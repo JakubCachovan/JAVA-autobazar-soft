@@ -1,0 +1,22 @@
+INSERT INTO Vozidlo (id, cena, znacka, model, pocetKm, vykon, rokVyroby, palivo, stav, popis) VALUES (3, 2000, 'Fiat', 'Bravo', 198000, 65, 2000, 'benzín', 'Nove', '');
+INSERT INTO Vozidlo (id, cena, znacka, model, pocetKm, vykon, rokVyroby, palivo, stav, popis) VALUES (4, 30000, 'Fiat', 'Bravo', 198000, 65, 2000, 'benzín', 'Nove', '');
+INSERT INTO Vozidlo (id, cena, znacka, model, pocetKm, vykon, rokVyroby, palivo, stav, popis) VALUES (5, 50000, 'Fiat', 'Bravo', 198000, 65, 2000, 'benzín', 'Nove', '');
+INSERT INTO Vozidlo (id, cena, znacka, model, pocetKm, vykon, rokVyroby, palivo, stav, popis) VALUES (6, 2500, 'Renault', 'Clio', 198000, 65, 2005, 'diesel', 'Ojazdene', '');
+
+INSERT INTO Predajca (email, meno, priezvisko, telefon, lokalita) VALUES ('j@j.com', 'Ferko', 'Mrkva', '000000000', 'Trencin');
+INSERT INTO Predajca (email, meno, priezvisko, telefon, lokalita) VALUES ('petkap@j.com', 'Peter', 'Kapusta', '0908529768', 'Bratislava');
+
+INSERT INTO Automobil (id, karoseria, pocetDveri, pocetSedadiel) VALUES (3, 'sedan', 3, 2);
+INSERT INTO Automobil (id, karoseria, pocetDveri, pocetSedadiel) VALUES (4, 'sedan', 3, 2);
+INSERT INTO Automobil (id, karoseria, pocetDveri, pocetSedadiel) VALUES (5, 'sedan', 3, 2);
+INSERT INTO Automobil (id, karoseria, pocetDveri, pocetSedadiel) VALUES (6, 'combi', 5, 5);
+
+INSERT INTO Inzerat (id, datum, stav, email) VALUES (0, '2017-04-28', 'Aktivne', 'j@j.com');
+INSERT INTO Inzerat (id, datum, stav, email) VALUES (1, '2017-04-28', 'Aktivne', 'j@j.com');
+INSERT INTO Inzerat (id, datum, stav, email) VALUES (2, '2017-04-28', 'Aktivne', 'j@j.com');
+INSERT INTO Inzerat (id, datum, stav, email) VALUES (3, '2017-04-29', 'Aktivne', 'petkap@j.com');
+
+INSERT INTO Kategoria (id_vozidla, id_inzeratu) VALUES (3, 0);
+INSERT INTO Kategoria (id_vozidla, id_inzeratu) VALUES (4, 1);
+INSERT INTO Kategoria (id_vozidla, id_inzeratu) VALUES (5, 2);
+INSERT INTO Kategoria (id_vozidla, id_inzeratu) VALUES (6, 3);

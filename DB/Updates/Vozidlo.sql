@@ -1,0 +1,4 @@
+UPDATE Vozidlo SET cena = 2000, znacka = 'Fiat', model = 'Bravo', pocetKm = 198000, vykon = 65, rokVyroby = 2000, palivo = 'benzín', stav = 'Nove', popis = '' WHERE id = 3;
+UPDATE Vozidlo SET cena = 30000, znacka = 'Fiat', model = 'Bravo', pocetKm = 198000, vykon = 65, rokVyroby = 2000, palivo = 'benzín', stav = 'Nove', popis = '' WHERE id = 4;
+UPDATE Vozidlo SET cena = 50000, znacka = 'Fiat', model = 'Bravo', pocetKm = 198000, vykon = 65, rokVyroby = 2000, palivo = 'benzín', stav = 'Nove', popis = '' WHERE id = 5;
+UPDATE Vozidlo SET cena = 2500, znacka = 'Renault', model = 'Clio', pocetKm = 198000, vykon = 65, rokVyroby = 2005, palivo = 'diesel', stav = 'Ojazdene', popis = '' WHERE id = 6;

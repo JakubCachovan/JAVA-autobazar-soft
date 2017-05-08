@@ -1,0 +1,2 @@
+INSERT INTO Predajca (email, meno, priezvisko, telefon, lokalita) VALUES ('j@j.com', 'Ferko', 'Mrkva', '000000000', 'Trencin');
+INSERT INTO Predajca (email, meno, priezvisko, telefon, lokalita) VALUES ('petkap@j.com', 'Peter', 'Kapusta', '0908529768', 'Bratislava');

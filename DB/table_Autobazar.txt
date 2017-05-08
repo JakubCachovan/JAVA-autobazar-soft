@@ -1,0 +1,71 @@
+CREATE TABLE "Vozidlo"
+("id" INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL ,
+  "cena" INTEGER,
+  "znacka" TEXT,
+  "model" TEXT,
+  "pocetKm" INTEGER,
+  "vykon" INTEGER,
+  "rokVyroby" INTEGER,
+  "palivo" TEXT,
+  "stav" TEXT,
+  "popis" TEXT
+);
+
+CREATE TABLE "Predajca"
+(
+    email TEXT PRIMARY KEY,
+    meno TEXT NOT NULL,
+    priezvisko TEXT,
+    telefon TEXT,
+    lokalita TEXT
+);
+
+CREATE TABLE Nakladne
+(
+    id INT PRIMARY KEY,
+    hmotnost TEXT,
+    normaEmisii TEXT,
+    nosnost INT,
+    CONSTRAINT id FOREIGN KEY (id) REFERENCES vozidlo (id)
+);
+
+CREATE TABLE Motocykel
+(
+    id INT PRIMARY KEY NOT NULL,
+    druh TEXT NOT NULL,
+    objemValcov INT NOT NULL,
+    CONSTRAINT id FOREIGN KEY (id) REFERENCES vozidlo (id)
+);
+
+CREATE TABLE Automobil
+(
+    id INT PRIMARY KEY NOT NULL,
+    karoseria TEXT NOT NULL,
+    pocetDveri INT,
+    pocetSedadiel INT,
+    CONSTRAINT id FOREIGN KEY (id) REFERENCES vozidlo (id)
+);
+
+CREATE TABLE Autobus
+(
+    id INT PRIMARY KEY NOT NULL, nadstavba TEXT NULL, pocetMiest INT NULL, batozinPriestor TEXT NULL, vlastnostiSedadiel TEXT NULL,
+    CONSTRAINT id FOREIGN KEY (id) REFERENCES vozidlo (id)
+);
+
+CREATE TABLE "Inzerat"
+(
+    id INTEGER PRIMARY KEY,
+    datum TEXT,
+    stav TEXT,
+    email TEXT,
+    CONSTRAINT email FOREIGN KEY (email) REFERENCES Predajca (email)
+);
+
+  CREATE TABLE "Kategoria"
+(
+    id_vozidla INTEGER,
+    id_inzeratu INTEGER,
+    CONSTRAINT kategoria_id_inzeratu_id_vozidla_pk PRIMARY KEY (id_inzeratu, id_vozidla),
+    FOREIGN KEY (id_vozidla) REFERENCES vozidlo (id) DEFERRABLE INITIALLY DEFERRED,
+    FOREIGN KEY (id_inzeratu) REFERENCES Inzerat (id) DEFERRABLE INITIALLY DEFERRED
+);

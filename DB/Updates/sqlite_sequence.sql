@@ -1,0 +1,1 @@
+UPDATE sqlite_sequence SET name = 'Vozidlo', seq = 6;

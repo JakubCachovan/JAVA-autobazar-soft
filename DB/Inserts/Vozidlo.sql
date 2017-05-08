@@ -1,0 +1,4 @@
+INSERT INTO Vozidlo (id, cena, znacka, model, pocetKm, vykon, rokVyroby, palivo, stav, popis) VALUES (3, 2000, 'Fiat', 'Bravo', 198000, 65, 2000, 'benzín', 'Nove', '');
+INSERT INTO Vozidlo (id, cena, znacka, model, pocetKm, vykon, rokVyroby, palivo, stav, popis) VALUES (4, 30000, 'Fiat', 'Bravo', 198000, 65, 2000, 'benzín', 'Nove', '');
+INSERT INTO Vozidlo (id, cena, znacka, model, pocetKm, vykon, rokVyroby, palivo, stav, popis) VALUES (5, 50000, 'Fiat', 'Bravo', 198000, 65, 2000, 'benzín', 'Nove', '');
+INSERT INTO Vozidlo (id, cena, znacka, model, pocetKm, vykon, rokVyroby, palivo, stav, popis) VALUES (6, 2500, 'Renault', 'Clio', 198000, 65, 2005, 'diesel', 'Ojazdene', '');

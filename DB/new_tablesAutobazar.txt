@@ -1,0 +1,44 @@
+CREATE TABLE "Vozidlo"
+(
+    id_vozidla INTEGER PRIMARY KEY NOT NULL,
+    id_kategoria INTEGER,
+    cena INTEGER,
+    znacka TEXT,
+    model TEXT,
+    pocetKm INTEGER,
+    vykon INTEGER,
+    rokVyroby INTEGER,
+    palivo TEXT,
+    stav_vozidla TEXT,
+    popis TEXT,
+    karoseria TEXT,
+    pocetDveri INTEGER,
+    pocetSedadiel INTEGER,
+    objemValcov INTEGER,
+    batozPriestor TEXT,
+    nadstavba TEXT,
+    vlastnostiSedadiel INTEGER,
+    hmotnostVozidla INTEGER,
+    normaEmisii TEXT,
+    nosnost INTEGER
+);
+
+CREATE TABLE "Predajca"
+(
+    email TEXT PRIMARY KEY,
+    meno TEXT NOT NULL,
+    priezvisko TEXT,
+    telefon TEXT,
+    lokalita TEXT
+)
+
+CREATE TABLE "Inzerat"
+(
+    id_inzeratu INTEGER PRIMARY KEY,
+    datum TEXT,
+    email TEXT,
+    stav TEXT,
+    id_vozidla INTEGER,
+    FOREIGN KEY (id_vozidla) REFERENCES Vozidlo (id_vozidla) DEFERRABLE INITIALLY DEFERRED,
+    CONSTRAINT email FOREIGN KEY (email) REFERENCES Predajca (email)
+)

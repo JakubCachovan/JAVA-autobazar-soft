@@ -1,0 +1,2 @@
+UPDATE Predajca SET meno = 'Ferko', priezvisko = 'Mrkva', telefon = '000000000', lokalita = 'Trencin' WHERE email = 'j@j.com';
+UPDATE Predajca SET meno = 'Peter', priezvisko = 'Kapusta', telefon = '0908529768', lokalita = 'Bratislava' WHERE email = 'petkap@j.com';
