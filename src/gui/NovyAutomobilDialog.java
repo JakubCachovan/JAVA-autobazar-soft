@@ -7,6 +7,7 @@ package gui;
 
 import autobazar.Automobil;
 import autobazar.StavVozidla;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
@@ -25,6 +26,7 @@ public class NovyAutomobilDialog extends javax.swing.JDialog {
         for (StavVozidla stav : StavVozidla.values()) {
             jComboBoxStavVozidla.addItem(stav.name());
         }     
+        jButtonUlozitInzerat.setIcon(new ImageIcon("./icons/save.png"));
     }
 
     public Automobil getAutomobil() {
@@ -95,7 +97,7 @@ public class NovyAutomobilDialog extends javax.swing.JDialog {
         jComboBoxPocetDveri = new javax.swing.JComboBox<>();
         jTextFieldCena = new javax.swing.JTextField();
         jTextFieldRokVyroby = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        jButtonUlozitInzerat = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Pridanie automobilu");
@@ -156,10 +158,10 @@ public class NovyAutomobilDialog extends javax.swing.JDialog {
 
         jTextFieldRokVyroby.setText("2000");
 
-        jButton1.setText("Uložiť");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jButtonUlozitInzerat.setText("Uložiť");
+        jButtonUlozitInzerat.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jButtonUlozitInzeratActionPerformed(evt);
             }
         });
 
@@ -223,7 +225,7 @@ public class NovyAutomobilDialog extends javax.swing.JDialog {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jLabel17)))))
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jButtonUlozitInzerat, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -279,7 +281,7 @@ public class NovyAutomobilDialog extends javax.swing.JDialog {
                             .addComponent(jTextFieldCena, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel17))))
                 .addGap(18, 18, 18)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jButtonUlozitInzerat, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -328,7 +330,7 @@ public class NovyAutomobilDialog extends javax.swing.JDialog {
         //inicializacia premennych       
     }//GEN-LAST:event_jComboBoxPocetDveriActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jButtonUlozitInzeratActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonUlozitInzeratActionPerformed
         //inicializacia premennych  
     
         if(validaciaFormularu()){
@@ -366,11 +368,11 @@ public class NovyAutomobilDialog extends javax.swing.JDialog {
                 dispose();
             }
         }      
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_jButtonUlozitInzeratActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButtonUlozitInzerat;
     private javax.swing.JComboBox<String> jComboBoxPalivo;
     private javax.swing.JComboBox<String> jComboBoxPocetDveri;
     private javax.swing.JComboBox<String> jComboBoxPocetSedadiel;

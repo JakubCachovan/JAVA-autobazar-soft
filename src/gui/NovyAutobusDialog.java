@@ -9,6 +9,7 @@ import autobazar.Autobus;
 import autobazar.BatozinovyPriestor;
 import autobazar.StavVozidla;
 import autobazar.VlastnostiSedadiel;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
@@ -27,6 +28,7 @@ public class NovyAutobusDialog extends javax.swing.JDialog {
         for (StavVozidla stav : StavVozidla.values()) {
             jComboBoxStavVozidla.addItem(stav.name());
         }  
+        jButtonUlozitInzerat.setIcon(new ImageIcon("./icons/save.png"));
     }
 
     public boolean isUpravaVozidla() {

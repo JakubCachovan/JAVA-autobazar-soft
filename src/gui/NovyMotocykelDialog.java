@@ -7,6 +7,7 @@ package gui;
 
 import autobazar.Motocykel;
 import autobazar.StavVozidla;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
@@ -26,6 +27,7 @@ public class NovyMotocykelDialog extends javax.swing.JDialog {
         for (StavVozidla stav : StavVozidla.values()) {
             jComboBoxStav.addItem(stav.name());
         }    
+        jButtonUlozitInzerat.setIcon(new ImageIcon("./icons/save.png"));
     }
 
     public boolean isUpravaVozidla() {

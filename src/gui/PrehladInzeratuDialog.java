@@ -5,14 +5,8 @@
  */
 package gui;
 
-import autobazar.Autobus;
-import autobazar.Automobil;
-import autobazar.Inzerat;
-import autobazar.Kategoria;
-import autobazar.Motocykel;
-import autobazar.NakladneAuto;
-import autobazar.Predajca;
-import autobazar.Vozidlo;
+import autobazar.*;
+import javax.swing.ImageIcon;
 import javax.swing.JCheckBox;
 import javax.swing.table.DefaultTableModel;
 
@@ -29,6 +23,9 @@ public class PrehladInzeratuDialog extends javax.swing.JDialog {
     public PrehladInzeratuDialog(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        jLabel1.setIcon(new ImageIcon("./icons/detail.png"));
+        jLabel17.setIcon(new ImageIcon("./icons/user.png"));
+        jLabel24.setIcon(new ImageIcon("./icons/vozidlo.png"));
     }
     
     public void zobrazPrehlad(){

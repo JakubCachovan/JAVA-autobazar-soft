@@ -10,6 +10,7 @@ import java.awt.HeadlessException;
 import java.awt.event.KeyEvent;
 import java.io.File;
 import java.util.ArrayList;
+import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
@@ -82,10 +83,17 @@ public final class Aplikacia extends javax.swing.JFrame {
     }
     
     public void initialIcons(){
-        /*jButtonSaveToFile.setIcon(new ImageIcon("./save.png"));
-        jButtonNovyInzerat.setIcon(new ImageIcon("./add.png"));
-        jButtonUpravitInzerat.setIcon(new ImageIcon("./edit.png"));
-        jButtonVymazatInzerat.setIcon(new ImageIcon("./remove.png"));*/
+        jButtonAktivny.setIcon(new ImageIcon("./icons/aktivne.png"));
+        jButtonFilter.setIcon(new ImageIcon("./icons/filter.png"));
+        jButtonNacitajPredajcov.setIcon(new ImageIcon("./icons/obnovit.png"));
+        jButtonPredane.setIcon(new ImageIcon("./icons/neaktivne.png"));
+        jButtonSaveToFile.setIcon(new ImageIcon("./icons/save.png"));
+        jButtonNovyInzerat.setIcon(new ImageIcon("./icons/pridat.png"));
+        jButtonUpravitInzerat.setIcon(new ImageIcon("./icons/upravit.png"));
+        jButtonVymazatInzerat.setIcon(new ImageIcon("./icons/vymazat.png"));
+        jButtonUpravitPredajcu.setIcon(new ImageIcon("./icons/upravit.png"));
+        jButtonVymazatPredajcu.setIcon(new ImageIcon("./icons/vymazat.png"));
+        jButtonZobrazInzerat.setIcon(new ImageIcon("./icons/detail.png"));
     }
     
     public void ObnovitVsetkyTabulky(){

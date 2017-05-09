@@ -7,6 +7,7 @@ package gui;
 
 import autobazar.NakladneAuto;
 import autobazar.StavVozidla;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
@@ -25,6 +26,7 @@ public class NovyNakladakDialog extends javax.swing.JDialog {
         for (StavVozidla stav : StavVozidla.values()) {
             jComboBoxStav.addItem(stav.name());
         }  
+        jButtonUlozitInzerat.setIcon(new ImageIcon("./icons/save.png"));
     }
 
     public NakladneAuto getNakladne() {

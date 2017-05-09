@@ -9,6 +9,7 @@ import autobazar.Predajca;
 import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
@@ -25,6 +26,8 @@ public class NovyPredajcaDialog extends javax.swing.JDialog {
     public NovyPredajcaDialog(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        jLabel1.setIcon(new ImageIcon("./icons/userM.png"));
+        jButtonUlozitPredajcu.setIcon(new ImageIcon("./icons/save.png"));
     }
 
     public Predajca getPredajca() {

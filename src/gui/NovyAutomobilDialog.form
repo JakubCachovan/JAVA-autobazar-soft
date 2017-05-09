@@ -99,7 +99,7 @@
                       </Group>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
-                  <Component id="jButton1" alignment="0" max="32767" attributes="0"/>
+                  <Component id="jButtonUlozitInzerat" alignment="0" max="32767" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -169,7 +169,7 @@
                   </Group>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="jButton1" min="-2" pref="30" max="-2" attributes="0"/>
+              <Component id="jButtonUlozitInzerat" min="-2" pref="30" max="-2" attributes="0"/>
               <EmptySpace min="-2" max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -349,12 +349,12 @@
         <Property name="text" type="java.lang.String" value="2000"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton1">
+    <Component class="javax.swing.JButton" name="jButtonUlozitInzerat">
       <Properties>
         <Property name="text" type="java.lang.String" value="Ulo&#x17e;i&#x165;"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonUlozitInzeratActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

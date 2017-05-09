@@ -5,12 +5,10 @@
  */
 package gui;
 
-import autobazar.Autobazar;
 import autobazar.Kategoria;
 import autobazar.Predajca;
 import java.util.ArrayList;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -18,7 +16,7 @@ import javax.swing.table.DefaultTableModel;
  * 
  * @author Acer
  */
-public class VytvoritInzeratDialog extends javax.swing.JDialog {
+public final class VytvoritInzeratDialog extends javax.swing.JDialog {
 
     private ArrayList<Predajca> existujuciPredajcovia;
     private Predajca predajca;
@@ -35,6 +33,24 @@ public class VytvoritInzeratDialog extends javax.swing.JDialog {
         jLabelHlaska.setVisible(false);
         jLabelDetail.setVisible(false);
         jLabelDetailText.setVisible(false);
+        initIcons();
+    }
+    
+    public void initIcons(){
+        jButtonHladaj.setIcon(new ImageIcon("./icons/search.png"));
+        jButtonNovyPredajca.setIcon(new ImageIcon("./icons/newUser.png"));
+        jButtonObnovit.setIcon(new ImageIcon("./icons/obnovit.png"));
+        jButtonPridajExistujuceho.setIcon(new ImageIcon("./icons/save.png"));
+        jButtonUlozitInzerat.setIcon(new ImageIcon("./icons/save.png"));
+        
+        jToggleButtonAutomobil.setIcon(new ImageIcon("./icons/automobil.png"));
+        jToggleButtonAutobus.setIcon(new ImageIcon("./icons/autobus.png"));
+        jToggleButtonMotocykel.setIcon(new ImageIcon("./icons/motocykel.png"));
+        jToggleButtonNakladne.setIcon(new ImageIcon("./icons/nakladne.png"));
+        
+        jLabel1.setIcon(new ImageIcon("./icons/userM.png"));
+        jLabel9.setIcon(new ImageIcon("./icons/aktivne.png"));
+        jLabelDetail.setIcon(new ImageIcon("./icons/user.png"));
     }
     
     public void NaplnTableExistujucichPredajcov(){
@@ -104,7 +120,7 @@ public class VytvoritInzeratDialog extends javax.swing.JDialog {
 
         jLabel8.setText("Zvolte kategóriu");
 
-        jButtonUlozitInzerat.setIcon(new javax.swing.ImageIcon("C:\\Users\\Acer\\Documents\\NetBeansProjects\\Autobazar\\icons\\addInzerat.png")); // NOI18N
+        jButtonUlozitInzerat.setIcon(new javax.swing.ImageIcon("C:\\Users\\Acer\\Documents\\NetBeansProjects\\Autobazar\\icons\\save.png")); // NOI18N
         jButtonUlozitInzerat.setText("Pridať inzerát");
         jButtonUlozitInzerat.setEnabled(false);
         jButtonUlozitInzerat.addActionListener(new java.awt.event.ActionListener() {
@@ -157,7 +173,7 @@ public class VytvoritInzeratDialog extends javax.swing.JDialog {
         jLabel10.setText("Alebo označte existujúceho predajcu");
 
         jButtonPridajExistujuceho.setIcon(new javax.swing.ImageIcon("C:\\Users\\Acer\\Documents\\NetBeansProjects\\Autobazar\\icons\\aktivne.png")); // NOI18N
-        jButtonPridajExistujuceho.setText("Vybrať existujúceho predajcu");
+        jButtonPridajExistujuceho.setText("Uložiť predajcu");
         jButtonPridajExistujuceho.setEnabled(false);
         jButtonPridajExistujuceho.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -226,47 +242,48 @@ public class VytvoritInzeratDialog extends javax.swing.JDialog {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButtonUlozitInzerat, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jSeparator2)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jSeparator1)
-                    .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButtonUlozitInzerat, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jSeparator2, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1)
+                    .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addComponent(jLabel10)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jTextFieldHladany, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButtonHladaj))
-                    .addGroup(layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButtonNovyPredajca, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addComponent(jButtonPridajExistujuceho)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabelHlaska)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButtonObnovit))
-                    .addGroup(layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabelDetail)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabelDetailText))
                             .addComponent(jLabel8)
-                            .addComponent(jLabelHlaska)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel7)
                                 .addGap(34, 34, 34)
                                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jToggleButtonAutomobil)
+                                .addComponent(jToggleButtonAutomobil, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jToggleButtonMotocykel)
+                                .addComponent(jToggleButtonMotocykel, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jToggleButtonAutobus)
+                                .addComponent(jToggleButtonAutobus, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jToggleButtonNakladne)))
+                                .addComponent(jToggleButtonNakladne, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -290,14 +307,13 @@ public class VytvoritInzeratDialog extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonPridajExistujuceho, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonObnovit, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jLabelHlaska)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(jButtonObnovit, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelHlaska))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelDetail)
                     .addComponent(jLabelDetailText))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -307,13 +323,13 @@ public class VytvoritInzeratDialog extends javax.swing.JDialog {
                 .addComponent(jLabel8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jToggleButtonAutomobil)
-                    .addComponent(jToggleButtonMotocykel)
-                    .addComponent(jToggleButtonAutobus)
-                    .addComponent(jToggleButtonNakladne))
-                .addGap(18, 18, 18)
-                .addComponent(jButtonUlozitInzerat)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jToggleButtonAutomobil, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jToggleButtonMotocykel, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jToggleButtonAutobus, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jToggleButtonNakladne, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, Short.MAX_VALUE)
+                .addComponent(jButtonUlozitInzerat, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
@@ -356,9 +372,9 @@ public class VytvoritInzeratDialog extends javax.swing.JDialog {
         selectedRow = jTableExistujuciPredajcovia.getSelectedRow();
         if(selectedRow != -1){
             jButtonPridajExistujuceho.setEnabled(true);
-            jLabelHlaska.setText("");
-            jLabelHlaska.setVisible(false);
-            
+            jLabelHlaska.setVisible(true);
+            jLabelHlaska.setText("Uložte výber predajcu pre inzerát");
+            jLabelHlaska.setIcon(new ImageIcon("./icons/warning.png"));       
         }
     }//GEN-LAST:event_jTableExistujuciPredajcoviaMouseClicked
 
@@ -369,7 +385,8 @@ public class VytvoritInzeratDialog extends javax.swing.JDialog {
         for (Predajca p : existujuciPredajcovia) {
             if(p.getEmail().equalsIgnoreCase(email)){
                 predajca = p;
-                jLabelHlaska.setText("Predajca úspešne vybratý");
+                jLabelHlaska.setText("Predajca úspešne priradený inzerátu");
+                jLabelHlaska.setIcon(new ImageIcon("./icons/aktivne.png"));
                 jLabelHlaska.setVisible(true);
             }
         }

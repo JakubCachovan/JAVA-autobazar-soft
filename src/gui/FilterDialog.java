@@ -7,6 +7,7 @@ package gui;
 
 import autobazar.Inzerat;
 import java.util.ArrayList;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -21,6 +22,7 @@ public class FilterDialog extends javax.swing.JDialog {
     public FilterDialog(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        jButton1.setIcon(new ImageIcon("./icons/search.png"));
     }
 
     public ArrayList<Inzerat> getInzeraty() {

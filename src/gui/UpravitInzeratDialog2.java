@@ -6,6 +6,7 @@
 package gui;
 
 import autobazar.*;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import sql.*;
 
@@ -23,6 +24,8 @@ public class UpravitInzeratDialog2 extends javax.swing.JDialog {
     public UpravitInzeratDialog2(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        jButtonUpravitPredajcu.setIcon(new ImageIcon("./icons/userM.png"));
+        jButtonUpravitVozidlo.setIcon(new ImageIcon("./icons/car.png"));
     }
 
     public Inzerat getInzerat() {
