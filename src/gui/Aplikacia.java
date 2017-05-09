@@ -30,7 +30,6 @@ public final class Aplikacia extends javax.swing.JFrame {
     public Aplikacia() {
         initComponents();
         initialIcons();
-       
         LoadDataDialog loadData = new LoadDataDialog(this, true);
         loadData.setLocationRelativeTo(null);
         loadData.setVisible(true);
