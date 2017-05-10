@@ -145,6 +145,7 @@ public class NovyAutobusDialog extends javax.swing.JDialog {
 
         jLabel11.setText("Výkon (kW)");
 
+        jButtonUlozitInzerat.setIcon(new javax.swing.ImageIcon("C:\\Users\\Acer\\Documents\\NetBeansProjects\\Autobazar\\icons\\save.png")); // NOI18N
         jButtonUlozitInzerat.setText("Uložiť inzerát");
         jButtonUlozitInzerat.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -351,7 +352,7 @@ public class NovyAutobusDialog extends javax.swing.JDialog {
                     .addComponent(jTextFieldCena, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel17))
                 .addGap(18, 18, 18)
-                .addComponent(jButtonUlozitInzerat, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jButtonUlozitInzerat, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 

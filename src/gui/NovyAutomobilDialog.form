@@ -169,7 +169,7 @@
                   </Group>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="jButtonUlozitInzerat" min="-2" pref="30" max="-2" attributes="0"/>
+              <Component id="jButtonUlozitInzerat" min="-2" pref="40" max="-2" attributes="0"/>
               <EmptySpace min="-2" max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -351,6 +351,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="jButtonUlozitInzerat">
       <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="2" name="C:\Users\Acer\Documents\NetBeansProjects\Autobazar\icons\save.png"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Ulo&#x17e;i&#x165;"/>
       </Properties>
       <Events>

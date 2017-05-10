@@ -22,7 +22,7 @@ public class FilterDialog extends javax.swing.JDialog {
     public FilterDialog(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-        jButton1.setIcon(new ImageIcon("./icons/search.png"));
+        jButtonFiltruj.setIcon(new ImageIcon("./icons/search.png"));
     }
 
     public ArrayList<Inzerat> getInzeraty() {
@@ -54,7 +54,7 @@ public class FilterDialog extends javax.swing.JDialog {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        jButtonFiltruj = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jTextFieldCenaOd = new javax.swing.JTextField();
@@ -93,11 +93,11 @@ public class FilterDialog extends javax.swing.JDialog {
 
         jLabel7.setText("Do");
 
-        jButton1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Acer\\Documents\\NetBeansProjects\\Autobazar\\icons\\search.png")); // NOI18N
-        jButton1.setText("Hľadaj");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jButtonFiltruj.setIcon(new javax.swing.ImageIcon("C:\\Users\\Acer\\Documents\\NetBeansProjects\\Autobazar\\icons\\search.png")); // NOI18N
+        jButtonFiltruj.setText("Hľadaj");
+        jButtonFiltruj.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jButtonFiltrujActionPerformed(evt);
             }
         });
 
@@ -131,7 +131,7 @@ public class FilterDialog extends javax.swing.JDialog {
                             .addComponent(jTextFieldRokVyrobyDO, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addComponent(jLabel5)
                         .addComponent(jComboBoxZnacka, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButtonFiltruj, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createSequentialGroup()
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(layout.createSequentialGroup()
@@ -187,7 +187,7 @@ public class FilterDialog extends javax.swing.JDialog {
                     .addComponent(jLabel10)
                     .addComponent(jTextFieldCenaDo, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jButtonFiltruj, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -198,10 +198,74 @@ public class FilterDialog extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBoxZnackaActionPerformed
 
-    
-    
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        String znacka = jComboBoxZnacka.getSelectedItem().toString();
+    private void jButtonFiltrujActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonFiltrujActionPerformed
+        if(jComboBoxZnacka.getSelectedIndex() != 0){
+            //filter značky
+            ArrayList<Inzerat> filtrovaneInzeraty = new ArrayList<>();
+            for (Inzerat inzerat : inzeraty) {
+                if(inzerat.getKategoria().getZnacka().equalsIgnoreCase(jComboBoxZnacka.getSelectedItem().toString())){
+                    filtrovaneInzeraty.add(inzerat);
+                }
+            }
+            inzeraty = filtrovaneInzeraty;
+        }
+        if(!jTextFieldRokVyrobyOD.getText().isEmpty()){
+            ArrayList<Inzerat> filtrovaneInzeraty = new ArrayList<>();
+            for (Inzerat inzerat : inzeraty) {
+                if(inzerat.getKategoria().getRokVyroby() >= Integer.parseInt(jTextFieldRokVyrobyOD.getText())){
+                    filtrovaneInzeraty.add(inzerat);
+                }
+            }
+            inzeraty = filtrovaneInzeraty;
+        }
+        if(!jTextFieldRokVyrobyDO.getText().isEmpty()){
+            ArrayList<Inzerat> filtrovaneInzeraty = new ArrayList<>();
+            for (Inzerat inzerat : inzeraty) {
+                if(inzerat.getKategoria().getRokVyroby() <= Integer.parseInt(jTextFieldRokVyrobyDO.getText())){
+                    filtrovaneInzeraty.add(inzerat);
+                }
+            }
+            inzeraty = filtrovaneInzeraty;
+        }
+        if(!jTextFieldCenaOd.getText().isEmpty()){
+            ArrayList<Inzerat> filtrovaneInzeraty = new ArrayList<>();
+            for (Inzerat inzerat : inzeraty) {
+                if(inzerat.getKategoria().getCena() >= Integer.parseInt(jTextFieldCenaOd.getText())){
+                    filtrovaneInzeraty.add(inzerat);
+                }
+            }
+            inzeraty = filtrovaneInzeraty;
+        }
+        if(!jTextFieldCenaDo.getText().isEmpty()){
+            ArrayList<Inzerat> filtrovaneInzeraty = new ArrayList<>();
+            for (Inzerat inzerat : inzeraty) {
+                if(inzerat.getKategoria().getCena()<= Integer.parseInt(jTextFieldCenaDo.getText())){
+                    filtrovaneInzeraty.add(inzerat);
+                }
+            }
+            inzeraty = filtrovaneInzeraty;
+        }
+        if(!jTextFieldNajazdeneKmDO.getText().isEmpty()){
+            ArrayList<Inzerat> filtrovaneInzeraty = new ArrayList<>();
+            for (Inzerat inzerat : inzeraty) {
+                if(inzerat.getKategoria().getNajazdeneKM() >= Integer.parseInt(jTextFieldCenaDo.getText())){
+                    filtrovaneInzeraty.add(inzerat);
+                }
+            }
+            inzeraty = filtrovaneInzeraty;
+        }
+        if(!jTextFieldNajazdeneKmOD.getText().isEmpty()){
+            ArrayList<Inzerat> filtrovaneInzeraty = new ArrayList<>();
+            for (Inzerat inzerat : inzeraty) {
+                if(inzerat.getKategoria().getNajazdeneKM()<= Integer.parseInt(jTextFieldNajazdeneKmOD.getText())){
+                    filtrovaneInzeraty.add(inzerat);
+                }
+            }
+            inzeraty = filtrovaneInzeraty;
+        }
+        
+        
+        /*String znacka = jComboBoxZnacka.getSelectedItem().toString();
         int kmOd = Integer.parseInt(jTextFieldNajazdeneKmOD.getText());
         int kmDo = Integer.parseInt(jTextFieldNajazdeneKmDO.getText());
         int rvOd = Integer.parseInt(jTextFieldRokVyrobyOD.getText());
@@ -222,14 +286,14 @@ public class FilterDialog extends javax.swing.JDialog {
                     && inzerat.getKategoria().getCena() > cenaDo){
                 inzeraty.remove(inzerat);
             }
-        }
+        }*/
         dispose();
         
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_jButtonFiltrujActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButtonFiltruj;
     private javax.swing.JComboBox<String> jComboBoxZnacka;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;

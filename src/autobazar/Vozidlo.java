@@ -12,16 +12,15 @@ import java.io.Serializable;
  */
 public abstract class Vozidlo implements Kategoria, Serializable{
 
-	private int cena;
-	private String model;
-	private int najazdeneKM;
-	private String palivo;
-	private int rokVyroby;
-	private StavVozidla stav;
-	private int vykon;
-	private String znacka;
-        private String popis;
-        //private int id_vozidla;
+	protected int cena;
+	protected String model;
+	protected int najazdeneKM;
+	protected String palivo;
+	protected int rokVyroby;
+	protected StavVozidla stav;
+	protected int vykon;
+	protected String znacka;
+        protected String popis;
 
     public Vozidlo(int cena, String model, int najazdeneKM, String palivo, int rokVyroby, StavVozidla stav, int vykon, String znacka, String popis) {
         this.cena = cena;
@@ -34,14 +33,6 @@ public abstract class Vozidlo implements Kategoria, Serializable{
         this.znacka = znacka;
         this.popis = popis;
     }
-
-    /*public int getId_vozidla() {
-        return id_vozidla;
-    }
-
-    public void setId_vozidla(int id_vozidla) {
-        this.id_vozidla = id_vozidla;
-    }*/
    
     /**
      *
@@ -56,7 +47,6 @@ public abstract class Vozidlo implements Kategoria, Serializable{
         this.popis = popis;
     }
 
-    
         @Override
     public int getCena() {
         return cena;
@@ -137,7 +127,5 @@ public abstract class Vozidlo implements Kategoria, Serializable{
     public String toString() {
         return "Vozidlo{" + "cena=" + cena + ", model=" + model + ", najazdeneKM=" + najazdeneKM + ", palivo=" + palivo + ", rokVyroby=" + rokVyroby + ", stav=" + stav + ", vykon=" + vykon + ", znacka=" + znacka + ", popis=" + popis + '}';
     }
-    
-    
-    
+
 }

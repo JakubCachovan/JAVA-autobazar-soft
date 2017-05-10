@@ -7,21 +7,19 @@ package gui;
 
 import autobazar.*;
 import javax.swing.ImageIcon;
-import javax.swing.JOptionPane;
-import sql.*;
 
 /**
  *
  * @author Acer
  */
-public class UpravitInzeratDialog2 extends javax.swing.JDialog {
+public class UpravitInzeratDialog extends javax.swing.JDialog {
     private Inzerat inzerat;
     private boolean upravaPredajcu = false;
     private boolean upravaVozidla = false;
     /**
      * Creates new form UpravitInzeratDialog2
      */
-    public UpravitInzeratDialog2(java.awt.Frame parent, boolean modal) {
+    public UpravitInzeratDialog(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
         jButtonUpravitPredajcu.setIcon(new ImageIcon("./icons/userM.png"));

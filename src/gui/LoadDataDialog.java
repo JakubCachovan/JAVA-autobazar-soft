@@ -152,7 +152,7 @@ public class LoadDataDialog extends javax.swing.JDialog {
         Pattern p = Pattern.compile("(.sqlite)");
         Pattern p2 = Pattern.compile("(.txt)");
         Matcher m = p.matcher(path);   
-        Matcher m2 = p.matcher(path); 
+        Matcher m2 = p2.matcher(path); 
         if(m.find()){
             //from DB
             isFromDB = true;

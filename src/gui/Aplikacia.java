@@ -39,8 +39,6 @@ public final class Aplikacia extends javax.swing.JFrame {
             Autobazar nacitanyAutobazar = LoaderDB.LoadFromDB(DbPath);
             if(nacitanyAutobazar != null){
                 _autobazar = nacitanyAutobazar;
-                
-                //JOptionPane.showMessageDialog(null, "Načítanie z databázy úspešné !", "Výborne", JOptionPane.INFORMATION_MESSAGE);
             }else{
                 JOptionPane.showMessageDialog(null, "Načítanie z databázy zlyhalo !", "Chyba", JOptionPane.ERROR_MESSAGE);
             }
@@ -48,8 +46,7 @@ public final class Aplikacia extends javax.swing.JFrame {
             FilePath = loadData.getPath(); 
             Autobazar nacitanyAutobazar = Autobazar.loadFromFile(loadData.getFile());
             if(nacitanyAutobazar != null){
-                _autobazar = nacitanyAutobazar;
-                //JOptionPane.showMessageDialog(null, "Načítanie zo súboru úspešné !", "Výborne", JOptionPane.INFORMATION_MESSAGE);                  
+                _autobazar = nacitanyAutobazar;                 
             }else{
                 JOptionPane.showMessageDialog(null, "Načítanie zo súboru zlyhalo !", "Chyba", JOptionPane.ERROR_MESSAGE);          
             }           
@@ -284,7 +281,6 @@ public final class Aplikacia extends javax.swing.JFrame {
         jScrollPane5 = new javax.swing.JScrollPane();
         jTableInzeratyPredajcu = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         jButtonNacitajPredajcov = new javax.swing.JButton();
         jButtonUpravitPredajcu = new javax.swing.JButton();
         jButtonVymazatPredajcu = new javax.swing.JButton();
@@ -536,7 +532,7 @@ public final class Aplikacia extends javax.swing.JFrame {
                                 .addComponent(jButtonPredane, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jButtonZobrazInzerat, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jButtonAktivny, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                .addGap(10, 10, 10)
                 .addGroup(jPanelPrehladLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelPrehladLayout.createSequentialGroup()
                         .addComponent(jButtonUpravitInzerat, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -619,11 +615,14 @@ public final class Aplikacia extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        jTableInzeratyPredajcu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTableInzeratyPredajcuMouseClicked(evt);
+            }
+        });
         jScrollPane5.setViewportView(jTableInzeratyPredajcu);
 
         jLabel1.setText("Inzeráty predajcu");
-
-        jLabel2.setText("Zoznam predajcov");
 
         jButtonNacitajPredajcov.setIcon(new javax.swing.ImageIcon("C:\\Users\\Acer\\Documents\\NetBeansProjects\\Autobazar\\icons\\obnovit.png")); // NOI18N
         jButtonNacitajPredajcov.setText("Obnoviť");
@@ -658,20 +657,19 @@ public final class Aplikacia extends javax.swing.JFrame {
             .addGroup(jPanelPredajcoviaLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanelPredajcoviaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelPredajcoviaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jButtonNacitajPredajcov, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
-                        .addComponent(jButtonUpravitPredajcu, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE))
-                    .addComponent(jButtonVymazatPredajcu, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanelPredajcoviaLayout.createSequentialGroup()
+                        .addComponent(jButtonNacitajPredajcov, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButtonUpravitPredajcu, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButtonVymazatPredajcu, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 638, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanelPredajcoviaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 638, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanelPredajcoviaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 785, Short.MAX_VALUE)
                     .addGroup(jPanelPredajcoviaLayout.createSequentialGroup()
                         .addComponent(jLabel1)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 629, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanelPredajcoviaLayout.setVerticalGroup(
@@ -679,20 +677,15 @@ public final class Aplikacia extends javax.swing.JFrame {
             .addGroup(jPanelPredajcoviaLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanelPredajcoviaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelPredajcoviaLayout.createSequentialGroup()
-                        .addGroup(jPanelPredajcoviaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel1))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanelPredajcoviaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 734, Short.MAX_VALUE)
-                            .addComponent(jScrollPane4)))
-                    .addGroup(jPanelPredajcoviaLayout.createSequentialGroup()
+                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanelPredajcoviaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jButtonNacitajPredajcov, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jButtonUpravitPredajcu, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jButtonVymazatPredajcu, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanelPredajcoviaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 715, Short.MAX_VALUE)
+                    .addComponent(jScrollPane5))
                 .addContainerGap())
         );
 
@@ -1110,7 +1103,7 @@ public final class Aplikacia extends javax.swing.JFrame {
             String idInzeratu = m.getValueAt(selectedRow, 0).toString();
             Inzerat inzerat = _autobazar.najdiInzerat(Integer.parseInt(idInzeratu));
             if(inzerat != null){
-                UpravitInzeratDialog2 edit = new UpravitInzeratDialog2(this, true);
+                UpravitInzeratDialog edit = new UpravitInzeratDialog(this, true);
                 edit.setLocationRelativeTo(null);
                 edit.setInzerat(inzerat);
                 edit.setVisible(true);
@@ -1252,6 +1245,22 @@ public final class Aplikacia extends javax.swing.JFrame {
         FillTableInzeraty(fd.getInzeraty());
     }//GEN-LAST:event_jButtonFilterActionPerformed
 
+    private void jTableInzeratyPredajcuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableInzeratyPredajcuMouseClicked
+        if(evt.getClickCount() == 2 && evt.getButton() == 1){
+            int selectedRow = jTableInzeratyPredajcu.getSelectedRow();
+            DefaultTableModel m = (DefaultTableModel)jTableInzeratyPredajcu.getModel();
+            String idInzeratu = m.getValueAt(selectedRow, 0).toString();
+            Inzerat inzerat = _autobazar.najdiInzerat(Integer.parseInt(idInzeratu));
+            if(inzerat != null){
+                PrehladInzeratuDialog prehlad = new PrehladInzeratuDialog(this, true);
+                prehlad.setLocationRelativeTo(null);
+                prehlad.setInzerat(inzerat);
+                prehlad.zobrazPrehlad();
+                prehlad.setVisible(true);
+            }
+        }
+    }//GEN-LAST:event_jTableInzeratyPredajcuMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -1301,7 +1310,6 @@ public final class Aplikacia extends javax.swing.JFrame {
     private javax.swing.JButton jButtonVymazatPredajcu;
     private javax.swing.JButton jButtonZobrazInzerat;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
