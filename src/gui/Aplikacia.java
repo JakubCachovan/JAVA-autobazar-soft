@@ -9,6 +9,8 @@ import autobazar.*;
 import java.awt.HeadlessException;
 import java.awt.event.KeyEvent;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
@@ -55,6 +57,13 @@ public final class Aplikacia extends javax.swing.JFrame {
         }  
         
         ObnovitVsetkyTabulky();
+        jTableInzeraty.setAutoCreateRowSorter(true);
+        jTableAutobusy.setAutoCreateRowSorter(true);
+        jTableAutomobily.setAutoCreateRowSorter(true);
+        jTableInzeratyPredajcu.setAutoCreateRowSorter(true);
+        jTableMotocykle.setAutoCreateRowSorter(true);
+        jTableNakladne.setAutoCreateRowSorter(true);
+        jTablePredajcovia.setAutoCreateRowSorter(true);
     }
     
     public void initialIcons(){
@@ -268,15 +277,15 @@ public final class Aplikacia extends javax.swing.JFrame {
         jPanelMotocykle = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTableMotocykle = new javax.swing.JTable();
-        jPanelNakladne = new javax.swing.JPanel();
-        jScrollPane6 = new javax.swing.JScrollPane();
-        jTableNakladne = new javax.swing.JTable();
         jPanelAutobusy = new javax.swing.JPanel();
         jScrollPane7 = new javax.swing.JScrollPane();
         jTableAutobusy = new javax.swing.JTable();
+        jPanelNakladne = new javax.swing.JPanel();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        jTableNakladne = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Autobazár");
+        setTitle("Autobazaris");
         setBackground(java.awt.Color.lightGray);
 
         jTabbedPane1.setBackground(java.awt.Color.lightGray);
@@ -769,53 +778,6 @@ public final class Aplikacia extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Motocykle", jPanelMotocykle);
 
-        jPanelNakladne.setBackground(java.awt.Color.lightGray);
-
-        jTableNakladne.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        jTableNakladne.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Značka", "Model", "Rok výroby", "Počet KM", "Palivo", "Stav", "Výkon", "Druh", "Hmotnosť vozidla", "Norma emisií", "Nosnosť", "Popis", "Cena"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false, true, true, false, false
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jScrollPane6.setViewportView(jTableNakladne);
-
-        javax.swing.GroupLayout jPanelNakladneLayout = new javax.swing.GroupLayout(jPanelNakladne);
-        jPanelNakladne.setLayout(jPanelNakladneLayout);
-        jPanelNakladneLayout.setHorizontalGroup(
-            jPanelNakladneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelNakladneLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 1433, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        jPanelNakladneLayout.setVerticalGroup(
-            jPanelNakladneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelNakladneLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 766, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
-        jTabbedPane1.addTab("Nákladné vozidlá", jPanelNakladne);
-
         jPanelAutobusy.setBackground(java.awt.Color.lightGray);
 
         jTableAutobusy.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
@@ -862,6 +824,53 @@ public final class Aplikacia extends javax.swing.JFrame {
         );
 
         jTabbedPane1.addTab("Autobusy", jPanelAutobusy);
+
+        jPanelNakladne.setBackground(java.awt.Color.lightGray);
+
+        jTableNakladne.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        jTableNakladne.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Značka", "Model", "Rok výroby", "Počet KM", "Palivo", "Stav", "Výkon", "Druh", "Hmotnosť vozidla", "Norma emisií", "Nosnosť", "Popis", "Cena"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false, false, true, true, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane6.setViewportView(jTableNakladne);
+
+        javax.swing.GroupLayout jPanelNakladneLayout = new javax.swing.GroupLayout(jPanelNakladne);
+        jPanelNakladne.setLayout(jPanelNakladneLayout);
+        jPanelNakladneLayout.setHorizontalGroup(
+            jPanelNakladneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelNakladneLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 1433, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanelNakladneLayout.setVerticalGroup(
+            jPanelNakladneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelNakladneLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 766, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        jTabbedPane1.addTab("Nákladné vozidlá", jPanelNakladne);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -917,6 +926,20 @@ public final class Aplikacia extends javax.swing.JFrame {
             predajcaDialog.setUpravaPredajcu(true);
             predajcaDialog.setTitle("Úprava predajcu");
             predajcaDialog.setVisible(true);
+            
+            Predajca upravenyPredajca = predajcaDialog.getPredajca();
+            if(DbPath != null){
+                if(!Update.upravitPredajcu(upravenyPredajca, DbPath)){
+                    JOptionPane.showMessageDialog(null, "Úprava predajcu v databáze zlyhala!", "Chyba!", JOptionPane.ERROR_MESSAGE);
+                }
+            }
+            if(FilePath != null){
+                try {
+                    _autobazar.saveToFile(new File(FilePath));
+                } catch (IOException e) {
+                    JOptionPane.showMessageDialog(null, e, "Chyba", JOptionPane.ERROR);
+                }
+            }
         }
         ObnovitVsetkyTabulky();
         
@@ -941,6 +964,13 @@ public final class Aplikacia extends javax.swing.JFrame {
                                 //vymazat z DB
                                 DbDelete.vymazatInzeratyPredajcu(email, DbPath);
                                 DbDelete.vymazPredajcu(email, DbPath);
+                            }
+                            if(FilePath != null){
+                                try {
+                                    _autobazar.saveToFile(new File(FilePath));
+                                } catch (IOException e) {
+                                    JOptionPane.showMessageDialog(null, e, "Chyba", JOptionPane.ERROR);
+                                }
                             }
                         }else{
                             JOptionPane.showMessageDialog(null, "Pri vymazávaní nastala chyba", "Chyba!", JOptionPane.ERROR);
@@ -997,8 +1027,17 @@ public final class Aplikacia extends javax.swing.JFrame {
                 String idIzeratu = m.getValueAt(selectedRow, 0).toString();
                 if(!_autobazar.getAktivne(Integer.parseInt(idIzeratu))){
                     _autobazar.setAktivne(Integer.parseInt(idIzeratu));
-                    if(!sql.Update.upravitInzerat(_autobazar.najdiInzerat(Integer.parseInt(idIzeratu)), DbPath)){
-                        JOptionPane.showMessageDialog(null, "Chyba pri upraveni v DB");
+                    if(DbPath != null){
+                        if(!sql.Update.upravitInzerat(_autobazar.najdiInzerat(Integer.parseInt(idIzeratu)), DbPath)){
+                            JOptionPane.showMessageDialog(null, "Chyba pri upraveni v DB");
+                        }
+                    }
+                    if(FilePath != null){
+                        try {
+                            _autobazar.saveToFile(new File(FilePath));
+                        } catch (IOException e) {
+                            JOptionPane.showMessageDialog(null, e, "Chyba", JOptionPane.ERROR);
+                        }
                     }
                     FillTableInzeraty();
                     JOptionPane.showMessageDialog(null, "Inzerát "+idIzeratu+" bol označený ako aktívny.","Upozornenie", JOptionPane.INFORMATION_MESSAGE);
@@ -1043,16 +1082,16 @@ public final class Aplikacia extends javax.swing.JFrame {
     private void jButtonSaveToFileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSaveToFileActionPerformed
         try {
             JFileChooser fileChooser = new JFileChooser("./");
+            fileChooser.setSelectedFile(new File("autobazar.txt"));
             if (fileChooser.showSaveDialog(this)== JFileChooser.APPROVE_OPTION) {
                 File file = fileChooser.getSelectedFile();
-                String filePath = file.getAbsolutePath();
-                if(Autobazar.saveToFile(file, _autobazar)){
+                if(_autobazar.saveToFile(file)){
                     JOptionPane.showMessageDialog(null, "Uloženie úspešné!", "Info", JOptionPane.INFORMATION_MESSAGE);
                 }else{
                     JOptionPane.showMessageDialog(null, "Chyba pri ukladaní do súboru", "Chyba", JOptionPane.ERROR_MESSAGE);
                 }
             }
-        } catch (Exception e) {
+        } catch (HeadlessException | IOException e) {
             JOptionPane.showMessageDialog(null, e);
         }
     }//GEN-LAST:event_jButtonSaveToFileActionPerformed
@@ -1069,6 +1108,13 @@ public final class Aplikacia extends javax.swing.JFrame {
                 if(DbPath != null){
                     //vymazanie z DB
                     DbDelete.vymazatInzerat(Integer.parseInt(idIzeratu), DbPath);
+                }
+                if(FilePath != null){
+                    try {
+                        _autobazar.saveToFile(new File(FilePath));
+                    } catch (IOException e) {
+                        JOptionPane.showMessageDialog(null, e, "Chyba", JOptionPane.ERROR);
+                    }
                 }
                 jButtonVymazatInzerat.setEnabled(false);
                 jButtonUpravitInzerat.setEnabled(false);
@@ -1096,6 +1142,13 @@ public final class Aplikacia extends javax.swing.JFrame {
                 if(DbPath != null && (edit.isUpravaVozidla() || edit.isUpravaPredajcu())){
                     if(!Update.upravitInzerat(inzerat, DbPath))
                     JOptionPane.showMessageDialog(null, "Chyba pri upravovani inzeratu v DB", "Chyba", JOptionPane.ERROR_MESSAGE);
+                }
+                if(FilePath != null && (edit.isUpravaVozidla() || edit.isUpravaPredajcu())){
+                    try {
+                        _autobazar.saveToFile(new File(FilePath));
+                    } catch (IOException e) {
+                        JOptionPane.showMessageDialog(null, e, "Chyba", JOptionPane.ERROR);
+                    }
                 }
             }
             ObnovitVsetkyTabulky();
@@ -1133,9 +1186,18 @@ public final class Aplikacia extends javax.swing.JFrame {
                 String idIzeratu = m.getValueAt(selectedRow, 0).toString();
                 if(!_autobazar.getPredane(Integer.parseInt(idIzeratu))){
                     _autobazar.setPredane(Integer.parseInt(idIzeratu));
-                    if(!sql.Update.upravitStavInzeratu(idIzeratu, DbPath)){
-                        JOptionPane.showMessageDialog(null, "Chyba pri upraveni v DB");
+                    if(DbPath != null){
+                        if(!sql.Update.upravitStavInzeratu(idIzeratu, DbPath)){
+                            JOptionPane.showMessageDialog(null, "Chyba pri upraveni v DB");
+                        }
                     }
+                    if(FilePath != null){
+                    try {
+                        _autobazar.saveToFile(new File(FilePath));
+                    } catch (IOException e) {
+                        JOptionPane.showMessageDialog(null, e, "Chyba", JOptionPane.ERROR);
+                    }
+                }
                     FillTableInzeraty();
                     JOptionPane.showMessageDialog(null, "Inzerát "+idIzeratu+" bol označený ako predaný.","Upozornenie", JOptionPane.INFORMATION_MESSAGE);
                     jButtonPredane.setEnabled(false);
@@ -1168,6 +1230,13 @@ public final class Aplikacia extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Inzerat pridany do DB");
             }else{
                 JOptionPane.showMessageDialog(null, "Chyba pri ukladani do DB", "Chyba", JOptionPane.ERROR);
+            }
+        }
+        if(FilePath != null){
+            try {
+                _autobazar.saveToFile(new File(FilePath));
+            } catch (IOException e) {
+                JOptionPane.showMessageDialog(null, e, "Chyba", JOptionPane.ERROR);
             }
         }
         FillTableInzeraty();

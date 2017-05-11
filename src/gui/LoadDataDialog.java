@@ -173,8 +173,8 @@ public class LoadDataDialog extends javax.swing.JDialog {
 
     private void jButtonFromFileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonFromFileActionPerformed
         // TODO add your handling code here:              
-        path = "C:\\Users\\Acer\\Documents\\NetBeansProjects\\Autobazar\\subor.txt";  
-        path = "./subor.txt";
+        //path = "C:\\Users\\Acer\\Documents\\NetBeansProjects\\Autobazar\\subor.txt";  
+        path = "./autobazar.txt";
         file = new File(path);
         if(file.exists() && !file.isDirectory()) { 
             isFromFile = true;
@@ -186,7 +186,7 @@ public class LoadDataDialog extends javax.swing.JDialog {
 
     private void jButtonFromDBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonFromDBActionPerformed
         // TODO add your handling code here:              
-        path = "C:\\Users\\Acer\\Documents\\NetBeansProjects\\Autobazar\\autobazar.sqlite"; 
+        //path = "C:\\Users\\Acer\\Documents\\NetBeansProjects\\Autobazar\\autobazar.sqlite"; 
         path = "./autobazar.sqlite";
         file = new File(path);
         if(file.exists() && !file.isDirectory()) { 

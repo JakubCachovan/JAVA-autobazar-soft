@@ -49,6 +49,9 @@
   <SubComponents>
     <Component class="javax.swing.JButton" name="jButtonUpravitPredajcu">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Century Gothic" size="12" style="0"/>
+        </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="2" name="C:\Users\Acer\Documents\NetBeansProjects\Autobazar\icons\userM.png"/>
         </Property>
@@ -60,6 +63,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="jButtonUpravitVozidlo">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Century Gothic" size="12" style="0"/>
+        </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="2" name="C:\Users\Acer\Documents\NetBeansProjects\Autobazar\icons\car.png"/>
         </Property>

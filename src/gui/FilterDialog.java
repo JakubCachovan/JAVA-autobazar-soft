@@ -64,6 +64,7 @@ public class FilterDialog extends javax.swing.JDialog {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Hľadanie inzerátu");
 
+        jComboBoxZnacka.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jComboBoxZnacka.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Žiadna" }));
         jComboBoxZnacka.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -71,28 +72,40 @@ public class FilterDialog extends javax.swing.JDialog {
             }
         });
 
+        jTextFieldRokVyrobyOD.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jTextFieldRokVyrobyOD.setText("jTextField1");
 
+        jTextFieldNajazdeneKmOD.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jTextFieldNajazdeneKmOD.setText("jTextField3");
 
+        jTextFieldRokVyrobyDO.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jTextFieldRokVyrobyDO.setText("jTextField2");
 
+        jTextFieldNajazdeneKmDO.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jTextFieldNajazdeneKmDO.setText("jTextField4");
 
+        jLabel1.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jLabel1.setText("Značka");
 
+        jLabel2.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jLabel2.setText("Rok výroby");
 
+        jLabel3.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jLabel3.setText("Od");
 
+        jLabel4.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jLabel4.setText("Do");
 
+        jLabel5.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jLabel5.setText("Najazdené km");
 
+        jLabel6.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jLabel6.setText("Od");
 
+        jLabel7.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jLabel7.setText("Do");
 
+        jButtonFiltruj.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jButtonFiltruj.setIcon(new javax.swing.ImageIcon("C:\\Users\\Acer\\Documents\\NetBeansProjects\\Autobazar\\icons\\search.png")); // NOI18N
         jButtonFiltruj.setText("Hľadaj");
         jButtonFiltruj.addActionListener(new java.awt.event.ActionListener() {
@@ -101,14 +114,19 @@ public class FilterDialog extends javax.swing.JDialog {
             }
         });
 
+        jLabel8.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jLabel8.setText("Cena");
 
+        jLabel9.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jLabel9.setText("Od");
 
+        jTextFieldCenaOd.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jTextFieldCenaOd.setText("jTextField1");
 
+        jLabel10.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jLabel10.setText("Do");
 
+        jTextFieldCenaDo.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jTextFieldCenaDo.setText("jTextField2");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -162,7 +180,7 @@ public class FilterDialog extends javax.swing.JDialog {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jComboBoxZnacka, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -170,7 +188,7 @@ public class FilterDialog extends javax.swing.JDialog {
                     .addComponent(jTextFieldRokVyrobyDO, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3)
                     .addComponent(jLabel4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -178,15 +196,15 @@ public class FilterDialog extends javax.swing.JDialog {
                     .addComponent(jTextFieldNajazdeneKmOD, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7)
                     .addComponent(jTextFieldNajazdeneKmDO, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
                     .addComponent(jTextFieldCenaOd, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel10)
                     .addComponent(jTextFieldCenaDo, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
                 .addComponent(jButtonFiltruj, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );

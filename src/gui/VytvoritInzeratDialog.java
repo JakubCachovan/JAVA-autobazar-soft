@@ -111,15 +111,17 @@ public final class VytvoritInzeratDialog extends javax.swing.JDialog {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Nový inzerát");
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Acer\\Documents\\NetBeansProjects\\Autobazar\\icons\\userM.png")); // NOI18N
         jLabel1.setText("Predajca");
 
-        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         jLabel7.setText("Inzerát");
 
+        jLabel8.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jLabel8.setText("Zvolte kategóriu");
 
+        jButtonUlozitInzerat.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jButtonUlozitInzerat.setIcon(new javax.swing.ImageIcon("C:\\Users\\Acer\\Documents\\NetBeansProjects\\Autobazar\\icons\\save.png")); // NOI18N
         jButtonUlozitInzerat.setText("Pridať inzerát");
         jButtonUlozitInzerat.setEnabled(false);
@@ -129,9 +131,11 @@ public final class VytvoritInzeratDialog extends javax.swing.JDialog {
             }
         });
 
+        jLabel9.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jLabel9.setIcon(new javax.swing.ImageIcon("C:\\Users\\Acer\\Documents\\NetBeansProjects\\Autobazar\\icons\\aktivne.png")); // NOI18N
         jLabel9.setText("vlozenyText");
 
+        jButtonNovyPredajca.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jButtonNovyPredajca.setIcon(new javax.swing.ImageIcon("C:\\Users\\Acer\\Documents\\NetBeansProjects\\Autobazar\\icons\\newUser.png")); // NOI18N
         jButtonNovyPredajca.setText("Pridať nového predajcu");
         jButtonNovyPredajca.addActionListener(new java.awt.event.ActionListener() {
@@ -140,6 +144,7 @@ public final class VytvoritInzeratDialog extends javax.swing.JDialog {
             }
         });
 
+        jTableExistujuciPredajcovia.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jTableExistujuciPredajcovia.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -170,8 +175,10 @@ public final class VytvoritInzeratDialog extends javax.swing.JDialog {
         });
         jScrollPane1.setViewportView(jTableExistujuciPredajcovia);
 
+        jLabel10.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jLabel10.setText("Alebo označte existujúceho predajcu");
 
+        jButtonPridajExistujuceho.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jButtonPridajExistujuceho.setIcon(new javax.swing.ImageIcon("C:\\Users\\Acer\\Documents\\NetBeansProjects\\Autobazar\\icons\\aktivne.png")); // NOI18N
         jButtonPridajExistujuceho.setText("Uložiť predajcu");
         jButtonPridajExistujuceho.setEnabled(false);
@@ -181,6 +188,7 @@ public final class VytvoritInzeratDialog extends javax.swing.JDialog {
             }
         });
 
+        jButtonHladaj.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jButtonHladaj.setIcon(new javax.swing.ImageIcon("C:\\Users\\Acer\\Documents\\NetBeansProjects\\Autobazar\\icons\\search.png")); // NOI18N
         jButtonHladaj.setText("Hľadaj");
         jButtonHladaj.setToolTipText("Hľadanie podľa emailu, mena, priezviska aj lokality");
@@ -197,16 +205,20 @@ public final class VytvoritInzeratDialog extends javax.swing.JDialog {
             }
         });
 
+        jLabelHlaska.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jLabelHlaska.setIcon(new javax.swing.ImageIcon("C:\\Users\\Acer\\Documents\\NetBeansProjects\\Autobazar\\icons\\aktivne.png")); // NOI18N
         jLabelHlaska.setText("Hláška");
 
+        jLabelDetail.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jLabelDetail.setIcon(new javax.swing.ImageIcon("C:\\Users\\Acer\\Documents\\NetBeansProjects\\Autobazar\\icons\\user.png")); // NOI18N
         jLabelDetail.setText("Detail predajcu:");
 
+        jLabelDetailText.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jLabelDetailText.setText("jLabel3");
 
         buttonGroupKategoria.add(jToggleButtonAutomobil);
         jToggleButtonAutomobil.setIcon(new javax.swing.ImageIcon("C:\\Users\\Acer\\Documents\\NetBeansProjects\\Autobazar\\icons\\automobil.png")); // NOI18N
+        jToggleButtonAutomobil.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jToggleButtonAutomobil.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jToggleButtonAutomobilActionPerformed(evt);
@@ -260,30 +272,31 @@ public final class VytvoritInzeratDialog extends javax.swing.JDialog {
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButtonNovyPredajca, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addComponent(jButtonPridajExistujuceho)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabelHlaska))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addComponent(jLabelDetail)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabelDetailText))
-                            .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addComponent(jLabel7)
-                                .addGap(34, 34, 34)
-                                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addComponent(jToggleButtonAutomobil, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jToggleButtonMotocykel, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jToggleButtonAutobus, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jToggleButtonNakladne, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addComponent(jLabel7)
+                            .addGap(34, 34, 34)
+                            .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                    .addComponent(jButtonPridajExistujuceho)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(jLabelHlaska))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                    .addComponent(jLabelDetail)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(jLabelDetailText))
+                                .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                    .addComponent(jToggleButtonAutomobil, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(jToggleButtonMotocykel, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(jToggleButtonAutobus, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(jToggleButtonNakladne, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGap(0, 0, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(

@@ -179,7 +179,7 @@ public class Update {
     public static boolean upravitNakladne(int idVozidla, NakladneAuto nakladne, String dbPath){
         try (Connection con = ConnectToDB.ConnectDB(dbPath);){                               
             PreparedStatement state = con.prepareStatement(
-                    "UPDATE INTO Vozidlo SET cena=?, znacka=?, model=?, pocetKm=?, vykon=?, rokVyroby=?, palivo=?, stav_vozidla=?, popis=?, karoseria=?, hmotnostVozidla=?, normaEmisii=?, nosnost=?\n" +
+                    "UPDATE Vozidlo SET cena=?, znacka=?, model=?, pocetKm=?, vykon=?, rokVyroby=?, palivo=?, stav_vozidla=?, popis=?, karoseria=?, hmotnostVozidla=?, normaEmisii=?, nosnost=?\n" +
                                     "  WHERE id_vozidla=?;");
             state.setString(1, nakladne.getCena()+"");
             state.setString(2, nakladne.getZnacka());

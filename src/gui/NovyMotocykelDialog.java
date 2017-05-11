@@ -101,7 +101,7 @@ public class NovyMotocykelDialog extends javax.swing.JDialog {
         });
 
         jLabel12.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        jLabel12.setText("Palivo");
+        jLabel12.setText("Palivo *");
 
         jTextAreaPopis.setColumns(20);
         jTextAreaPopis.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
@@ -109,13 +109,13 @@ public class NovyMotocykelDialog extends javax.swing.JDialog {
         jScrollPane1.setViewportView(jTextAreaPopis);
 
         jLabel13.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        jLabel13.setText("Cena");
+        jLabel13.setText("Cena *");
 
         jLabel14.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        jLabel14.setText("Počet najazdených kilometrov");
+        jLabel14.setText("Počet najazdených kilometrov *");
 
         jLabel2.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        jLabel2.setText("Druh");
+        jLabel2.setText("Druh *");
 
         jLabel19.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jLabel19.setText("Popis");
@@ -125,10 +125,10 @@ public class NovyMotocykelDialog extends javax.swing.JDialog {
         jComboBoxDruh.setSelectedIndex(-1);
 
         jLabel15.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        jLabel15.setText("Rok výroby");
+        jLabel15.setText("Rok výroby *");
 
         jLabel16.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        jLabel16.setText("Stav");
+        jLabel16.setText("Stav *");
 
         jComboBoxPalivo.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jComboBoxPalivo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "benzín", "diesel", "iné" }));
@@ -141,20 +141,20 @@ public class NovyMotocykelDialog extends javax.swing.JDialog {
         jTextFieldCena.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
 
         jLabel9.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        jLabel9.setText("Značka");
+        jLabel9.setText("Značka *");
 
         jTextFieldRokVyroby.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
 
         jTextFieldZnacka.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
 
         jLabel10.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        jLabel10.setText("Model");
+        jLabel10.setText("Model * ");
 
         jLabel11.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        jLabel11.setText("Výkon");
+        jLabel11.setText("Výkon (kW) *");
 
         jLabel4.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        jLabel4.setText("Objem válcov");
+        jLabel4.setText("Objem válcov (ccm) *");
 
         jTextFieldObjem.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
 

@@ -57,6 +57,7 @@ public class UpravitInzeratDialog extends javax.swing.JDialog {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Upraviť inzerát");
 
+        jButtonUpravitPredajcu.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jButtonUpravitPredajcu.setIcon(new javax.swing.ImageIcon("C:\\Users\\Acer\\Documents\\NetBeansProjects\\Autobazar\\icons\\userM.png")); // NOI18N
         jButtonUpravitPredajcu.setText("Upraviť predajcu");
         jButtonUpravitPredajcu.addActionListener(new java.awt.event.ActionListener() {
@@ -65,6 +66,7 @@ public class UpravitInzeratDialog extends javax.swing.JDialog {
             }
         });
 
+        jButtonUpravitVozidlo.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jButtonUpravitVozidlo.setIcon(new javax.swing.ImageIcon("C:\\Users\\Acer\\Documents\\NetBeansProjects\\Autobazar\\icons\\car.png")); // NOI18N
         jButtonUpravitVozidlo.setText("Upraviť vozidlo");
         jButtonUpravitVozidlo.addActionListener(new java.awt.event.ActionListener() {

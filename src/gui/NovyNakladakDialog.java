@@ -106,7 +106,7 @@ public class NovyNakladakDialog extends javax.swing.JDialog {
         setTitle("Nové nákladné auto");
 
         jLabel11.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        jLabel11.setText("Výkon *");
+        jLabel11.setText("Výkon (kW) *");
 
         jLabel4.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jLabel4.setText("Hmostnosť vozidla");
@@ -128,7 +128,7 @@ public class NovyNakladakDialog extends javax.swing.JDialog {
         jLabel14.setText("Počet najazdených kilometrov *");
 
         jLabel2.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        jLabel2.setText("Druh");
+        jLabel2.setText("Druh/Karoséria");
 
         jLabel19.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jLabel19.setText("Popis");
@@ -280,9 +280,9 @@ public class NovyNakladakDialog extends javax.swing.JDialog {
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jTextFieldNosnost, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel2)
-                        .addGap(1, 1, 1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jTextFieldDruh, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)

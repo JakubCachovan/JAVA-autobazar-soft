@@ -180,7 +180,7 @@ public class InsertIntoDB {
         try (Connection con = ConnectToDB.ConnectDB(dbPath);){                               
             PreparedStatement state = con.prepareStatement(
                     "INSERT INTO Vozidlo (id_kategoria, cena, znacka, model, pocetKm, vykon, rokVyroby, palivo, stav_vozidla, popis, karoseria, hmotnostVozidla, normaEmisii, nosnost)\n" +
-                                    "  VALUES (?,?,?,?,?,?,?,?,?,?,?,?);");
+                                    "  VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?);");
             state.setString(1, "3");
             state.setString(2, nakladne.getCena()+"");
             state.setString(3, nakladne.getZnacka());

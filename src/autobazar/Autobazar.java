@@ -246,10 +246,10 @@ public class Autobazar implements Serializable{
     }
     
     
-    public static boolean saveToFile(File f, Autobazar a) throws IOException{
+    public boolean saveToFile(File f) throws IOException{
         try {
             ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream(f));
-            os.writeObject(a);
+            os.writeObject(this);
             os.close();
             return true;
         } catch (FileNotFoundException e) {
