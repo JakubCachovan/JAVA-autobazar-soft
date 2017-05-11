@@ -53,30 +53,8 @@ public final class Aplikacia extends javax.swing.JFrame {
         }else{
             System.exit(0);
         }  
-
         
-        //DbDelete.vymazPredajcu("j@j.com", DbPath);
-        /*DbDelete.vymazatInzerat(3, DbPath);
-        System.exit(0);
-        */
-        /*Kategoria auto = new Automobil("sedan", 5, 5, 2000, "A4", 20000, "diesel", 2000, StavVozidla.Zachovale, 200, "Audi", "Popis1");
-        Kategoria auto2 = new Automobil("sedan", 7, 9, 5000, "BRavno", 30000, "diesel", 2000, StavVozidla.Zachovale, 200, "Fiat","Popis2");
-        //Kategoria autobus = new Autobus("Velky", DbPath, batozinovyPriestor, DbPath, PROPERTIES, vlastnostiSedadiel, WIDTH, DbPath, FRAMEBITS, DbPath, ERROR, StavVozidla.Nove, ERROR, DbPath, DbPath)
-        Predajca p1 = new Predajca("niekto@niekto.com", "Presov", "Jurko", "Jurkovic", "0000000000");
-        _autobazar.VytvoritInzerat(auto, p1);
-        //_autobazar.VytvoritInzerat(autobus, p1);
-        _autobazar.VytvoritInzerat(auto2, p1);
-
-        ArrayList<Inzerat> inzeraty = _autobazar.getZoznamInzeratov();
-        ArrayList<Autobus> autobusy = _autobazar.getZoznamAutobusov();
-        ArrayList<Automobil> auta = _autobazar.getZoznamAutomobilov();*/ 
-        
-        FillTableInzeraty();
-        FillTableAutomobily();
-        FillTableMotocykle();
-        FillTableNakladne();
-        FillTableAutobusy();
-        FillTablePredajcovia();
+        ObnovitVsetkyTabulky();
     }
     
     public void initialIcons(){
@@ -310,7 +288,7 @@ public final class Aplikacia extends javax.swing.JFrame {
             }
         });
 
-        jTableInzeraty.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
+        jTableInzeraty.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jTableInzeraty.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -469,6 +447,7 @@ public final class Aplikacia extends javax.swing.JFrame {
 
         jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\Acer\\Documents\\NetBeansProjects\\Autobazar\\icons\\search.png")); // NOI18N
 
+        jButtonFilter.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jButtonFilter.setIcon(new javax.swing.ImageIcon("C:\\Users\\Acer\\Documents\\NetBeansProjects\\Autobazar\\icons\\filter.png")); // NOI18N
         jButtonFilter.setText("Filter");
         jButtonFilter.addActionListener(new java.awt.event.ActionListener() {
@@ -562,6 +541,7 @@ public final class Aplikacia extends javax.swing.JFrame {
 
         jPanelPredajcovia.setBackground(java.awt.Color.lightGray);
 
+        jTablePredajcovia.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jTablePredajcovia.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -592,6 +572,7 @@ public final class Aplikacia extends javax.swing.JFrame {
         });
         jScrollPane4.setViewportView(jTablePredajcovia);
 
+        jTableInzeratyPredajcu.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jTableInzeratyPredajcu.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -624,6 +605,7 @@ public final class Aplikacia extends javax.swing.JFrame {
 
         jLabel1.setText("Inzeráty predajcu");
 
+        jButtonNacitajPredajcov.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jButtonNacitajPredajcov.setIcon(new javax.swing.ImageIcon("C:\\Users\\Acer\\Documents\\NetBeansProjects\\Autobazar\\icons\\obnovit.png")); // NOI18N
         jButtonNacitajPredajcov.setText("Obnoviť");
         jButtonNacitajPredajcov.addActionListener(new java.awt.event.ActionListener() {
@@ -632,6 +614,7 @@ public final class Aplikacia extends javax.swing.JFrame {
             }
         });
 
+        jButtonUpravitPredajcu.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jButtonUpravitPredajcu.setIcon(new javax.swing.ImageIcon("C:\\Users\\Acer\\Documents\\NetBeansProjects\\Autobazar\\icons\\upravit.png")); // NOI18N
         jButtonUpravitPredajcu.setText("Upraviť");
         jButtonUpravitPredajcu.setEnabled(false);
@@ -641,6 +624,7 @@ public final class Aplikacia extends javax.swing.JFrame {
             }
         });
 
+        jButtonVymazatPredajcu.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jButtonVymazatPredajcu.setIcon(new javax.swing.ImageIcon("C:\\Users\\Acer\\Documents\\NetBeansProjects\\Autobazar\\icons\\vymazat.png")); // NOI18N
         jButtonVymazatPredajcu.setText("Vymazať");
         jButtonVymazatPredajcu.setEnabled(false);
@@ -693,6 +677,7 @@ public final class Aplikacia extends javax.swing.JFrame {
 
         jPanel_Automobily.setBackground(java.awt.Color.lightGray);
 
+        jTableAutomobily.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jTableAutomobily.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -739,6 +724,7 @@ public final class Aplikacia extends javax.swing.JFrame {
 
         jPanelMotocykle.setBackground(java.awt.Color.lightGray);
 
+        jTableMotocykle.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jTableMotocykle.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -785,6 +771,7 @@ public final class Aplikacia extends javax.swing.JFrame {
 
         jPanelNakladne.setBackground(java.awt.Color.lightGray);
 
+        jTableNakladne.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jTableNakladne.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -831,6 +818,7 @@ public final class Aplikacia extends javax.swing.JFrame {
 
         jPanelAutobusy.setBackground(java.awt.Color.lightGray);
 
+        jTableAutobusy.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jTableAutobusy.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -890,9 +878,10 @@ public final class Aplikacia extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonNacitajPredajcovActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNacitajPredajcovActionPerformed
-        // TODO add your handling code here:
+        DefaultTableModel m = (DefaultTableModel)jTableInzeratyPredajcu.getModel();
+        m.setRowCount(0);
         ObnovitVsetkyTabulky();
-        jButtonUpravitInzerat.setEnabled(false);
+        jButtonUpravitPredajcu.setEnabled(false);
         jButtonVymazatPredajcu.setEnabled(false);
     }//GEN-LAST:event_jButtonNacitajPredajcovActionPerformed
 
@@ -938,27 +927,30 @@ public final class Aplikacia extends javax.swing.JFrame {
         selectedRow = jTablePredajcovia.getSelectedRow();
         DefaultTableModel m = (DefaultTableModel)jTablePredajcovia.getModel();       
         if(selectedRow != -1){
-            for (Predajca p : _autobazar.getZoznamPredajcov()) {
-                if(p.getEmail().equalsIgnoreCase(m.getValueAt(selectedRow, 2).toString())){
-                    String email = p.getEmail();
-                    if(_autobazar.vymazatPredajcu(p.getEmail())){
-                        JOptionPane.showMessageDialog(null, "Predajca vymazaný", "Upozornenie!", JOptionPane.WARNING_MESSAGE);
-                        m.removeRow(selectedRow);
-                        DefaultTableModel m2 = (DefaultTableModel)jTableInzeratyPredajcu.getModel();  
-                        m2.setRowCount(0);
-                        if(DbPath != null){
-                            //vymazat z DB
-                            DbDelete.vymazatInzeratyPredajcu(email, DbPath);
-                            DbDelete.vymazPredajcu(email, DbPath);
+            int vysl = JOptionPane.showConfirmDialog(null, "Naozaj chcete vymazat predajcu?", "Posledna šanca", JOptionPane.YES_NO_OPTION);
+            if(vysl == 0){  
+                for (Predajca p : _autobazar.getZoznamPredajcov()) {
+                    if(p.getEmail().equalsIgnoreCase(m.getValueAt(selectedRow, 2).toString())){
+                        String email = p.getEmail();
+                        if(_autobazar.vymazatPredajcu(p.getEmail())){
+                            JOptionPane.showMessageDialog(null, "Predajca vymazaný", "Upozornenie!", JOptionPane.WARNING_MESSAGE);
+                            m.removeRow(selectedRow);
+                            DefaultTableModel m2 = (DefaultTableModel)jTableInzeratyPredajcu.getModel();  
+                            m2.setRowCount(0);
+                            if(DbPath != null){
+                                //vymazat z DB
+                                DbDelete.vymazatInzeratyPredajcu(email, DbPath);
+                                DbDelete.vymazPredajcu(email, DbPath);
+                            }
+                        }else{
+                            JOptionPane.showMessageDialog(null, "Pri vymazávaní nastala chyba", "Chyba!", JOptionPane.ERROR);
                         }
-                    }else{
-                        JOptionPane.showMessageDialog(null, "Pri vymazávaní nastala chyba", "Chyba!", JOptionPane.ERROR);
-                    }
-                }                  
+                    }                  
+                }
+                jButtonUpravitPredajcu.setEnabled(false);
+                jButtonVymazatPredajcu.setEnabled(false);
+                ObnovitVsetkyTabulky();
             }
-            jButtonUpravitPredajcu.setEnabled(false);
-            jButtonVymazatPredajcu.setEnabled(false);
-            ObnovitVsetkyTabulky();
         }
         
         
@@ -990,10 +982,10 @@ public final class Aplikacia extends javax.swing.JFrame {
     private void jTextFieldFastSearchMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextFieldFastSearchMouseClicked
         jTextFieldFastSearch.selectAll();
         jButtonUpravitInzerat.setEnabled(false);
-            jButtonVymazatInzerat.setEnabled(false);
-            jButtonAktivny.setEnabled(false);
-            jButtonPredane.setEnabled(false);
-            jButtonZobrazInzerat.setEnabled(false);
+        jButtonVymazatInzerat.setEnabled(false);
+        jButtonAktivny.setEnabled(false);
+        jButtonPredane.setEnabled(false);
+        jButtonZobrazInzerat.setEnabled(false);
     }//GEN-LAST:event_jTextFieldFastSearchMouseClicked
 
     private void jButtonAktivnyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAktivnyActionPerformed
@@ -1066,16 +1058,11 @@ public final class Aplikacia extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonSaveToFileActionPerformed
 
     private void jButtonVymazatInzeratActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVymazatInzeratActionPerformed
-        // TODO add your handling code here:
         int selectedRow = -1;
         selectedRow = jTableInzeraty.getSelectedRow();
         if(selectedRow != -1){
             DefaultTableModel m = (DefaultTableModel)jTableInzeraty.getModel();
             String idIzeratu = m.getValueAt(selectedRow, 0).toString();
-            /*final JOptionPane optionPane = new JOptionPane(
-                "Naozaj chcete vymazat inzerát?",
-                JOptionPane.QUESTION_MESSAGE,
-                JOptionPane.YES_NO_OPTION);*/
             int vysl = JOptionPane.showConfirmDialog(null, "Naozaj chcete vymazat inzerát?", "Posledna šanca", JOptionPane.YES_NO_OPTION);
             if(vysl == 0){
                 _autobazar.vymazatInzerat(Integer.parseInt(idIzeratu));
@@ -1095,7 +1082,6 @@ public final class Aplikacia extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonVymazatInzeratActionPerformed
 
     private void jButtonUpravitInzeratActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonUpravitInzeratActionPerformed
-        // TODO add your handling code here:
         int selectedRow = -1;
         selectedRow = jTableInzeraty.getSelectedRow();
         if(selectedRow != -1){
@@ -1122,7 +1108,6 @@ public final class Aplikacia extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonUpravitInzeratActionPerformed
 
     private void jButtonZobrazInzeratActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonZobrazInzeratActionPerformed
-        // TODO add your handling code here:
         int selectedRow = -1;
         selectedRow = jTableInzeraty.getSelectedRow();
         if(selectedRow != -1){
@@ -1130,7 +1115,7 @@ public final class Aplikacia extends javax.swing.JFrame {
             String idInzeratu = m.getValueAt(selectedRow, 0).toString();
             Inzerat inzerat = _autobazar.najdiInzerat(Integer.parseInt(idInzeratu));
             if(inzerat != null){
-                PrehladInzeratuDialog prehlad = new PrehladInzeratuDialog(this, true);
+                PrehladInzeratuDialog prehlad = new PrehladInzeratuDialog(this, false);
                 prehlad.setLocationRelativeTo(null);
                 prehlad.setInzerat(inzerat);
                 prehlad.zobrazPrehlad();
@@ -1140,7 +1125,6 @@ public final class Aplikacia extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonZobrazInzeratActionPerformed
 
     private void jButtonPredaneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPredaneActionPerformed
-        // TODO add your handling code here:
         int selectedRow = -1;
         selectedRow = jTableInzeraty.getSelectedRow();
         if(selectedRow != -1){
@@ -1165,7 +1149,6 @@ public final class Aplikacia extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonPredaneActionPerformed
 
     private void jButtonNovyInzeratActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNovyInzeratActionPerformed
-        // TODO add your handling code here:
         VytvoritInzeratDialog vid = new VytvoritInzeratDialog(this, true);
         vid.setLocationRelativeTo(null);
         vid.setExistujuciPredajcovia(_autobazar.getZoznamPredajcov());
@@ -1218,7 +1201,7 @@ public final class Aplikacia extends javax.swing.JFrame {
             String idInzeratu = m.getValueAt(selectedRow, 0).toString();
             Inzerat inzerat = _autobazar.najdiInzerat(Integer.parseInt(idInzeratu));
             if(inzerat != null){
-                PrehladInzeratuDialog prehlad = new PrehladInzeratuDialog(this, true);
+                PrehladInzeratuDialog prehlad = new PrehladInzeratuDialog(this, false);
                 prehlad.setLocationRelativeTo(null);
                 prehlad.setInzerat(inzerat);
                 prehlad.zobrazPrehlad();
@@ -1234,7 +1217,6 @@ public final class Aplikacia extends javax.swing.JFrame {
     }//GEN-LAST:event_jTableInzeratyMouseClicked
 
     private void jButtonFilterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonFilterActionPerformed
-        // TODO add your handling code here:
         FilterDialog fd = new FilterDialog(this, true);
         fd.setLocationRelativeTo(null);
         ArrayList<Inzerat> filtrovaneInzeraty = new ArrayList<>();
@@ -1243,6 +1225,12 @@ public final class Aplikacia extends javax.swing.JFrame {
         fd.NaplnUdaje();
         fd.setVisible(true);
         FillTableInzeraty(fd.getInzeraty());
+        jButtonUpravitInzerat.setEnabled(false);
+        jButtonVymazatInzerat.setEnabled(false);
+        jButtonAktivny.setEnabled(false);
+        jButtonPredane.setEnabled(false);
+        jButtonZobrazInzerat.setEnabled(false);
+        
     }//GEN-LAST:event_jButtonFilterActionPerformed
 
     private void jTableInzeratyPredajcuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableInzeratyPredajcuMouseClicked

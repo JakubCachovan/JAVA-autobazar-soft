@@ -115,27 +115,33 @@ public class NovyPredajcaDialog extends javax.swing.JDialog {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Nový predajca");
 
+        jLabel5.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jLabel5.setText("Lokalita");
 
+        jLabel6.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jLabel6.setText("Telefón");
 
-        jTextFieldMeno.setText("Ferko");
+        jTextFieldMeno.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jTextFieldMeno.setToolTipText("");
 
-        jTextFieldPriezvisko.setText("Mrkva");
+        jTextFieldPriezvisko.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
 
-        jTextFieldEmail.setText("j@j.com");
+        jTextFieldEmail.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
 
-        jTextFieldLokalita.setText("Trencin");
+        jTextFieldLokalita.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
 
-        jTextFieldTel.setText("000000000");
+        jTextFieldTel.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
 
+        jLabel2.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jLabel2.setText("Meno");
 
+        jLabel3.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jLabel3.setText("Priezvisko");
 
+        jLabel4.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jLabel4.setText("Email");
 
+        jButtonUlozitPredajcu.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jButtonUlozitPredajcu.setIcon(new javax.swing.ImageIcon("C:\\Users\\Acer\\Documents\\NetBeansProjects\\Autobazar\\icons\\pridat.png")); // NOI18N
         jButtonUlozitPredajcu.setText("Uložiť");
         jButtonUlozitPredajcu.addActionListener(new java.awt.event.ActionListener() {

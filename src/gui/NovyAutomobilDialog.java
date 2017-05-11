@@ -102,52 +102,69 @@ public class NovyAutomobilDialog extends javax.swing.JDialog {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Pridanie automobilu");
 
-        jTextFieldPocetKM.setText("198000");
+        jTextFieldPocetKM.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
 
-        jLabel17.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jComboBoxStavVozidla.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+
+        jLabel17.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jLabel17.setText("€");
 
+        jLabelVar1.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jLabelVar1.setText("Karoséria *");
 
+        jLabelVar2.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jLabelVar2.setText("Počet dverí *");
 
+        jLabelVar3.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jLabelVar3.setText("Počet sedadiel *");
 
-        jTextFieldKaroseria.setText("sedan");
+        jTextFieldKaroseria.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
 
+        jLabel9.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jLabel9.setText("Značka *");
 
-        jTextFieldZnacka.setText("Fiat");
+        jTextFieldZnacka.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
 
+        jLabel10.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jLabel10.setText("Model *");
 
+        jLabel11.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jLabel11.setText("Výkon *");
 
+        jLabel12.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jLabel12.setText("Palivo *");
 
         jTextAreaPopis.setColumns(20);
+        jTextAreaPopis.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jTextAreaPopis.setRows(5);
         jScrollPane1.setViewportView(jTextAreaPopis);
 
+        jLabel13.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jLabel13.setText("Cena *");
 
+        jLabel14.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jLabel14.setText("Pocet kilometrov *");
 
+        jLabel19.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jLabel19.setText("Popis");
 
+        jLabel15.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jLabel15.setText("Rok výroby *");
 
+        jLabel16.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jLabel16.setText("Stav *");
 
         jComboBoxPalivo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "benzín", "diesel", "iné" }));
 
-        jTextFieldModel.setText("Bravo");
+        jTextFieldModel.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
 
+        jComboBoxPocetSedadiel.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jComboBoxPocetSedadiel.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2", "3", "4", "5", "6" }));
 
-        jTextFieldVykon.setText("65");
+        jTextFieldVykon.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jTextFieldVykon.setToolTipText("kW");
 
+        jComboBoxPocetDveri.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jComboBoxPocetDveri.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "3", "5" }));
         jComboBoxPocetDveri.setToolTipText("Počet dverí");
         jComboBoxPocetDveri.addActionListener(new java.awt.event.ActionListener() {
@@ -156,8 +173,11 @@ public class NovyAutomobilDialog extends javax.swing.JDialog {
             }
         });
 
-        jTextFieldRokVyroby.setText("2000");
+        jTextFieldCena.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
 
+        jTextFieldRokVyroby.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+
+        jButtonUlozitInzerat.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jButtonUlozitInzerat.setIcon(new javax.swing.ImageIcon("C:\\Users\\Acer\\Documents\\NetBeansProjects\\Autobazar\\icons\\save.png")); // NOI18N
         jButtonUlozitInzerat.setText("Uložiť");
         jButtonUlozitInzerat.addActionListener(new java.awt.event.ActionListener() {

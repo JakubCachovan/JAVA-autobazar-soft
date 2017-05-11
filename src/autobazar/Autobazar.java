@@ -63,7 +63,9 @@ public class Autobazar implements Serializable{
         for (Inzerat inzerat : zoznamInzeratov) {
             if(inzerat.getKategoria().obsahujeKlucoveSlovo(klucoveSlovo)){
                 najdeneInzeraty.add(inzerat);
-            }          
+            }else if(inzerat.getPredajca().obsahujeKlucoveSlovo(klucoveSlovo)){
+                najdeneInzeraty.add(inzerat);
+            }
         }
         return najdeneInzeraty;
     }

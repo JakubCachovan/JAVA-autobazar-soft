@@ -130,21 +130,34 @@ public class NovyAutobusDialog extends javax.swing.JDialog {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Pridávanie autobusu");
 
-        jLabel17.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jTextFieldPocetKM.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+
+        jComboBoxStavVozidla.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+
+        jLabel17.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         jLabel17.setText("€");
 
+        jLabelVar1.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jLabelVar1.setText("Batožinový priestor:");
 
+        jLabelVar3.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jLabelVar3.setText("Miest na sedenie");
 
+        jLabelVar4.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jLabelVar4.setText("Nadstavba");
 
+        jLabel9.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jLabel9.setText("Značka");
 
+        jTextFieldZnacka.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+
+        jLabel10.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jLabel10.setText("Model");
 
+        jLabel11.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jLabel11.setText("Výkon (kW)");
 
+        jButtonUlozitInzerat.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jButtonUlozitInzerat.setIcon(new javax.swing.ImageIcon("C:\\Users\\Acer\\Documents\\NetBeansProjects\\Autobazar\\icons\\save.png")); // NOI18N
         jButtonUlozitInzerat.setText("Uložiť inzerát");
         jButtonUlozitInzerat.addActionListener(new java.awt.event.ActionListener() {
@@ -153,56 +166,92 @@ public class NovyAutobusDialog extends javax.swing.JDialog {
             }
         });
 
+        jLabel12.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jLabel12.setText("Palivo");
 
         jTextAreaPopis.setColumns(20);
+        jTextAreaPopis.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jTextAreaPopis.setRows(5);
         jScrollPane1.setViewportView(jTextAreaPopis);
 
+        jLabel13.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jLabel13.setText("Cena");
 
+        jLabel14.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jLabel14.setText("Počet najazdených kilometrov");
 
+        jLabel19.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jLabel19.setText("Popis");
 
+        jLabel15.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jLabel15.setText("Rok výroby");
 
+        jLabel16.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jLabel16.setText("Stav");
 
+        jComboBoxPalivo.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jComboBoxPalivo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "benzín", "diesel", "iné" }));
         jComboBoxPalivo.setSelectedIndex(-1);
 
+        jTextFieldModel.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+
+        jTextFieldVykon.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jTextFieldVykon.setToolTipText("kW");
 
+        jTextFieldCena.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+
+        jTextFieldRokVyroby.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+
+        jComboBoxNadstavba.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jComboBoxNadstavba.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Klasický", "So zvýšenou nadstavbou", "Poschodový" }));
         jComboBoxNadstavba.setSelectedIndex(-1);
 
+        jCheckBoxStandart.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jCheckBoxStandart.setText("Štandardne nízke");
 
+        jCheckBoxPolohovatelne.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jCheckBoxPolohovatelne.setText("Polohovateľné");
+        jCheckBoxPolohovatelne.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBoxPolohovatelneActionPerformed(evt);
+            }
+        });
 
+        jCheckBoxPosuvne.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jCheckBoxPosuvne.setText("Posuvné do uličky");
 
+        jCheckBoxNastavitelne.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jCheckBoxNastavitelne.setText("Výškovo nastaviteľné");
 
+        jLabel1.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jLabel1.setText("Vlastnosti sedadiel:");
 
+        jCheckBoxZiadny.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jCheckBoxZiadny.setText("Žiadny");
 
+        jCheckBoxKlasicky.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jCheckBoxKlasicky.setText("Klasický");
 
+        jCheckBoxVysoky.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jCheckBoxVysoky.setText("Vysoký");
 
+        jCheckBoxNosicLyzi.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jCheckBoxNosicLyzi.setText("Nosič lyží");
 
+        jLabel2.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jLabel2.setText("Druh");
 
+        jComboBoxDruh.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jComboBoxDruh.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mestský", "Medzinárodný", "Ďiaľkový", "Medzinárodný", "Mikrobus", "Minibus" }));
 
+        jLabel3.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jLabel3.setText("Norma emisií");
 
+        jComboBoxNormaEmisie.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jComboBoxNormaEmisie.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Euro2", "Euro3", "Euro4", "Euro5", "Euro6" }));
         jComboBoxNormaEmisie.setSelectedIndex(-1);
+
+        jTextFieldPocetMiest.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -215,6 +264,10 @@ public class NovyAutobusDialog extends javax.swing.JDialog {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
+                                .addComponent(jTextFieldCena, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel17))
+                            .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel16)
                                     .addComponent(jLabelVar4)
@@ -225,10 +278,9 @@ public class NovyAutobusDialog extends javax.swing.JDialog {
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                         .addComponent(jComboBoxNadstavba, javax.swing.GroupLayout.Alignment.LEADING, 0, 200, Short.MAX_VALUE)
                                         .addComponent(jComboBoxStavVozidla, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                                .addGap(15, 15, 15)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 405, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(layout.createSequentialGroup()
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -242,30 +294,17 @@ public class NovyAutobusDialog extends javax.swing.JDialog {
                                                     .addComponent(jTextFieldRokVyroby)
                                                     .addComponent(jComboBoxPalivo, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                             .addComponent(jTextFieldPocetKM, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel19))
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(jLabelVar3, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGap(18, 18, 18)
-                                            .addComponent(jLabel3)
-                                            .addGap(235, 235, 235)))))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                    .addComponent(jTextFieldCena, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(14, 14, 14))
-                                .addComponent(jLabel17, javax.swing.GroupLayout.Alignment.TRAILING))
+                                            .addComponent(jLabel19)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGap(205, 205, 205)
+                                                .addComponent(jLabel3)
+                                                .addGap(124, 124, 124))))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 410, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addComponent(jLabel13)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jCheckBoxStandart)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jCheckBoxPolohovatelne)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jCheckBoxPosuvne)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jCheckBoxNastavitelne))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabelVar1)
+                                .addComponent(jLabelVar1, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jCheckBoxZiadny)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -274,14 +313,29 @@ public class NovyAutobusDialog extends javax.swing.JDialog {
                                 .addComponent(jCheckBoxVysoky)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jCheckBoxNosicLyzi))
-                            .addComponent(jLabel2)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jComboBoxDruh, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jTextFieldPocetMiest, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jComboBoxNormaEmisie, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 3, Short.MAX_VALUE)))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jComboBoxDruh, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel2))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jLabelVar3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jTextFieldPocetMiest, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jComboBoxNormaEmisie, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jCheckBoxPosuvne)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jCheckBoxNastavitelne))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jCheckBoxStandart)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jCheckBoxPolohovatelne)))))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -326,29 +380,30 @@ public class NovyAutobusDialog extends javax.swing.JDialog {
                     .addComponent(jLabelVar3)
                     .addComponent(jLabel3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jComboBoxDruh, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jComboBoxNormaEmisie, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jTextFieldPocetMiest))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jComboBoxDruh, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBoxNormaEmisie, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextFieldPocetMiest, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jCheckBoxStandart)
                     .addComponent(jCheckBoxPolohovatelne)
-                    .addComponent(jCheckBoxPosuvne)
-                    .addComponent(jCheckBoxNastavitelne)
                     .addComponent(jLabel1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jCheckBoxPosuvne)
+                    .addComponent(jCheckBoxNastavitelne))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelVar1, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jCheckBoxZiadny)
                     .addComponent(jCheckBoxKlasicky)
                     .addComponent(jCheckBoxVysoky)
-                    .addComponent(jCheckBoxNosicLyzi))
+                    .addComponent(jCheckBoxNosicLyzi)
+                    .addComponent(jLabelVar1, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel13)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextFieldCena, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel17))
                 .addGap(18, 18, 18)
@@ -459,6 +514,10 @@ public class NovyAutobusDialog extends javax.swing.JDialog {
             }
         }      
     }//GEN-LAST:event_jButtonUlozitInzeratActionPerformed
+
+    private void jCheckBoxPolohovatelneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxPolohovatelneActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBoxPolohovatelneActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

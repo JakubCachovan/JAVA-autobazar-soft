@@ -1,6 +1,8 @@
 package autobazar;
 
 import java.io.Serializable;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 
 /**
@@ -23,7 +25,7 @@ public class Predajca implements Serializable{
         this.Priezvisko = Priezvisko;
         this.Telefon = Telefon;
     }
-
+    
     public String getEmail() {
         return Email;
     }
@@ -64,6 +66,17 @@ public class Predajca implements Serializable{
         this.Telefon = Telefon;
     }
 
+    public boolean obsahujeKlucoveSlovo(String keyWord){
+        Pattern p = Pattern.compile("("+keyWord+")");
+        Matcher m = p.matcher(this.toString());
+        return m.find();   
+    }
 
+    @Override
+    public String toString() {
+        return "Predajca{" + "Email=" + Email + ", Lokalita=" + Lokalita + ", Meno=" + Meno + ", Priezvisko=" + Priezvisko + ", Telefon=" + Telefon + '}';
+    }
+    
+    
     
 }

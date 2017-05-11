@@ -61,6 +61,7 @@ public class LoadDataDialog extends javax.swing.JDialog {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Načítanie dát");
 
+        jButtonFromFile.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jButtonFromFile.setText("From file");
         jButtonFromFile.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -68,12 +69,15 @@ public class LoadDataDialog extends javax.swing.JDialog {
             }
         });
 
+        jTextField1.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+
         jButtonVyber.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonVyberActionPerformed(evt);
             }
         });
 
+        jButtonNacitaj.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jButtonNacitaj.setText("Načítaj výber");
         jButtonNacitaj.setEnabled(false);
         jButtonNacitaj.addActionListener(new java.awt.event.ActionListener() {
@@ -82,6 +86,7 @@ public class LoadDataDialog extends javax.swing.JDialog {
             }
         });
 
+        jButtonFromDB.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jButtonFromDB.setText("From DB");
         jButtonFromDB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
