@@ -30,6 +30,7 @@ public final class Aplikacia extends javax.swing.JFrame {
     static String DbPath = null;
     static String FilePath = null;
     private Autobazar _autobazar = new Autobazar();
+    Thread vlakno = null;
     /**
      * Creates new form Aplikacia
      */
@@ -83,7 +84,7 @@ public final class Aplikacia extends javax.swing.JFrame {
             ActionListener listenerForNew = new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    Thread vlakno = new Thread(new Runnable() {
+                    vlakno = new Thread(new Runnable() {
                         @Override
                         public void run() {
                             new Aplikacia().setVisible(true);
@@ -110,7 +111,7 @@ public final class Aplikacia extends javax.swing.JFrame {
             popup.add(ukoncit);
             /// ... add other items
             // construct a TrayIcon
-            trayIcon = new TrayIcon(image, "Autobazar TRAY", popup);
+            trayIcon = new TrayIcon(image, "Autobazaris Tray", popup);
             // set the TrayIcon properties
             trayIcon.addActionListener(listenerForNew);
             trayIcon.addActionListener(listenerForUkoncit);
