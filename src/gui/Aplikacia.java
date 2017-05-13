@@ -1,41 +1,44 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package gui;
 
 import autobazar.*;
+import java.awt.AWTException;
 import java.awt.HeadlessException;
+import java.awt.Image;
+import java.awt.MenuItem;
+import java.awt.PopupMenu;
+import java.awt.SystemTray;
+import java.awt.Toolkit;
+import java.awt.TrayIcon;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
-import javax.swing.SwingWorker;
 import javax.swing.table.DefaultTableModel;
 import sql.*;
 
 /**
- *
- * @author Acer
+ * 
+ * @author Jakub Cachovan
  */
 public final class Aplikacia extends javax.swing.JFrame {
     static String DbPath = null;
     static String FilePath = null;
     private Autobazar _autobazar = new Autobazar();
-    private SwingWorker<Void, String> worker;
     /**
      * Creates new form Aplikacia
      */
     public Aplikacia() {
         initComponents();
         initialIcons();
+        initSystemTray();
         LoadDataDialog loadData = new LoadDataDialog(this, true);
+        loadData.setIconImage(Toolkit.getDefaultToolkit().getImage("./icons/spinner.png"));
         loadData.setLocationRelativeTo(null);
         loadData.setVisible(true);
         if(LoadDataDialog.isFromDB){
@@ -56,7 +59,6 @@ public final class Aplikacia extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Načítanie zo súboru zlyhalo !", "Chyba", JOptionPane.ERROR_MESSAGE);          
             }           
         }else{
-            //System.exit(0);
             Runtime.getRuntime().exit(0);
         }  
         
@@ -68,6 +70,62 @@ public final class Aplikacia extends javax.swing.JFrame {
         jTableMotocykle.setAutoCreateRowSorter(true);
         jTableNakladne.setAutoCreateRowSorter(true);
         jTablePredajcovia.setAutoCreateRowSorter(true);
+    }
+    
+    public void initSystemTray(){
+        TrayIcon trayIcon = null;
+        if (SystemTray.isSupported()) {
+            // get the SystemTray instance
+            SystemTray tray = SystemTray.getSystemTray();
+            // load an image
+            Image image = Toolkit.getDefaultToolkit().getImage("./icons/car-compact2.png");
+            // create a action listener to listen for default action executed on the tray icon
+            ActionListener listenerForNew = new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    Thread vlakno = new Thread(new Runnable() {
+                        @Override
+                        public void run() {
+                            new Aplikacia().setVisible(true);
+                        }
+                    });
+                    vlakno.start();
+                }
+            };
+            ActionListener listenerForUkoncit = new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    Runtime.getRuntime().exit(0);
+                }
+            };
+            // create a popup menu
+            PopupMenu popup = new PopupMenu();
+            // create menu item for the default action
+            MenuItem novy = new MenuItem("Nové okno");
+            MenuItem ukoncit = new MenuItem("Exit");
+            novy.addActionListener(listenerForNew);
+            ukoncit.addActionListener(listenerForUkoncit);
+            popup.add(novy); 
+            popup.addSeparator();
+            popup.add(ukoncit);
+            /// ... add other items
+            // construct a TrayIcon
+            trayIcon = new TrayIcon(image, "Autobazar TRAY", popup);
+            // set the TrayIcon properties
+            trayIcon.addActionListener(listenerForNew);
+            trayIcon.addActionListener(listenerForUkoncit);
+            // ...
+            // add the tray image
+            try {
+                tray.add(trayIcon);
+            } catch (AWTException e) {
+                System.err.println(e);
+            }
+            // ...
+        } else {
+            // disable tray option in your application or
+            // perform other actions
+        }
     }
     
     public void initialIcons(){
@@ -525,7 +583,7 @@ public final class Aplikacia extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 7, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelPrehladLayout.createSequentialGroup()
-                        .addGap(14, 14, 14)
+                        .addContainerGap()
                         .addGroup(jPanelPrehladLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanelPrehladLayout.createSequentialGroup()
                                 .addGap(1, 1, 1)
@@ -556,7 +614,7 @@ public final class Aplikacia extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jButtonFilter, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButtonSynchronize, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButtonSynchronize, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButtonSaveToFile, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 708, Short.MAX_VALUE))
@@ -1380,9 +1438,12 @@ public final class Aplikacia extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Aplikacia().setVisible(true);
+                Aplikacia aplikacia = new Aplikacia();
+                aplikacia.setIconImage(Toolkit.getDefaultToolkit().getImage("./icons/car-compact.png"));
+                aplikacia.setVisible(true);
             }
         });
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

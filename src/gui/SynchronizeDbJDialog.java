@@ -81,7 +81,8 @@ public class SynchronizeDbJDialog extends javax.swing.JDialog {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Synchronizácia s databázou");
 
-        jButtonSpusti.setText("Synchronizuj");
+        jButtonSpusti.setIcon(new javax.swing.ImageIcon("C:\\Users\\Acer\\Documents\\NetBeansProjects\\Autobazar\\icons\\obnovit.png")); // NOI18N
+        jButtonSpusti.setText("Synchronizovať");
         jButtonSpusti.setEnabled(false);
         jButtonSpusti.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -108,6 +109,7 @@ public class SynchronizeDbJDialog extends javax.swing.JDialog {
             }
         });
 
+        jButtonZrusit.setIcon(new javax.swing.ImageIcon("C:\\Users\\Acer\\Documents\\NetBeansProjects\\Autobazar\\icons\\vymazat.png")); // NOI18N
         jButtonZrusit.setText("Zrušiť");
         jButtonZrusit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

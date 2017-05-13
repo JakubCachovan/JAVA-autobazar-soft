@@ -71,6 +71,7 @@ public class LoadDataDialog extends javax.swing.JDialog {
 
         jTextField1.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
 
+        jButtonVyber.setIcon(new javax.swing.ImageIcon("C:\\Users\\Acer\\Documents\\NetBeansProjects\\Autobazar\\icons\\more.png")); // NOI18N
         jButtonVyber.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonVyberActionPerformed(evt);
@@ -112,7 +113,7 @@ public class LoadDataDialog extends javax.swing.JDialog {
                                 .addGroup(layout.createSequentialGroup()
                                     .addComponent(jTextField1)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jButtonVyber))
+                                    .addComponent(jButtonVyber, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addComponent(jButtonNacitaj, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())

@@ -84,7 +84,10 @@
     </Component>
     <Component class="javax.swing.JButton" name="jButtonSpusti">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Synchronizuj"/>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="2" name="C:\Users\Acer\Documents\NetBeansProjects\Autobazar\icons\obnovit.png"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Synchronizova&#x165;"/>
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
       <Events>
@@ -138,6 +141,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="jButtonZrusit">
       <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="2" name="C:\Users\Acer\Documents\NetBeansProjects\Autobazar\icons\vymazat.png"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Zru&#x161;i&#x165;"/>
       </Properties>
       <Events>
