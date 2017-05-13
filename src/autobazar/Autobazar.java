@@ -17,7 +17,7 @@ import javax.swing.JOptionPane;
  * @version 1.0
  * @created 31-3-2017 13:05:51
  */
-public class Autobazar implements Serializable{
+public class Autobazar implements Serializable, Runnable{
 
     /**
      * private int mnozsvtoInzeratov;
@@ -31,6 +31,12 @@ public class Autobazar implements Serializable{
         zoznamInzeratov = new ArrayList<>();   
         zoznamPredajcov = new ArrayList<>();
         zoznamVozidiel = new ArrayList<>();
+    }
+    
+    @Override
+    public void run(){
+        System.out.println("Synchronizujem");
+        
     }
 
     public Inzerat VytvoritInzerat(Kategoria paKategoria, Predajca paPredajca){

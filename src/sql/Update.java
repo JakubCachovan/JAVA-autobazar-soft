@@ -15,6 +15,7 @@ import javax.swing.JOptionPane;
  * @author Acer
  */
 public class Update {
+            
     public static boolean upravitStavInzeratu(String idInzeratu, String dbPath){      
         try (Connection con = ConnectToDB.ConnectDB(dbPath);){               
             PreparedStatement state = con.prepareStatement("UPDATE Inzerat SET stav='Predane' WHERE id_inzeratu=?;");

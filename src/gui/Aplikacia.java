@@ -16,6 +16,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
+import javax.swing.SwingWorker;
 import javax.swing.table.DefaultTableModel;
 import sql.*;
 
@@ -27,6 +28,7 @@ public final class Aplikacia extends javax.swing.JFrame {
     static String DbPath = null;
     static String FilePath = null;
     private Autobazar _autobazar = new Autobazar();
+    private SwingWorker<Void, String> worker;
     /**
      * Creates new form Aplikacia
      */
@@ -41,6 +43,7 @@ public final class Aplikacia extends javax.swing.JFrame {
             Autobazar nacitanyAutobazar = LoaderDB.LoadFromDB(DbPath);
             if(nacitanyAutobazar != null){
                 _autobazar = nacitanyAutobazar;
+                jButtonSynchronize.setEnabled(false);
             }else{
                 JOptionPane.showMessageDialog(null, "Načítanie z databázy zlyhalo !", "Chyba", JOptionPane.ERROR_MESSAGE);
             }
@@ -53,7 +56,8 @@ public final class Aplikacia extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Načítanie zo súboru zlyhalo !", "Chyba", JOptionPane.ERROR_MESSAGE);          
             }           
         }else{
-            System.exit(0);
+            //System.exit(0);
+            Runtime.getRuntime().exit(0);
         }  
         
         ObnovitVsetkyTabulky();
@@ -262,6 +266,7 @@ public final class Aplikacia extends javax.swing.JFrame {
         jSeparator2 = new javax.swing.JSeparator();
         jLabel5 = new javax.swing.JLabel();
         jButtonFilter = new javax.swing.JButton();
+        jButtonSynchronize = new javax.swing.JButton();
         jPanelPredajcovia = new javax.swing.JPanel();
         jScrollPane4 = new javax.swing.JScrollPane();
         jTablePredajcovia = new javax.swing.JTable();
@@ -465,6 +470,15 @@ public final class Aplikacia extends javax.swing.JFrame {
             }
         });
 
+        jButtonSynchronize.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        jButtonSynchronize.setIcon(new javax.swing.ImageIcon("C:\\Users\\Acer\\Documents\\NetBeansProjects\\Autobazar\\icons\\obnovit.png")); // NOI18N
+        jButtonSynchronize.setText("Synch s DB");
+        jButtonSynchronize.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSynchronizeActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanelPrehladLayout = new javax.swing.GroupLayout(jPanelPrehlad);
         jPanelPrehlad.setLayout(jPanelPrehladLayout);
         jPanelPrehladLayout.setHorizontalGroup(
@@ -482,7 +496,8 @@ public final class Aplikacia extends javax.swing.JFrame {
                     .addComponent(jRadioButtonVsetky, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabelHodnota)
                     .addComponent(jLabel4)
-                    .addComponent(jButtonFilter, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jButtonFilter, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButtonSynchronize, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(10, 10, 10)
                 .addGroup(jPanelPrehladLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane2)
@@ -541,6 +556,8 @@ public final class Aplikacia extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jButtonFilter, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButtonSynchronize, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButtonSaveToFile, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 708, Short.MAX_VALUE))
                 .addContainerGap())
@@ -1085,6 +1102,9 @@ public final class Aplikacia extends javax.swing.JFrame {
             fileChooser.setSelectedFile(new File("autobazar.txt"));
             if (fileChooser.showSaveDialog(this)== JFileChooser.APPROVE_OPTION) {
                 File file = fileChooser.getSelectedFile();
+                if(file.exists() && !file.isDirectory()) { 
+                    
+                }
                 if(_autobazar.saveToFile(file)){
                     JOptionPane.showMessageDialog(null, "Uloženie úspešné!", "Info", JOptionPane.INFORMATION_MESSAGE);
                 }else{
@@ -1319,6 +1339,18 @@ public final class Aplikacia extends javax.swing.JFrame {
     }//GEN-LAST:event_jTableInzeratyPredajcuMouseClicked
 
     /**
+     * Akcia pre synchronizáiu dát v databáte v prípade, že boli načítané dáta pre aplikáciu zo súboru.
+     * @param evt 
+     */
+    private void jButtonSynchronizeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSynchronizeActionPerformed
+        // TODO add your handling code here:
+        SynchronizeDbJDialog sd = new SynchronizeDbJDialog(this, true);
+        sd.setLocationRelativeTo(null);
+        sd.setAutobazar(_autobazar);
+        sd.setVisible(true);
+    }//GEN-LAST:event_jButtonSynchronizeActionPerformed
+
+    /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
@@ -1361,6 +1393,7 @@ public final class Aplikacia extends javax.swing.JFrame {
     private javax.swing.JButton jButtonNovyInzerat;
     private javax.swing.JButton jButtonPredane;
     private javax.swing.JButton jButtonSaveToFile;
+    private javax.swing.JButton jButtonSynchronize;
     private javax.swing.JButton jButtonUpravitInzerat;
     private javax.swing.JButton jButtonUpravitPredajcu;
     private javax.swing.JButton jButtonVymazatInzerat;
