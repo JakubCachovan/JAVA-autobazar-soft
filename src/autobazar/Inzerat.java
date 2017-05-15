@@ -19,6 +19,11 @@ public class Inzerat implements Serializable{
 
     public Inzerat(){}
     
+    /**
+     * Konštruktor pre vytvorenie objektu typu Inzerat
+     * @param paKategoria
+     * @param paPredajca 
+     */
     public Inzerat(Kategoria paKategoria, Predajca paPredajca){
         DatumVytvorenia = new Date(java.util.Date.from(Instant.now()).getTime());
         predajca = paPredajca;
@@ -26,6 +31,15 @@ public class Inzerat implements Serializable{
         stav = StavInzeratu.Aktivne;
     }
     
+    /**
+     * Metóda pre priradenie predajcu pre inzerát.
+     * @param Email
+     * @param Lokalita
+     * @param Meno
+     * @param Priezvisko
+     * @param Telefon
+     * @return true/false
+     */
     public boolean priraditPredajcu(String Email, String Lokalita, String Meno, String Priezvisko, String Telefon){
         try {
             predajca = new Predajca(Email, Lokalita, Meno, Priezvisko, Telefon);
@@ -36,7 +50,8 @@ public class Inzerat implements Serializable{
         return false;
     }
     /**
-     * 1-> automobil, 2->Autobus, 3->Motocykel, 4->Nakladne auto
+     * Vrátenie hodnoty ktorá reprezentuje typ objektu.
+     * 1-> Automobil, 2->Autobus, 3->Motocykel, 4->Nakladne auto
      * @return 
      */
     public int getInstanceKategoria(){
@@ -53,20 +68,11 @@ public class Inzerat implements Serializable{
         return -1;
     }
     
-    public static int getInstanceKategoria(Kategoria kategoria){
-        if(kategoria instanceof Automobil){
-            return 1; // Auto
-        }else if(kategoria instanceof Autobus){
-            return 2;
-        }else if(kategoria instanceof Motocykel){
-            return 3;
-        }else if(kategoria instanceof NakladneAuto){
-            return 4;
-        }
-        JOptionPane.showMessageDialog(null, "Chyba!");
-        return -1;
-    }
-    
+    /**
+     * Vrátenie názvu kategórie podľa toho, ktorá inštancia ju reprezentuje.
+     * 
+     * @return String
+     */
     public String getKategoriaInstanceName(){
         if(kategoria instanceof Automobil){
             return "Automobil";
@@ -80,35 +86,66 @@ public class Inzerat implements Serializable{
         return "";
     }
 
+    /**
+     * Setter pre atribút predajca.
+     * @param predajca - objekt typu Predajca
+     */
     public void setPredajca(Predajca predajca) {
         this.predajca = predajca;
     }
-    
 
+    /**
+     * Setter pre atribút stav.
+     * @param stav 
+     */
     public void setStav(StavInzeratu stav) {
         this.stav = stav;
     }
 
+    /**
+     * Getter pre atribút stav inzeratu.
+     * @return 
+     */
     public StavInzeratu getStav() {
         return stav;
     }
        
+    /**
+     * Getter pre atribút kategória.
+     * @return 
+     */
     public Kategoria getKategoria() {    
         return kategoria;
     }
 
+    /**
+     * Getter pre atribút datumVytvorenia.
+     * @return dátum vytvorenia inzeratu
+     */
     public Date getDatumVytvorenia() {
         return DatumVytvorenia;
     }
 
+    /**
+     * Getter pre atribút id inzeratu.
+     * @return 
+     */
     public int getID() {
         return ID;
     }
 
+    /**
+     * Getter pre atribút predajca.
+     * @return objekt typu Predajca
+     */
     public Predajca getPredajca() {
         return predajca;
     }
 
+    /**
+     * 
+     * @param kategoria 
+     */
     public void setKategoria(Kategoria kategoria) {
         this.kategoria = kategoria;
     }

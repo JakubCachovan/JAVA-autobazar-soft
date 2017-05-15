@@ -17,28 +17,28 @@ import javax.swing.JOptionPane;
  * @version 1.0
  * @created 31-3-2017 13:05:51
  */
-public class Autobazar implements Serializable, Runnable{
+public class Autobazar implements Serializable{
 
-    /**
-     * private int mnozsvtoInzeratov;
-     */
-    //private String nazov;
     private ArrayList<Inzerat> zoznamInzeratov;
     private ArrayList<Predajca> zoznamPredajcov;
     private ArrayList<Kategoria> zoznamVozidiel;
 
+    /**
+     * Konštruktor pre vytvorenie objektu typu Autobazar
+     * Inicializuje zoznam inzeratov, predajcov a vozidiel
+     */
     public Autobazar(){
         zoznamInzeratov = new ArrayList<>();   
         zoznamPredajcov = new ArrayList<>();
         zoznamVozidiel = new ArrayList<>();
     }
     
-    @Override
-    public void run(){
-        System.out.println("Synchronizujem");
-        
-    }
-
+    /**
+     * Vytvorenie inzerátu za základe kategórie vozidla a predajcu.
+     * @param paKategoria - objekt typu Kategoria
+     * @param paPredajca - objekt typu Predajca
+     * @return objekt typu Inzerat
+     */
     public Inzerat VytvoritInzerat(Kategoria paKategoria, Predajca paPredajca){
         try {
             zoznamVozidiel.add(paKategoria);
@@ -55,6 +55,10 @@ public class Autobazar implements Serializable, Runnable{
         return null;
     }
     
+    /**
+     * Metóda pre výpočet cenovej hodnoty všetkých vozidiel v autobazáre.
+     * @return integer
+     */
     public int hodnotaVsetkychVozidiel(){
         int hodnota = 0;
         for (Kategoria kategoria : zoznamVozidiel) {
@@ -63,6 +67,12 @@ public class Autobazar implements Serializable, Runnable{
         return hodnota;
     }
     
+    /**
+     * Metóda na vyhľadávanie inzerátov podľa kľúčového slova.
+     * Inzeráty zhodné s kľúčových slovom sú návratovou hodnotou metódy.
+     * @param klucoveSlovo
+     * @return zoznam inzerátov 
+     */
     public ArrayList<Inzerat> keyWordSearch(String klucoveSlovo){
         //hladanie v predajcoch
         ArrayList<Inzerat> najdeneInzeraty = new ArrayList<>();
@@ -76,6 +86,11 @@ public class Autobazar implements Serializable, Runnable{
         return najdeneInzeraty;
     }
     
+    /**
+     * Metóda na vytvorenie identifikáčného čísla pre inzerát. 
+     * Toto id je aj návratovou hodnotou metódy.
+     * @return integer
+     */
     public int vytvoritID(){
         if(zoznamInzeratov.isEmpty()){
             return 0;
@@ -86,6 +101,11 @@ public class Autobazar implements Serializable, Runnable{
         }     
     }
     
+    /**
+     * Vyhľadávanie predajcu v zozname predajcov na základe emailu, ktorý je parametrom metódy.
+     * @param email - emailová adresa predajcu
+     * @return objekt typu Predajca
+     */
     public Predajca najdiPredajcu(String email){
         for (Predajca p : zoznamPredajcov) {
             if(p.getEmail().equalsIgnoreCase(email)){
@@ -95,6 +115,11 @@ public class Autobazar implements Serializable, Runnable{
         return null;
     }
     
+    /**
+     * Vyhľadávanie kategórie vozidla na základe id inzerátu.
+     * @param idInzeratu - id inzerátu
+     * @return objekt typu Kategoria
+     */
     public Kategoria najdiKategoriu(int idInzeratu){
         for (Inzerat inzerat : zoznamInzeratov) {
             if(inzerat.getID() == idInzeratu){
@@ -105,6 +130,11 @@ public class Autobazar implements Serializable, Runnable{
         return null;
     }
     
+    /**
+     * Vyhľadávanie inzerátu na základe id inzerátu.
+     * @param idInzeratu
+     * @return objekt typu Inzerat
+     */
     public Inzerat najdiInzerat(int idInzeratu){
         for (Inzerat inzerat : zoznamInzeratov) {
             if(inzerat.getID() == idInzeratu){
@@ -115,7 +145,11 @@ public class Autobazar implements Serializable, Runnable{
         return null;
     }
 
-    
+    /**
+     * Metóda pre vymazanie predajcu zo zoznamu predajcov na základe emailu.
+     * @param email - emailová adresa predajcu
+     * @return true/false
+     */
     public boolean vymazatPredajcu(String email){
 
         for (Predajca predajca : zoznamPredajcov) {
@@ -126,9 +160,22 @@ public class Autobazar implements Serializable, Runnable{
         }
         return false;
     }
-    public void vymazatInzerat(Inzerat i){
-        zoznamInzeratov.remove(i);
+    
+    /**
+     * Vymazanie inzerátu zo zoznamu inzerátov.
+     * @param inzerat - objekt typu Inzerat
+     */
+    public void vymazatInzerat(Inzerat inzerat){
+        if(zoznamInzeratov.contains(inzerat)){
+            zoznamInzeratov.remove(inzerat);
+        }
     }
+    
+    /**
+     * Vymazanie inzerátu zo zoznamu inzerátov na základe ID.
+     * @param idInzeratu - id inzerátu
+     * @return 
+     */
     public boolean vymazatInzerat(int idInzeratu){
         for (Inzerat inzerat : zoznamInzeratov) {
             if(inzerat.getID() == idInzeratu){
@@ -139,6 +186,12 @@ public class Autobazar implements Serializable, Runnable{
         return false;
     }
     
+    /**
+     * Setter pre atribút stav inzerátu.
+     * Nastaví stav inzerátu na "Aktívny".
+     * @param idInzeratu - id inzeratu
+     * @return true/false
+     */
     public boolean setAktivne(int idInzeratu){
         try {
             for (Inzerat inzerat : zoznamInzeratov) {
@@ -153,6 +206,11 @@ public class Autobazar implements Serializable, Runnable{
         return false;
     }
     
+    /**
+     * Getter pre stav inzerátu.
+     * @param idInzeratu - id inzerátu
+     * @return true/false
+     */
     public boolean getAktivne(int idInzeratu){
         try {
             for (Inzerat inzerat : zoznamInzeratov) {
@@ -168,6 +226,11 @@ public class Autobazar implements Serializable, Runnable{
         return false;
     }
     
+    /**
+     * Setter pre stav inzeratu na hodnotu "Predane".
+     * @param idInzeratu - id inzeratu
+     * @return true/false
+     */
     public boolean setPredane(int idInzeratu){
         try {
             for (Inzerat inzerat : zoznamInzeratov) {
@@ -182,6 +245,11 @@ public class Autobazar implements Serializable, Runnable{
         return false;
     }
     
+    /**
+     * Getter pre stav inzerátu. 
+     * @param idInzeratu - id inzeratu
+     * @return true/false
+     */
     public boolean getPredane(int idInzeratu){
         try {
             for (Inzerat inzerat : zoznamInzeratov) {
@@ -197,23 +265,42 @@ public class Autobazar implements Serializable, Runnable{
         return false;
     }
 
+    /**
+     * Getter pre zoznam inzeratov.
+     * @return zoznam inzerátov
+     */
     public ArrayList<Inzerat> getZoznamInzeratov() {
         return zoznamInzeratov;
     }
 
+    /**
+     * Getter pre zoznam predajcov.
+     * @return 
+     */
     public ArrayList<Predajca> getZoznamPredajcov() {
         return zoznamPredajcov;
     }
 
+    /**
+     * Setter pre zoznam predajcov.
+     * @param zoznamPredajcov 
+     */
     public void setZoznamPredajcov(ArrayList<Predajca> zoznamPredajcov) {
         this.zoznamPredajcov = zoznamPredajcov;
     }
 
+    /**
+     * Setter pre zoznam inzeratov.
+     * @param zoznamInzeratov 
+     */
     public void setZoznamInzeratov(ArrayList<Inzerat> zoznamInzeratov) {
         this.zoznamInzeratov = zoznamInzeratov;
     }
     
-
+    /**
+     * Getter pre zoznam automobilov
+     * @return
+     */
     public ArrayList<Automobil> getZoznamAutomobilov(){
         try {
             ArrayList<Automobil> zoznamAutomobilov = new ArrayList<>();
@@ -228,6 +315,11 @@ public class Autobazar implements Serializable, Runnable{
         }      
         return null;
     }
+    
+    /**
+     * Getter pre zoznam autobusov
+     * @return 
+     */
     public ArrayList<Autobus> getZoznamAutobusov(){
         try {
             ArrayList<Autobus> zoznamAutobusov = new ArrayList<>();
@@ -243,15 +335,28 @@ public class Autobazar implements Serializable, Runnable{
         return null;
     }
 
+    /**
+     * Getter pre zoznam vozidiel
+     * @return 
+     */
     public ArrayList<Kategoria> getZoznamVozidiel() {
         return zoznamVozidiel;
     }
 
+    /**
+     * Setter pre zoznam vozidiel
+     * @param zoznamVozidiel 
+     */
     public void setZoznamVozidiel(ArrayList<Kategoria> zoznamVozidiel) {
         this.zoznamVozidiel = zoznamVozidiel;
     }
     
-    
+    /**
+     * Uloženie dát do súboru
+     * @param f - súbor
+     * @return true/false
+     * @throws IOException 
+     */
     public boolean saveToFile(File f) throws IOException{
         try {
             ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream(f));
@@ -267,6 +372,11 @@ public class Autobazar implements Serializable, Runnable{
         }       
     }
     
+    /**
+     * Statická metóda pre načítanie objektu typu Autobazar zo súboru
+     * @param f - súbor
+     * @return objekt typu Autobazar / null
+     */
     public static Autobazar loadFromFile(File f){
         try {
             ObjectInputStream is = new ObjectInputStream(new FileInputStream(f.getAbsoluteFile()));
@@ -279,6 +389,10 @@ public class Autobazar implements Serializable, Runnable{
         }
     }
 
+    /**
+     * Znaková reprezentácia objektu.
+     * @return 
+     */
     @Override
     public String toString() {
         return "Autobazar{" + "zoznamInzeratov=" + zoznamInzeratov + '}';
