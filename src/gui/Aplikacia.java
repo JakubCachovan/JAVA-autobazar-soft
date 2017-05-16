@@ -13,7 +13,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
@@ -1054,11 +1053,8 @@ public final class Aplikacia extends javax.swing.JFrame {
                 }
             }
             if(FilePath != null){
-                try {
-                    _autobazar.saveToFile(new File(FilePath));
-                } catch (IOException e) {
-                    JOptionPane.showMessageDialog(null, e, "Chyba", JOptionPane.ERROR);
-                }
+                if(!_autobazar.saveToFile(new File(FilePath)))
+                    JOptionPane.showMessageDialog(null, "Chyba pri ukladaní do súboru", "Chyba", JOptionPane.ERROR);
             }
         }
         ObnovitVsetkyTabulky();
@@ -1091,10 +1087,8 @@ public final class Aplikacia extends javax.swing.JFrame {
                                 DeleteFromDB.vymazPredajcu(email, DbPath);
                             }
                             if(FilePath != null){
-                                try {
-                                    _autobazar.saveToFile(new File(FilePath));
-                                } catch (IOException e) {
-                                    JOptionPane.showMessageDialog(null, e, "Chyba", JOptionPane.ERROR);
+                                if(!_autobazar.saveToFile(new File(FilePath))){
+                                    JOptionPane.showMessageDialog(null, "Chyba pri ukladaní do súboru", "Chyba", JOptionPane.ERROR);
                                 }
                             }
                         }else{
@@ -1167,11 +1161,9 @@ public final class Aplikacia extends javax.swing.JFrame {
                         }
                     }
                     if(FilePath != null){
-                        try {
-                            _autobazar.saveToFile(new File(FilePath));
-                        } catch (IOException e) {
-                            JOptionPane.showMessageDialog(null, e, "Chyba", JOptionPane.ERROR);
-                        }
+                        if(!_autobazar.saveToFile(new File(FilePath))){
+                                    JOptionPane.showMessageDialog(null, "Chyba pri ukladaní do súboru", "Chyba", JOptionPane.ERROR);
+                                }
                     }
                     FillTableInzeraty();
                     JOptionPane.showMessageDialog(null, "Inzerát "+idIzeratu+" bol označený ako aktívny.","Upozornenie", JOptionPane.INFORMATION_MESSAGE);
@@ -1244,7 +1236,7 @@ public final class Aplikacia extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(null, "Chyba pri ukladaní do súboru", "Chyba", JOptionPane.ERROR_MESSAGE);
                 }
             }
-        } catch (HeadlessException | IOException e) {
+        } catch (HeadlessException e) {
             JOptionPane.showMessageDialog(null, e);
         }
     }//GEN-LAST:event_jButtonSaveToFileActionPerformed
@@ -1267,10 +1259,8 @@ public final class Aplikacia extends javax.swing.JFrame {
                     DeleteFromDB.vymazatInzerat(Integer.parseInt(idIzeratu), DbPath);
                 }
                 if(FilePath != null){
-                    try {
-                        _autobazar.saveToFile(new File(FilePath));
-                    } catch (IOException e) {
-                        JOptionPane.showMessageDialog(null, e, "Chyba", JOptionPane.ERROR);
+                    if(!_autobazar.saveToFile(new File(FilePath))){
+                        JOptionPane.showMessageDialog(null, "Chyba pri ukladaní do súboru", "Chyba", JOptionPane.ERROR);
                     }
                 }
                 jButtonVymazatInzerat.setEnabled(false);
@@ -1305,10 +1295,8 @@ public final class Aplikacia extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(null, "Chyba pri upravovani inzeratu v DB", "Chyba", JOptionPane.ERROR_MESSAGE);
                 }
                 if(FilePath != null && (edit.isUpravaVozidla() || edit.isUpravaPredajcu())){
-                    try {
-                        _autobazar.saveToFile(new File(FilePath));
-                    } catch (IOException e) {
-                        JOptionPane.showMessageDialog(null, e, "Chyba", JOptionPane.ERROR);
+                   if(!_autobazar.saveToFile(new File(FilePath))){
+                        JOptionPane.showMessageDialog(null, "Chyba pri ukladaní do súboru", "Chyba", JOptionPane.ERROR);
                     }
                 }
             }
@@ -1362,10 +1350,8 @@ public final class Aplikacia extends javax.swing.JFrame {
                         }
                     }
                     if(FilePath != null){
-                    try {
-                        _autobazar.saveToFile(new File(FilePath));
-                    } catch (IOException e) {
-                        JOptionPane.showMessageDialog(null, e, "Chyba", JOptionPane.ERROR);
+                    if(!_autobazar.saveToFile(new File(FilePath))){
+                        JOptionPane.showMessageDialog(null, "Chyba pri ukladaní do súboru", "Chyba", JOptionPane.ERROR);
                     }
                 }
                     FillTableInzeraty();
@@ -1407,10 +1393,8 @@ public final class Aplikacia extends javax.swing.JFrame {
             }
         }
         if(FilePath != null){
-            try {
-                _autobazar.saveToFile(new File(FilePath));
-            } catch (IOException e) {
-                JOptionPane.showMessageDialog(null, e, "Chyba", JOptionPane.ERROR);
+            if(!_autobazar.saveToFile(new File(FilePath))){
+                JOptionPane.showMessageDialog(null, "Chyba pri ukladaní do súboru", "Chyba", JOptionPane.ERROR);
             }
         }
         FillTableInzeraty();

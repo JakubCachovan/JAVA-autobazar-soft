@@ -70,7 +70,7 @@ public class Autobazar implements Serializable{
     /**
      * Metóda na vyhľadávanie inzerátov podľa kľúčového slova.
      * Inzeráty zhodné s kľúčových slovom sú návratovou hodnotou metódy.
-     * @param klucoveSlovo
+     * @param klucoveSlovo - kľúčové slovo pre vyhľadávanie
      * @return zoznam inzerátov 
      */
     public ArrayList<Inzerat> keyWordSearch(String klucoveSlovo){
@@ -132,7 +132,7 @@ public class Autobazar implements Serializable{
     
     /**
      * Vyhľadávanie inzerátu na základe id inzerátu.
-     * @param idInzeratu
+     * @param idInzeratu - id inzerátu
      * @return objekt typu Inzerat
      */
     public Inzerat najdiInzerat(int idInzeratu){
@@ -174,7 +174,7 @@ public class Autobazar implements Serializable{
     /**
      * Vymazanie inzerátu zo zoznamu inzerátov na základe ID.
      * @param idInzeratu - id inzerátu
-     * @return 
+     * @return true ak uspesne vymazany, inak false
      */
     public boolean vymazatInzerat(int idInzeratu){
         for (Inzerat inzerat : zoznamInzeratov) {
@@ -275,7 +275,7 @@ public class Autobazar implements Serializable{
 
     /**
      * Getter pre zoznam predajcov.
-     * @return 
+     * @return zoznam Predajcov
      */
     public ArrayList<Predajca> getZoznamPredajcov() {
         return zoznamPredajcov;
@@ -283,7 +283,7 @@ public class Autobazar implements Serializable{
 
     /**
      * Setter pre zoznam predajcov.
-     * @param zoznamPredajcov 
+     * @param zoznamPredajcov - zoznam predajcov 
      */
     public void setZoznamPredajcov(ArrayList<Predajca> zoznamPredajcov) {
         this.zoznamPredajcov = zoznamPredajcov;
@@ -291,7 +291,7 @@ public class Autobazar implements Serializable{
 
     /**
      * Setter pre zoznam inzeratov.
-     * @param zoznamInzeratov 
+     * @param zoznamInzeratov - zoznam inzerátov
      */
     public void setZoznamInzeratov(ArrayList<Inzerat> zoznamInzeratov) {
         this.zoznamInzeratov = zoznamInzeratov;
@@ -299,7 +299,7 @@ public class Autobazar implements Serializable{
     
     /**
      * Getter pre zoznam automobilov
-     * @return
+     * @return zoznam automobilov
      */
     public ArrayList<Automobil> getZoznamAutomobilov(){
         try {
@@ -354,10 +354,9 @@ public class Autobazar implements Serializable{
     /**
      * Uloženie dát do súboru
      * @param f - súbor
-     * @return true/false
-     * @throws IOException 
+     * @return true/false 
      */
-    public boolean saveToFile(File f) throws IOException{
+    public boolean saveToFile(File f){
         try {
             ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream(f));
             os.writeObject(this);
