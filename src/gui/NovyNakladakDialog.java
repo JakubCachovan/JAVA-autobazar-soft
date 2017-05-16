@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package gui;
 
 import autobazar.NakladneAuto;
@@ -11,8 +6,8 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
- *
- * @author Acer
+ * Dialogove okno pre vytvorenie nákladného auta.
+ * @author Jakub Cachovan
  */
 public class NovyNakladakDialog extends javax.swing.JDialog {
     private NakladneAuto nakladne;
@@ -29,23 +24,41 @@ public class NovyNakladakDialog extends javax.swing.JDialog {
         jButtonUlozitInzerat.setIcon(new ImageIcon("./icons/save.png"));
     }
 
+    /**
+     * Getter pre atribut nakladne.
+     * @return NakladneAuto
+     */
     public NakladneAuto getNakladne() {
         return nakladne;
     }
 
+    /**
+     * Setter pre objekt typu NakladneAuto.
+     * @param nakladne 
+     */
     public void setNakladne(NakladneAuto nakladne) {
         this.nakladne = nakladne;
     }
     
-
+    /**
+     * Indikátor úpravy nákaladného auta.
+     * @return 
+     */
     public boolean isUpravaVozidla() {
         return upravaVozidla;
     }
 
+    /**
+     * Setter pre indikátor úpravy nákladného auta.
+     * @param upravaVozidla 
+     */
     public void setUpravaVozidla(boolean upravaVozidla) {
         this.upravaVozidla = upravaVozidla;
     }
     
+    /**
+     *  Inicializácia dát do formulárov, v prípade že sa jedná o úpravu.
+     */
     public void NaplnFormular(){
         jTextFieldCena.setText(nakladne.getCena()+"");
         jTextFieldZnacka.setText(nakladne.getZnacka());
@@ -309,6 +322,10 @@ public class NovyNakladakDialog extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Validácia formuláru pre úpravu nákladného auta.
+     * @return 
+     */
     public boolean validaciaFormularu(){
         if(jTextFieldCena.getText().isEmpty()){
             JOptionPane.showMessageDialog(null, "Nezadaná cena");
@@ -338,9 +355,11 @@ public class NovyNakladakDialog extends javax.swing.JDialog {
         return true;
     }
     
+    /**
+     * Uloženie kategorie vozidla pre inzerát.
+     * @param evt 
+     */
     private void jButtonUlozitInzeratActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonUlozitInzeratActionPerformed
-        // TODO add your handling code here:
-        
         if(validaciaFormularu()){
             int cena = Integer.parseInt(jTextFieldCena.getText());
             String znacka = jTextFieldZnacka.getText();

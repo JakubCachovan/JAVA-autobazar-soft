@@ -167,11 +167,6 @@ public class NovyAutomobilDialog extends javax.swing.JDialog {
         jComboBoxPocetDveri.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jComboBoxPocetDveri.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "3", "5" }));
         jComboBoxPocetDveri.setToolTipText("Počet dverí");
-        jComboBoxPocetDveri.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBoxPocetDveriActionPerformed(evt);
-            }
-        });
 
         jTextFieldCena.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
 
@@ -309,6 +304,10 @@ public class NovyAutomobilDialog extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Validácia formulárov pre automobil.
+     * @return true/false
+     */
     public boolean validaciaFormularu(){
         if(jTextFieldCena.getText().isEmpty()){
             JOptionPane.showMessageDialog(null, "Nezadaná cena automobilu");
@@ -347,13 +346,12 @@ public class NovyAutomobilDialog extends javax.swing.JDialog {
         return true;
     }
     
-    private void jComboBoxPocetDveriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxPocetDveriActionPerformed
-        //inicializacia premennych       
-    }//GEN-LAST:event_jComboBoxPocetDveriActionPerformed
-
+    /**
+     * Uloženie kategorie vozidla pre inzerát. 
+     * @param evt 
+     */
     private void jButtonUlozitInzeratActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonUlozitInzeratActionPerformed
-        //inicializacia premennych  
-    
+        //inicializacia premennych      
         if(validaciaFormularu()){
             int cena = Integer.parseInt(jTextFieldCena.getText());
             String znacka = jTextFieldZnacka.getText();

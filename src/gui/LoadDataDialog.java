@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package gui;
 
 import autobazar.Autobazar;
@@ -14,14 +9,13 @@ import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 
 /**
- *
- * @author Acer
+ * Dialogove okno pre získanie cesty z zdrojovému súboru pre aplikáciu.
+ * @author Jakub Cachovan
  */
 public class LoadDataDialog extends javax.swing.JDialog {
 
     private String path;
     private File file;
-    private Autobazar _autobazar;
     static boolean isFromDB = false;
     static boolean isFromFile = false;
     /**
@@ -33,12 +27,28 @@ public class LoadDataDialog extends javax.swing.JDialog {
         jButtonFromDB.setIcon(new ImageIcon("./icons/database.png"));
         jButtonFromFile.setIcon(new ImageIcon("./icons/file.png"));
         jButtonVyber.setIcon(new ImageIcon("./icons/more.png"));
+        jButtonFromDB.setEnabled(false);
+        jButtonFromFile.setEnabled(false);
+        if(new File("./autobazar.sqlite").exists()){
+            jButtonFromDB.setEnabled(true);
+        }
+        if(new File("./autobazar.txt").exists()){
+            jButtonFromFile.setEnabled(true);
+        }
     }
     
+    /**
+     * Getter pre cestu k zdrojovému súboru.
+     * @return 
+     */
     public String getPath() {
         return path;
     }
 
+    /**
+     * Getter pre zdrojový súbor.
+     * @return 
+     */
     public File getFile() {
         return file;
     }
@@ -62,6 +72,7 @@ public class LoadDataDialog extends javax.swing.JDialog {
         setTitle("Načítanie dát");
 
         jButtonFromFile.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        jButtonFromFile.setIcon(new javax.swing.ImageIcon("C:\\Users\\Acer\\Documents\\NetBeansProjects\\Autobazar\\icons\\file.png")); // NOI18N
         jButtonFromFile.setText("From file");
         jButtonFromFile.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -88,6 +99,7 @@ public class LoadDataDialog extends javax.swing.JDialog {
         });
 
         jButtonFromDB.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        jButtonFromDB.setIcon(new javax.swing.ImageIcon("C:\\Users\\Acer\\Documents\\NetBeansProjects\\Autobazar\\icons\\database.png")); // NOI18N
         jButtonFromDB.setText("From DB");
         jButtonFromDB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -139,8 +151,11 @@ public class LoadDataDialog extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Vyvolanie okna pre výber zdrojového súboru.
+     * @param evt 
+     */
     private void jButtonVyberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVyberActionPerformed
-        // TODO add your handling code here:
         try {
             JFileChooser chooser = new JFileChooser("./");
             chooser.showOpenDialog(null);            
@@ -153,8 +168,12 @@ public class LoadDataDialog extends javax.swing.JDialog {
         }   
     }//GEN-LAST:event_jButtonVyberActionPerformed
 
+    /**
+     * Načítanie dát zo zdrojového súboru.
+     * Overuje príponu súboru. Povolene su len TXT subory alebo SQLITE databázy
+     * @param evt 
+     */
     private void jButtonNacitajActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNacitajActionPerformed
-        // TODO add your handling code here:
         Pattern p = Pattern.compile("(.sqlite)");
         Pattern p2 = Pattern.compile("(.txt)");
         Matcher m = p.matcher(path);   
@@ -172,9 +191,11 @@ public class LoadDataDialog extends javax.swing.JDialog {
         }
     }//GEN-LAST:event_jButtonNacitajActionPerformed
 
+    /**
+     * Rýchle načítanie zo súboru.
+     * @param evt 
+     */
     private void jButtonFromFileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonFromFileActionPerformed
-        // TODO add your handling code here:              
-        //path = "C:\\Users\\Acer\\Documents\\NetBeansProjects\\Autobazar\\subor.txt";  
         path = "./autobazar.txt";
         file = new File(path);
         if(file.exists() && !file.isDirectory()) { 
@@ -185,9 +206,11 @@ public class LoadDataDialog extends javax.swing.JDialog {
         }
     }//GEN-LAST:event_jButtonFromFileActionPerformed
 
+    /**
+     * Rýchle načítanie z databázy.
+     * @param evt 
+     */
     private void jButtonFromDBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonFromDBActionPerformed
-        // TODO add your handling code here:              
-        //path = "C:\\Users\\Acer\\Documents\\NetBeansProjects\\Autobazar\\autobazar.sqlite"; 
         path = "./autobazar.sqlite";
         file = new File(path);
         if(file.exists() && !file.isDirectory()) { 

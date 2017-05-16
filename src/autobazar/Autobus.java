@@ -48,15 +48,7 @@ public class Autobus extends Vozidlo implements Kategoria, Serializable{
         this.vlastnostiSedadiel = vlastnostiSedadiel;
     }
     
-    /**
-     * Metóda potrebná pre zistenie ceny vozidla.
-     * @return 
-     */
-    @Override
-    public int celkovaHodnotaVozidiel() {
-        return super.getCena();
-    }   
-
+    
     /**
      * Getter pre druh vozidla.
      * @return 
@@ -317,22 +309,14 @@ public class Autobus extends Vozidlo implements Kategoria, Serializable{
 
     /**
      * Getter pre kategoriu autobusu.
+     * 4-> reprezentuje Autobus
      * @return 
      */
     @Override
     public int getKategoriaInt() {
         return 4;
     }
-
-    /**
-     * Znaková reprezentácia objektu typu Autobus.
-     * @return 
-     */
-    @Override
-    public String toString() {
-        return "Autobus{" + "druh=" + druh + ", normaEmisii=" + normaEmisii + ", batozinovyPriestor=" + batozinovyPriestor + ", nadstavba=" + nadstavba + ", pocetMiestNaSedenie=" + pocetMiestNaSedenie + ", vlastnostiSedadiel=" + vlastnostiSedadiel + ", " + super.toString() +'}';
-    }
-
+    
     /**
      * Metóda pre zistenie zhody kľúčového slova v znakovej reprezentácií objektu (toString).
      * @param keyWord - kľúčové slovo
@@ -344,6 +328,25 @@ public class Autobus extends Vozidlo implements Kategoria, Serializable{
         Matcher m = p.matcher(this.toString());
         return m.find();       
     }
+    
+    /**
+     * Metóda potrebná pre zistenie ceny vozidla.
+     * @return 
+     */
+    @Override
+    public int celkovaHodnotaVozidiel() {
+        return super.getCena();
+    }   
+
+    /**
+     * Znaková reprezentácia objektu typu Autobus.
+     * @return 
+     */
+    @Override
+    public String toString() {
+        return "Autobus{" + "druh=" + druh + ", normaEmisii=" + normaEmisii + ", batozinovyPriestor=" + batozinovyPriestor + ", nadstavba=" + nadstavba + ", pocetMiestNaSedenie=" + pocetMiestNaSedenie + ", vlastnostiSedadiel=" + vlastnostiSedadiel + ", " + super.toString() +'}';
+    }
+
 
     
 	

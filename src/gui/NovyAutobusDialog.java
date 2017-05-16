@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package gui;
 
 import autobazar.Autobus;
@@ -13,8 +8,8 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
- *
- * @author Acer
+ * Dialogove okno pre vytvorenie autobusu.
+ * @author Jakub Cachovan
  */
 public class NovyAutobusDialog extends javax.swing.JDialog {
     private Autobus autobus;
@@ -31,23 +26,41 @@ public class NovyAutobusDialog extends javax.swing.JDialog {
         jButtonUlozitInzerat.setIcon(new ImageIcon("./icons/save.png"));
     }
 
+    /**
+     * Indikator upravy vozidla.
+     * @return 
+     */
     public boolean isUpravaVozidla() {
         return upravaVozidla;
     }
 
+    /**
+     * Setter pre indikator upravy.
+     * @param upravaVozidla 
+     */
     public void setUpravaVozidla(boolean upravaVozidla) {
         this.upravaVozidla = upravaVozidla;
     }
 
-    
+    /**
+     * Getter pre atribus autobus.
+     * @return 
+     */
     public Autobus getAutobus() {
         return autobus;
     }
 
+    /**
+     * Setter pre atribut autobus.
+     * @param autobus 
+     */
     public void setAutobus(Autobus autobus) {
         this.autobus = autobus;
     }
     
+    /**
+     * Inicializácia polí hodnotami pre konktétne vozidlo.
+     */
     public void NaplnFormular(){
         jTextFieldCena.setText(autobus.getCena()+"");
         jTextFieldZnacka.setText(autobus.getZnacka());
@@ -211,11 +224,6 @@ public class NovyAutobusDialog extends javax.swing.JDialog {
 
         jCheckBoxPolohovatelne.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jCheckBoxPolohovatelne.setText("Polohovateľné");
-        jCheckBoxPolohovatelne.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBoxPolohovatelneActionPerformed(evt);
-            }
-        });
 
         jCheckBoxPosuvne.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jCheckBoxPosuvne.setText("Posuvné do uličky");
@@ -412,6 +420,10 @@ public class NovyAutobusDialog extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Validácia formulárov pre autobus.
+     * @return 
+     */
     public boolean validaciaFormularu(){
         if(jTextFieldCena.getText().isEmpty()){
             JOptionPane.showMessageDialog(null, "Nezadaná cena");
@@ -453,6 +465,10 @@ public class NovyAutobusDialog extends javax.swing.JDialog {
         return true;
     }
     
+    /**
+     * Priradenie autobusu pre inzerát.
+     * @param evt 
+     */
     private void jButtonUlozitInzeratActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonUlozitInzeratActionPerformed
         // TODO add your handling code here:         
         if(validaciaFormularu()){
@@ -512,10 +528,6 @@ public class NovyAutobusDialog extends javax.swing.JDialog {
             }
         }      
     }//GEN-LAST:event_jButtonUlozitInzeratActionPerformed
-
-    private void jCheckBoxPolohovatelneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxPolohovatelneActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBoxPolohovatelneActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

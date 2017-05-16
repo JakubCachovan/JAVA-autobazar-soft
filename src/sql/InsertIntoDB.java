@@ -1,22 +1,19 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package sql;
+
 import autobazar.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
+
 /**
- *
- * @author Acer
+ * Trieda pre vkladanie do databázy.
+ * @author Jakub Cachovan
  */
 public class InsertIntoDB {
     /**
-     * Speacialne pre vkladanie inzeratu
+     * Statická metóda pre zistenie id vozidla pre potreby vkladania inzerátu.
      * @param idInzeratu
      * @param dbPath
      * @return 
@@ -38,6 +35,12 @@ public class InsertIntoDB {
         return lastIdVozidla;
     }
     
+    /**
+     * Statická metóda pre vloženie inzerátu do databázy.
+     * @param inzerat
+     * @param dbPath
+     * @return 
+     */
     public static boolean insertInzerat(Inzerat inzerat, String dbPath){      
         if(isNovyPredajca(inzerat.getPredajca().getEmail(), dbPath)){
             //vlozenie predajcu do DB
@@ -96,6 +99,12 @@ public class InsertIntoDB {
         return false;
     }
     
+    /**
+     * Statická metóda pre vloženie automobilu do databázy.
+     * @param auto
+     * @param dbPath
+     * @return 
+     */
     public static boolean insertAutomobil(Automobil auto, String dbPath){
         try (Connection con = ConnectToDB.ConnectDB(dbPath);){                               
             PreparedStatement state = con.prepareStatement(
@@ -122,6 +131,13 @@ public class InsertIntoDB {
         }   
         return false;
     }
+    
+    /**
+     * Statická metóda pre vloženie motocyklu do databázy.
+     * @param moto
+     * @param dbPath
+     * @return 
+     */
     public static boolean insertMotocykel(Motocykel moto, String dbPath){
         try (Connection con = ConnectToDB.ConnectDB(dbPath);){                               
             PreparedStatement state = con.prepareStatement(
@@ -147,6 +163,13 @@ public class InsertIntoDB {
         }   
         return false;
     }
+    
+    /**
+     * Statická metóda pre vloženie autobusu do databázy.
+     * @param autobus
+     * @param dbPath
+     * @return 
+     */
     public static boolean insertAutobus(Autobus autobus, String dbPath){
         try (Connection con = ConnectToDB.ConnectDB(dbPath);){                               
             PreparedStatement state = con.prepareStatement(
@@ -176,6 +199,13 @@ public class InsertIntoDB {
         }   
         return false;
     }
+    
+    /**
+     * Statická metóda pre vloženie nakladneho auta do databázy.
+     * @param nakladne
+     * @param dbPath
+     * @return 
+     */
     public static boolean insertNakladne(NakladneAuto nakladne, String dbPath){
         try (Connection con = ConnectToDB.ConnectDB(dbPath);){                               
             PreparedStatement state = con.prepareStatement(
@@ -204,6 +234,12 @@ public class InsertIntoDB {
         return false;
     }
     
+    /**
+     * Statická metóda pre overenie existencie predajcu v databaze.
+     * @param email - emailová adresa predajcu
+     * @param dbPath - cesta k databáze
+     * @return true/false
+     */
     public static boolean isNovyPredajca(String email, String dbPath){
         try (Connection con = ConnectToDB.ConnectDB(dbPath);){
             int pocet = -1;
@@ -222,6 +258,12 @@ public class InsertIntoDB {
         return false;
     }
     
+    /**
+     * Statická metóda pre vloženie predajcu do databázy.
+     * @param predajca
+     * @param dbPath
+     * @return 
+     */
     public static boolean insertPredajca(Predajca predajca, String dbPath){
         try (Connection con = ConnectToDB.ConnectDB(dbPath);){                               
             PreparedStatement state = con.prepareStatement("INSERT INTO Predajca (email, meno, priezvisko, telefon, lokalita) VALUES (?,?,?,?,?);");

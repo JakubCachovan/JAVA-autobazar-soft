@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package gui;
 
 import autobazar.Kategoria;
@@ -13,8 +8,8 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
- * 
- * @author Acer
+ * Dialogove okno pre vytvorenie inzeratu.
+ * @author Jakub Cachovan
  */
 public final class VytvoritInzeratDialog extends javax.swing.JDialog {
 
@@ -36,6 +31,9 @@ public final class VytvoritInzeratDialog extends javax.swing.JDialog {
         initIcons();
     }
     
+    /**
+     * Inicializácia ikon pre tlačidla a labely.
+     */
     public void initIcons(){
         jButtonHladaj.setIcon(new ImageIcon("./icons/search.png"));
         jButtonNovyPredajca.setIcon(new ImageIcon("./icons/newUser.png"));
@@ -53,6 +51,9 @@ public final class VytvoritInzeratDialog extends javax.swing.JDialog {
         jLabelDetail.setIcon(new ImageIcon("./icons/user.png"));
     }
     
+    /**
+     * Naplnenie tabulky existujucich predajcov.
+     */
     public void NaplnTableExistujucichPredajcov(){
         DefaultTableModel m = (DefaultTableModel)jTableExistujuciPredajcovia.getModel();
         m.setRowCount(0); // pre istotu premazeme tabulku aby ked pouzijeme metodu znovu nedochadzalo k duplicitam
@@ -62,15 +63,26 @@ public final class VytvoritInzeratDialog extends javax.swing.JDialog {
         }      
     }
 
+    /**
+     * Setter pre nastavenie existujuceho zoznamu predajcov.
+     * @param existujuciPredajcovia 
+     */
     public void setExistujuciPredajcovia(ArrayList<Predajca> existujuciPredajcovia) {
         this.existujuciPredajcovia = existujuciPredajcovia;
     }
    
-    
+    /**
+     * Gettter pre objekt typu Predajca.
+     * @return 
+     */
     public Predajca getPredajca() {
         return predajca;
     }
 
+    /**
+     * Getter pre objekt typu Kategoria.
+     * @return 
+     */
     public Kategoria getKategoria() {
         return kategoria;
     }
@@ -351,6 +363,10 @@ public final class VytvoritInzeratDialog extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Uloženie inzerátu.
+     * @param evt 
+     */
     private void jButtonUlozitInzeratActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonUlozitInzeratActionPerformed
         
         if(kategoria != null && predajca != null ){
@@ -360,6 +376,10 @@ public final class VytvoritInzeratDialog extends javax.swing.JDialog {
        }
     }//GEN-LAST:event_jButtonUlozitInzeratActionPerformed
 
+    /**
+     * Vytvorenie nového predajcu pre inzerát.
+     * @param evt 
+     */
     private void jButtonNovyPredajcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNovyPredajcaActionPerformed
         // TODO add your handling code here:
         NovyPredajcaDialog novyPredajca = new NovyPredajcaDialog(null, true);
@@ -383,6 +403,10 @@ public final class VytvoritInzeratDialog extends javax.swing.JDialog {
         }            
     }//GEN-LAST:event_jButtonNovyPredajcaActionPerformed
 
+    /**
+     * Aktivovanie funkcionalít po kliknutí na inzerát v tabulke.
+     * @param evt 
+     */
     private void jTableExistujuciPredajcoviaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableExistujuciPredajcoviaMouseClicked
         // TODO add your handling code here:
         int selectedRow = -1;
@@ -395,6 +419,10 @@ public final class VytvoritInzeratDialog extends javax.swing.JDialog {
         }
     }//GEN-LAST:event_jTableExistujuciPredajcoviaMouseClicked
 
+    /**
+     * Priradenie existujuceho predajcu pre inzerát.
+     * @param evt 
+     */
     private void jButtonPridajExistujucehoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPridajExistujucehoActionPerformed
         int selectedRow = jTableExistujuciPredajcovia.getSelectedRow();
         DefaultTableModel m = (DefaultTableModel)jTableExistujuciPredajcovia.getModel();
@@ -410,6 +438,10 @@ public final class VytvoritInzeratDialog extends javax.swing.JDialog {
         
     }//GEN-LAST:event_jButtonPridajExistujucehoActionPerformed
  
+    /**
+     * Hľadanie predajcu podla vlastnosti predajcu v tabulke.
+     * @param evt 
+     */
     private void jButtonHladajActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonHladajActionPerformed
         if(!jTextFieldHladany.getText().isEmpty()){
             String zadanyText = jTextFieldHladany.getText();
@@ -438,10 +470,18 @@ public final class VytvoritInzeratDialog extends javax.swing.JDialog {
         }
     }//GEN-LAST:event_jButtonHladajActionPerformed
 
+    /**
+     * Obnovenie tabulky exisujucich predajcov.
+     * @param evt 
+     */
     private void jButtonObnovitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonObnovitActionPerformed
         NaplnTableExistujucichPredajcov();
     }//GEN-LAST:event_jButtonObnovitActionPerformed
 
+    /**
+     * Tlačidlo pre vytvorenie automobilu.
+     * @param evt 
+     */
     private void jToggleButtonAutomobilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonAutomobilActionPerformed
         NovyAutomobilDialog autoDialog = new NovyAutomobilDialog(null, true);
         autoDialog.setLocationRelativeTo(null);
@@ -454,6 +494,10 @@ public final class VytvoritInzeratDialog extends javax.swing.JDialog {
         }
     }//GEN-LAST:event_jToggleButtonAutomobilActionPerformed
 
+    /**
+     * Tlačidlo pre vytvorenie motocykla.
+     * @param evt 
+     */
     private void jToggleButtonMotocykelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonMotocykelActionPerformed
         NovyMotocykelDialog motoDialog = new NovyMotocykelDialog(null, true);
         motoDialog.setLocationRelativeTo(null);
@@ -466,6 +510,10 @@ public final class VytvoritInzeratDialog extends javax.swing.JDialog {
         }
     }//GEN-LAST:event_jToggleButtonMotocykelActionPerformed
 
+    /**
+     * Tlačidlo pre vytvorenie autobusu.
+     * @param evt 
+     */
     private void jToggleButtonAutobusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonAutobusActionPerformed
         NovyAutobusDialog autobusDialog = new NovyAutobusDialog(null, true);
                 autobusDialog.setLocationRelativeTo(null);
@@ -478,6 +526,10 @@ public final class VytvoritInzeratDialog extends javax.swing.JDialog {
                 }
     }//GEN-LAST:event_jToggleButtonAutobusActionPerformed
 
+    /**
+     * Tlačidlo pre vytvorenie nákladného auta.
+     * @param evt 
+     */
     private void jToggleButtonNakladneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonNakladneActionPerformed
         NovyNakladakDialog nakladneDialog = new NovyNakladakDialog(null, true);
                 nakladneDialog.setLocationRelativeTo(null);

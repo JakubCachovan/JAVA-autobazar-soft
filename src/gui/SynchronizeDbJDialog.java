@@ -12,10 +12,10 @@ import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.SwingWorker;
-import sql.Update;
+import sql.UpdateDB;
 
 /**
- *
+ * Dialogove okno pre synchronizáciu dát načítaných zo súboru s databázou.
  * @author Jakub Cachovan
  */
 public class SynchronizeDbJDialog extends javax.swing.JDialog {
@@ -38,26 +38,50 @@ public class SynchronizeDbJDialog extends javax.swing.JDialog {
         jButtonZrusit.setIcon(new ImageIcon("./icons/vymazat.png"));
     }
 
+    /**
+     * Getter pre objekt typu Autobazar.
+     * @return 
+     */
     public Autobazar getAutobazar() {
         return autobazar;
     }
 
+    /**
+     * Setter pre objekt typu Autobazar.
+     * @param autobazar 
+     */
     public void setAutobazar(Autobazar autobazar) {
         this.autobazar = autobazar;
     }
 
+    /**
+     * Getter pre cestu k databáze.
+     * @return 
+     */
     public String getDbPath() {
         return dbPath;
     }
 
+    /**
+     * Setter pre cestu k databáze.
+     * @param dbPath 
+     */
     public void setDbPath(String dbPath) {
         this.dbPath = dbPath;
     }
 
+    /**
+     * Getter pre 
+     * @return 
+     */
     public double getProgress() {
         return progress;
     }
 
+    /**
+     * 
+     * @param progress 
+     */
     public void setProgress(double progress) {
         this.progress = progress;
     }
@@ -175,6 +199,10 @@ public class SynchronizeDbJDialog extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Vybranie databázy na synchronizáciu.
+     * @param evt 
+     */
     private void jButtonVybratActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVybratActionPerformed
         try {
             JFileChooser fileChooser = new JFileChooser("./");
@@ -194,6 +222,10 @@ public class SynchronizeDbJDialog extends javax.swing.JDialog {
         }
     }//GEN-LAST:event_jButtonVybratActionPerformed
 
+    /**
+     * Vykonanie synchronizácie s načítanou databázou.
+     * @param evt 
+     */
     private void jButtonSpustiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSpustiActionPerformed
         worker = new SwingWorker<Void, String>() {
             @Override
@@ -209,7 +241,7 @@ public class SynchronizeDbJDialog extends javax.swing.JDialog {
                         return null;
                     }
                     publish("Úprava inzerátu s ID: " + inzerat.getID());
-                    if(Update.upravitInzerat(inzerat, dbPath)){
+                    if(UpdateDB.upravitInzerat(inzerat, dbPath)){
                         publish(" >> Inzerát s ID:" + inzerat.getID() + " bol upravený !");
                     }else{
                         publish(" >> CHYBA!!! Inzerat s ID = " + inzerat.getID() + " sa nepodarilo upraviť !");
@@ -250,7 +282,7 @@ public class SynchronizeDbJDialog extends javax.swing.JDialog {
         worker.addPropertyChangeListener(new PropertyChangeListener() {
             @Override
             public void propertyChange(PropertyChangeEvent event) {
-                System.out.println(event);
+                //System.out.println(event);
                 switch (event.getPropertyName()){
                     case "progress":
                         jProgressBar1.setValue((Integer)event.getNewValue());
@@ -261,6 +293,10 @@ public class SynchronizeDbJDialog extends javax.swing.JDialog {
         worker.execute();
     }//GEN-LAST:event_jButtonSpustiActionPerformed
 
+    /**
+     * Zrušenie vykonávania synchronizácie.
+     * @param evt 
+     */
     private void jButtonZrusitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonZrusitActionPerformed
         worker.cancel(true);
     }//GEN-LAST:event_jButtonZrusitActionPerformed

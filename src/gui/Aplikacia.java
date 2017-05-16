@@ -23,7 +23,7 @@ import javax.swing.table.DefaultTableModel;
 import sql.*;
 
 /**
- * 
+ * Hlávná trieda inicializujuca GUI aplikácie.
  * @author Jakub Cachovan
  */
 public final class Aplikacia extends javax.swing.JFrame {
@@ -31,6 +31,7 @@ public final class Aplikacia extends javax.swing.JFrame {
     static String FilePath = null;
     private Autobazar _autobazar = new Autobazar();
     Thread vlakno = null;
+    
     /**
      * Creates new form Aplikacia
      */
@@ -73,6 +74,10 @@ public final class Aplikacia extends javax.swing.JFrame {
         jTablePredajcovia.setAutoCreateRowSorter(true);
     }
     
+    /**
+     * Inicializácia tray systému pre aplikáciu
+     * Umožnuje odštartovať novú inštanciu systému.
+     */
     public void initSystemTray(){
         TrayIcon trayIcon = null;
         if (SystemTray.isSupported()) {
@@ -129,6 +134,9 @@ public final class Aplikacia extends javax.swing.JFrame {
         }
     }
     
+    /**
+     * Inicializácia ikon pre grafické prvky aplikácie.
+     */
     public void initialIcons(){
         jButtonAktivny.setIcon(new ImageIcon("./icons/aktivne.png"));
         jButtonFilter.setIcon(new ImageIcon("./icons/filter.png"));
@@ -145,6 +153,9 @@ public final class Aplikacia extends javax.swing.JFrame {
         jButtonSynchronize.setIcon(new ImageIcon("./icons/obnovit.png"));
     }
     
+    /**
+     * Obnovenie dát pre tabulky v aplikácii.
+     */
     public void ObnovitVsetkyTabulky(){
         FillTableInzeraty();
         FillTableAutomobily();
@@ -154,6 +165,9 @@ public final class Aplikacia extends javax.swing.JFrame {
         FillTablePredajcovia();
     }
     
+    /**
+     * Naplnenie nabulky inzerátov.
+     */
     public void FillTableInzeraty(){
         jLabelHodnota.setText(_autobazar.hodnotaVsetkychVozidiel()+" €");
         
@@ -172,6 +186,10 @@ public final class Aplikacia extends javax.swing.JFrame {
         }       
     }
     
+    /**
+     * Naplnenie tabulky inzerátov hodnotami zo zoznamu inzeratov.
+     * @param inzeraty - zoznam inzeratov
+     */
     public void FillTableInzeraty(ArrayList<Inzerat> inzeraty){   
         DefaultTableModel m = (DefaultTableModel)jTableInzeraty.getModel();
         m.setRowCount(0);
@@ -188,6 +206,9 @@ public final class Aplikacia extends javax.swing.JFrame {
         }       
     }
     
+    /**
+     * Naplnenie tabulky automobilov.
+     */
     public void FillTableAutomobily(){
         DefaultTableModel m = (DefaultTableModel)jTableAutomobily.getModel();
         m.setRowCount(0);
@@ -212,6 +233,9 @@ public final class Aplikacia extends javax.swing.JFrame {
         }       
     }
     
+    /**
+     * Naplnenie tabulky motocyklov.
+     */
     public void FillTableMotocykle(){
         DefaultTableModel m = (DefaultTableModel)jTableMotocykle.getModel();
         m.setRowCount(0);
@@ -235,6 +259,9 @@ public final class Aplikacia extends javax.swing.JFrame {
         }       
     }
     
+    /**
+     * Naplnenie tabulky pre nakladne auta.
+     */
     public void FillTableNakladne(){
         DefaultTableModel m = (DefaultTableModel)jTableNakladne.getModel();
         m.setRowCount(0);
@@ -260,6 +287,9 @@ public final class Aplikacia extends javax.swing.JFrame {
         }       
     }
     
+    /**
+     * Naplnenie tabulky autobusov.
+     */
     public void FillTableAutobusy(){
         DefaultTableModel m = (DefaultTableModel)jTableAutobusy.getModel();
         m.setRowCount(0);
@@ -287,6 +317,9 @@ public final class Aplikacia extends javax.swing.JFrame {
         }       
     }
     
+    /**
+     * Naplnenie tabulky predajcov.
+     */
     public void FillTablePredajcovia(){
         DefaultTableModel m = (DefaultTableModel)jTablePredajcovia.getModel();
         m.setRowCount(0);
@@ -357,11 +390,6 @@ public final class Aplikacia extends javax.swing.JFrame {
         jTabbedPane1.setBackground(java.awt.Color.lightGray);
 
         jPanelPrehlad.setBackground(java.awt.Color.lightGray);
-        jPanelPrehlad.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                jPanelPrehladKeyPressed(evt);
-            }
-        });
 
         jTableInzeraty.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jTableInzeraty.setModel(new javax.swing.table.DefaultTableModel(
@@ -963,6 +991,10 @@ public final class Aplikacia extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Tlačidlo pre obnovenie tabulky predajcov.
+     * @param evt 
+     */
     private void jButtonNacitajPredajcovActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNacitajPredajcovActionPerformed
         DefaultTableModel m = (DefaultTableModel)jTableInzeratyPredajcu.getModel();
         m.setRowCount(0);
@@ -971,6 +1003,11 @@ public final class Aplikacia extends javax.swing.JFrame {
         jButtonVymazatPredajcu.setEnabled(false);
     }//GEN-LAST:event_jButtonNacitajPredajcovActionPerformed
 
+    /**
+     * Vyvola sa po kliknuti na tabulku predajcov.
+     * Po kliknutí na riadok tabulky naplní informácie o inzerátoch pre označeného predajcu.
+     * @param evt 
+     */
     private void jTablePredajcoviaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTablePredajcoviaMouseClicked
         // TODO add your handling code here:
         int selectedRow = -1;
@@ -990,6 +1027,12 @@ public final class Aplikacia extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jTablePredajcoviaMouseClicked
 
+    /**
+     * Upravenie predajcu.
+     * Vyvolá dialogove okno NovyPredajcaDialog.
+     * Po upravení uloží info o predajcovi do DB alebo súboru v závislosti od toho odkial bola aplikácia načítaná.
+     * @param evt 
+     */
     private void jButtonUpravitPredajcuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonUpravitPredajcuActionPerformed
         int selectedRow = -1;
         selectedRow = jTablePredajcovia.getSelectedRow();
@@ -1006,7 +1049,7 @@ public final class Aplikacia extends javax.swing.JFrame {
             
             Predajca upravenyPredajca = predajcaDialog.getPredajca();
             if(DbPath != null){
-                if(!Update.upravitPredajcu(upravenyPredajca, DbPath)){
+                if(!UpdateDB.upravitPredajcu(upravenyPredajca, DbPath)){
                     JOptionPane.showMessageDialog(null, "Úprava predajcu v databáze zlyhala!", "Chyba!", JOptionPane.ERROR_MESSAGE);
                 }
             }
@@ -1022,6 +1065,11 @@ public final class Aplikacia extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jButtonUpravitPredajcuActionPerformed
 
+    /**
+     * Tlačidlo pre vymazanie predajcu z aplikácie.
+     * V závislosti od zdroju načitanych dát sa vymaže aj z databázy alebo súboru.
+     * @param evt 
+     */
     private void jButtonVymazatPredajcuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVymazatPredajcuActionPerformed
         int selectedRow = -1;
         selectedRow = jTablePredajcovia.getSelectedRow();
@@ -1039,8 +1087,8 @@ public final class Aplikacia extends javax.swing.JFrame {
                             m2.setRowCount(0);
                             if(DbPath != null){
                                 //vymazat z DB
-                                DbDelete.vymazatInzeratyPredajcu(email, DbPath);
-                                DbDelete.vymazPredajcu(email, DbPath);
+                                DeleteFromDB.vymazatInzeratyPredajcu(email, DbPath);
+                                DeleteFromDB.vymazPredajcu(email, DbPath);
                             }
                             if(FilePath != null){
                                 try {
@@ -1063,10 +1111,10 @@ public final class Aplikacia extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jButtonVymazatPredajcuActionPerformed
 
-    private void jPanelPrehladKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jPanelPrehladKeyPressed
-        JOptionPane.showMessageDialog(null, "Key pressed");
-    }//GEN-LAST:event_jPanelPrehladKeyPressed
-
+    /**
+     * Po stlačení ENTERU po napísaní klučoveho slova do pola na to určeného sa aktualizuje tabulka inzerátov na základe zhody s klučovým slovom.
+     * @param evt 
+     */
     private void jTextFieldFastSearchKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldFastSearchKeyPressed
         if(evt.getKeyCode() == KeyEvent.VK_ENTER){
             jButtonUpravitInzerat.setEnabled(false);
@@ -1086,6 +1134,10 @@ public final class Aplikacia extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jTextFieldFastSearchKeyPressed
 
+    /**
+     * Po kliknutí sa označí text a deaktivujú neaktívne funkcionality.
+     * @param evt 
+     */
     private void jTextFieldFastSearchMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextFieldFastSearchMouseClicked
         jTextFieldFastSearch.selectAll();
         jButtonUpravitInzerat.setEnabled(false);
@@ -1095,6 +1147,11 @@ public final class Aplikacia extends javax.swing.JFrame {
         jButtonZobrazInzerat.setEnabled(false);
     }//GEN-LAST:event_jTextFieldFastSearchMouseClicked
 
+    /**
+     * Nastavenie inzerátu ako "predany".
+     * V závislosti od zdrojového dátoveho úložiska sa upraví atribút aj v databáze alebo v súbore.
+     * @param evt 
+     */
     private void jButtonAktivnyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAktivnyActionPerformed
         int selectedRow = -1;
         selectedRow = jTableInzeraty.getSelectedRow();
@@ -1105,7 +1162,7 @@ public final class Aplikacia extends javax.swing.JFrame {
                 if(!_autobazar.getAktivne(Integer.parseInt(idIzeratu))){
                     _autobazar.setAktivne(Integer.parseInt(idIzeratu));
                     if(DbPath != null){
-                        if(!sql.Update.upravitInzerat(_autobazar.najdiInzerat(Integer.parseInt(idIzeratu)), DbPath)){
+                        if(!sql.UpdateDB.upravitInzerat(_autobazar.najdiInzerat(Integer.parseInt(idIzeratu)), DbPath)){
                             JOptionPane.showMessageDialog(null, "Chyba pri upraveni v DB");
                         }
                     }
@@ -1128,6 +1185,10 @@ public final class Aplikacia extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButtonAktivnyActionPerformed
 
+    /**
+     * Načítanie neaktívnych inzerátov do tabulky zoznam inzerátov.
+     * @param evt 
+     */
     private void jRadioButtonNeaktivneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonNeaktivneActionPerformed
         DefaultTableModel m = (DefaultTableModel)jTableInzeraty.getModel();
         m.setRowCount(0);
@@ -1140,6 +1201,10 @@ public final class Aplikacia extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jRadioButtonNeaktivneActionPerformed
 
+    /**
+     * Načítanie aktívnych inzerátov do tabulky zoznam inzerátov.
+     * @param evt 
+     */
     private void jRadioButtonAktivneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonAktivneActionPerformed
         DefaultTableModel m = (DefaultTableModel)jTableInzeraty.getModel();
         m.setRowCount(0);
@@ -1152,10 +1217,18 @@ public final class Aplikacia extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jRadioButtonAktivneActionPerformed
 
+    /**
+     * Zobrazenie celej množiny inzerátov, ktorú autobazár eviduje.
+     * @param evt 
+     */
     private void jRadioButtonVsetkyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonVsetkyActionPerformed
         FillTableInzeraty();
     }//GEN-LAST:event_jRadioButtonVsetkyActionPerformed
 
+    /**
+     * Uloženie inzeratu do súboru.
+     * @param evt 
+     */
     private void jButtonSaveToFileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSaveToFileActionPerformed
         try {
             JFileChooser fileChooser = new JFileChooser("./");
@@ -1176,6 +1249,10 @@ public final class Aplikacia extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButtonSaveToFileActionPerformed
 
+    /**
+     * Vymazanie inzeratu.
+     * @param evt 
+     */
     private void jButtonVymazatInzeratActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVymazatInzeratActionPerformed
         int selectedRow = -1;
         selectedRow = jTableInzeraty.getSelectedRow();
@@ -1187,7 +1264,7 @@ public final class Aplikacia extends javax.swing.JFrame {
                 _autobazar.vymazatInzerat(Integer.parseInt(idIzeratu));
                 if(DbPath != null){
                     //vymazanie z DB
-                    DbDelete.vymazatInzerat(Integer.parseInt(idIzeratu), DbPath);
+                    DeleteFromDB.vymazatInzerat(Integer.parseInt(idIzeratu), DbPath);
                 }
                 if(FilePath != null){
                     try {
@@ -1207,6 +1284,10 @@ public final class Aplikacia extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jButtonVymazatInzeratActionPerformed
 
+    /**
+     * Upravenie inzeratu.
+     * @param evt 
+     */
     private void jButtonUpravitInzeratActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonUpravitInzeratActionPerformed
         int selectedRow = -1;
         selectedRow = jTableInzeraty.getSelectedRow();
@@ -1220,7 +1301,7 @@ public final class Aplikacia extends javax.swing.JFrame {
                 edit.setInzerat(inzerat);
                 edit.setVisible(true);
                 if(DbPath != null && (edit.isUpravaVozidla() || edit.isUpravaPredajcu())){
-                    if(!Update.upravitInzerat(inzerat, DbPath))
+                    if(!UpdateDB.upravitInzerat(inzerat, DbPath))
                     JOptionPane.showMessageDialog(null, "Chyba pri upravovani inzeratu v DB", "Chyba", JOptionPane.ERROR_MESSAGE);
                 }
                 if(FilePath != null && (edit.isUpravaVozidla() || edit.isUpravaPredajcu())){
@@ -1240,6 +1321,11 @@ public final class Aplikacia extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButtonUpravitInzeratActionPerformed
 
+    /**
+     * Zobrazenie detailu pre inzerat.
+     * Vyvola dialogove okno PrehladInzeratuDialog
+     * @param evt 
+     */
     private void jButtonZobrazInzeratActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonZobrazInzeratActionPerformed
         int selectedRow = -1;
         selectedRow = jTableInzeraty.getSelectedRow();
@@ -1257,6 +1343,10 @@ public final class Aplikacia extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButtonZobrazInzeratActionPerformed
 
+    /**
+     * Nastavenie atributu inzeratu stav na "predany".
+     * @param evt 
+     */
     private void jButtonPredaneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPredaneActionPerformed
         int selectedRow = -1;
         selectedRow = jTableInzeraty.getSelectedRow();
@@ -1267,7 +1357,7 @@ public final class Aplikacia extends javax.swing.JFrame {
                 if(!_autobazar.getPredane(Integer.parseInt(idIzeratu))){
                     _autobazar.setPredane(Integer.parseInt(idIzeratu));
                     if(DbPath != null){
-                        if(!sql.Update.upravitStavInzeratu(idIzeratu, DbPath)){
+                        if(!sql.UpdateDB.upravitStavInzeratu(idIzeratu, DbPath)){
                             JOptionPane.showMessageDialog(null, "Chyba pri upraveni v DB");
                         }
                     }
@@ -1290,6 +1380,10 @@ public final class Aplikacia extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButtonPredaneActionPerformed
 
+    /**
+     * Vytvorenie noveho inzeratu.
+     * @param evt 
+     */
     private void jButtonNovyInzeratActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNovyInzeratActionPerformed
         VytvoritInzeratDialog vid = new VytvoritInzeratDialog(this, true);
         vid.setLocationRelativeTo(null);
@@ -1326,6 +1420,11 @@ public final class Aplikacia extends javax.swing.JFrame {
         FillTableAutobusy();
     }//GEN-LAST:event_jButtonNovyInzeratActionPerformed
 
+    /**
+     * Po označení tabulky zoznam inzeratov sa aktivuju potrebné funkcionality.
+     * 2 klik na inzerat vyvola prehlad konkretneho inzeratu.
+     * @param evt 
+     */
     private void jTableInzeratyMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableInzeratyMouseClicked
         if(SwingUtilities.isLeftMouseButton(evt)){
             jButtonZobrazInzerat.setEnabled(true);
@@ -1357,14 +1456,12 @@ public final class Aplikacia extends javax.swing.JFrame {
                 prehlad.setVisible(true);
             }
         }
-        if(/*evt.getButton() == 3 &&*/ SwingUtilities.isRightMouseButton(evt)){
-            final RowPopup pop = new RowPopup(jTableInzeraty, _autobazar);
-            pop.show(evt.getComponent(), evt.getX(), evt.getY());
-            FillTableInzeraty();
-        }
-
     }//GEN-LAST:event_jTableInzeratyMouseClicked
 
+    /**
+     * Tlačidlo pre zobrazenie filtra pre inzeraty.
+     * @param evt 
+     */
     private void jButtonFilterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonFilterActionPerformed
         FilterDialog fd = new FilterDialog(this, true);
         fd.setLocationRelativeTo(null);
@@ -1382,6 +1479,10 @@ public final class Aplikacia extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jButtonFilterActionPerformed
 
+    /**
+     * Po 2 kliku sa zobrazi prehlad inzeratu.
+     * @param evt 
+     */
     private void jTableInzeratyPredajcuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableInzeratyPredajcuMouseClicked
         if(evt.getClickCount() == 2 && evt.getButton() == 1){
             int selectedRow = jTableInzeratyPredajcu.getSelectedRow();

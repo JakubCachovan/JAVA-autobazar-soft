@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package gui;
 
 import autobazar.Inzerat;
@@ -10,8 +5,8 @@ import java.util.ArrayList;
 import javax.swing.ImageIcon;
 
 /**
- *
- * @author Acer
+ * Dialogove okno pri filtrovanie zoznamu inzerátov.
+ * @author Jakub Cachovan
  */
 public class FilterDialog extends javax.swing.JDialog {
 
@@ -25,10 +20,18 @@ public class FilterDialog extends javax.swing.JDialog {
         jButtonFiltruj.setIcon(new ImageIcon("./icons/search.png"));
     }
 
+    /**
+     * Getter pre zoznam inzerátov.
+     * @return 
+     */
     public ArrayList<Inzerat> getInzeraty() {
         return inzeraty;
     }
 
+    /**
+     * Setter pre zoznam inzerátov.
+     * @param inzeraty 
+     */
     public void setInzeraty(ArrayList<Inzerat> inzeraty) {
         this.inzeraty = inzeraty;
     }
@@ -66,11 +69,6 @@ public class FilterDialog extends javax.swing.JDialog {
 
         jComboBoxZnacka.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jComboBoxZnacka.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Žiadna" }));
-        jComboBoxZnacka.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBoxZnackaActionPerformed(evt);
-            }
-        });
 
         jTextFieldRokVyrobyOD.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jTextFieldRokVyrobyOD.setText("jTextField1");
@@ -212,10 +210,10 @@ public class FilterDialog extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jComboBoxZnackaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxZnackaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBoxZnackaActionPerformed
-
+    /**
+     * Vykoná filtrovanie zoznamu inzerátov na základe zhody podla kritérií.
+     * @param evt 
+     */
     private void jButtonFiltrujActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonFiltrujActionPerformed
         if(jComboBoxZnacka.getSelectedIndex() != 0){
             //filter značky

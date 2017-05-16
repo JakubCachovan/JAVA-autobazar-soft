@@ -1,22 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package sql;
 
-import autobazar.Autobazar;
-import autobazar.Autobus;
-import autobazar.Automobil;
-import autobazar.BatozinovyPriestor;
-import autobazar.Inzerat;
-import autobazar.Kategoria;
-import autobazar.Motocykel;
-import autobazar.NakladneAuto;
-import autobazar.Predajca;
-import autobazar.StavInzeratu;
-import autobazar.StavVozidla;
-import autobazar.VlastnostiSedadiel;
+import autobazar.*;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -24,7 +8,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.text.DateFormat;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.regex.Matcher;
@@ -32,11 +15,17 @@ import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 
 /**
- *
- * @author Acer
+ * Trieda pre načítanie dát pre program z databázy.
+ * @author Jakub Cachovan
  */
 public class LoaderDB {
     
+    /**
+     * Metóda zistuje id vozidla, ktorý je priradený inzerátu.
+     * @param idInzeratu - id inzeratu
+     * @param dbPath - cesta k databáze
+     * @return id vozidla
+     */
     public static int zistiIdVozidla(int idInzeratu, String dbPath){
         int IdVozidla = -1;
         try (Connection con = ConnectToDB.ConnectDB(dbPath);){         
@@ -55,6 +44,15 @@ public class LoaderDB {
         return IdVozidla;
     }
     
+    /**
+     * Zistenie kategorie vozidla podla id inzeratu.
+     * Metóda indentifikuje kategóriu a vrátí vráti indentifikátor kategorie.
+     * 1-> Automobil, 2-> Motocykel, 3-> Nakladne, 4-> Autobus
+     * 
+     * @param idInzeratu - id inzeratu
+     * @param dbPath
+     * @return integer
+     */
     public static int getKategoriaInstance(int idInzeratu, String dbPath){
         int idKategoria = -1;
         try (Connection con = ConnectToDB.ConnectDB(dbPath);) {           
@@ -71,6 +69,11 @@ public class LoaderDB {
         return idKategoria;
     }
     
+    /**
+     * Načíta všetky dáta pre autobazár.
+     * @param dbPath - cesta k datbaze
+     * @return objekt typu Autobazar
+     */
     public static Autobazar LoadFromDB(String dbPath){
         
         try (Connection con = ConnectToDB.ConnectDB(dbPath);){
@@ -148,10 +151,10 @@ public class LoaderDB {
     }
     
     /**
-     *
-     * @param idInzeratu
-     * @param dbPath
-     * @return
+     * Statická metóda pre načítanie objektu typu Automobil z DB.
+     * @param idInzeratu - id inzerátu
+     * @param dbPath - cesta k datbaze
+     * @return objekt typu Automobil
      */
     public static Automobil getAutomobil(int idInzeratu, String dbPath){
         try (Connection con = ConnectToDB.ConnectDB(dbPath);){           
@@ -182,6 +185,12 @@ public class LoaderDB {
         return null;
     }
     
+    /**
+     * Statická metóda pre načítanie objektu typu Motocykel z DB.
+     * @param idInzeratu - id inzerátu
+     * @param dbPath - cesta k datbaze
+     * @return  objekt typu Motocykel
+     */
     private static Motocykel getMotocykel(int idInzeratu, String dbPath) {
         try {
             Connection con = ConnectToDB.ConnectDB(dbPath);
@@ -212,6 +221,12 @@ public class LoaderDB {
         return null;
     }
 
+    /**
+     * Statická metóda pre načítanie objektu typu NakldneAuto z DB.
+     * @param idInzeratu - id inzerátu
+     * @param dbPath - cesta k datbaze
+     * @return  objekt typu NakladneAuto
+     */
     private static NakladneAuto getNakladne(int idInzeratu, String dbPath) {
          try (Connection con = ConnectToDB.ConnectDB(dbPath);){           
             Statement state = con.createStatement();
@@ -242,6 +257,11 @@ public class LoaderDB {
          return null;
     }
     
+    /**
+     * Statická metóda pre zistenie zhody jednotlivých časti výbavy pre batožinový priestor a nastavenie objektu typu BatozinovyPriestor na požadované hodnoty.
+     * @param bpString - retazec obsahujuci vybavu batozinoveho priestoru oddelený čiarkami
+     * @return  objekt typu BatozinovyPriestor
+     */
     private static BatozinovyPriestor getBatozinovyPriestorPreAutobus(String bpString){
         BatozinovyPriestor bp = new BatozinovyPriestor();
         Pattern p1 = Pattern.compile("(Žiadny)");
@@ -260,6 +280,11 @@ public class LoaderDB {
         return bp;
     }
     
+    /**
+     * Statická metóda pre zistenie zhody jednotlivých časti výbavy pre vlastnosti sedadiel a nastavenie objektu typu VlastnostiSedadiel na požadované hodnoty.
+     * @param vsString - retazec obsahujuci vybavu vlastností sedadiel oddelený čiarkami
+     * @return  objekt typu VlastnostiSedadiel
+     */
     private static VlastnostiSedadiel getVlasnotiSedadielPreAutobus(String vsString){
         VlastnostiSedadiel vs = new VlastnostiSedadiel();
         Pattern p1 = Pattern.compile("(Štandart)");
@@ -277,6 +302,12 @@ public class LoaderDB {
         return vs;
     }
 
+    /**
+     * Statická metóda pre načítanie objektu typu Autobus z DB.
+     * @param idInzeratu - id inzerátu
+     * @param dbPath - cesta k datbaze
+     * @return  objekt typu Autobus
+     */
     private static Autobus getAutobus(int idInzeratu, String dbPath) {
          try(Connection con = ConnectToDB.ConnectDB(dbPath);) {           
             Statement state = con.createStatement();

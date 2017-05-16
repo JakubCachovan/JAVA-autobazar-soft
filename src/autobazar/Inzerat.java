@@ -143,21 +143,33 @@ public class Inzerat implements Serializable{
     }
 
     /**
-     * 
+     * Setter pre kategóriu vozidla.
      * @param kategoria 
      */
     public void setKategoria(Kategoria kategoria) {
         this.kategoria = kategoria;
     }
 
+    /**
+     * Setter pre dátum vytvorenia inzerátu.
+     * @param DatumVytvorenia 
+     */
     public void setDatumVytvorenia(Date DatumVytvorenia) {
         this.DatumVytvorenia = DatumVytvorenia;
     }
 
+    /**
+     * Setter pre id inzerátu.
+     * @param ID 
+     */
     public void setID(int ID) {
         this.ID = ID;
     }
 
+    /**
+     * Znaková reprezentácia objektu typu Inzerat.
+     * @return 
+     */
     @Override
     public String toString() {
         return "Inzerat{" + "kategoria=" + kategoria + ", DatumVytvorenia=" + DatumVytvorenia + ", ID=" + ID + ", predajca=" + predajca + ", stav=" + stav + '}';

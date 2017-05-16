@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package gui;
 
 import autobazar.Motocykel;
@@ -11,8 +6,8 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
- *
- * @author Acer
+ * Dialogove okno pre vytvorenie motocykla.
+ * @author Jakub Cachovan
  */
 public class NovyMotocykelDialog extends javax.swing.JDialog {
     
@@ -30,19 +25,35 @@ public class NovyMotocykelDialog extends javax.swing.JDialog {
         jButtonUlozitInzerat.setIcon(new ImageIcon("./icons/save.png"));
     }
 
+    /**
+     * Indikátor úpravy motocykla.
+     * @return 
+     */
     public boolean isUpravaVozidla() {
         return upravaVozidla;
     }
 
+    /**
+     * Setter pre indikátor úpravy motocykla.
+     * @param upravaVozidla 
+     */
     public void setUpravaVozidla(boolean upravaVozidla) {
         this.upravaVozidla = upravaVozidla;
     }
 
-    
+
+    /**
+     * Setter pre atribut motocykel.
+     * @param motocykel 
+     */    
     public void setMotocykel(Motocykel motocykel) {
         this.motocykel = motocykel;
     }
 
+    /**
+     * Getter pre atribut motocykel
+     * @return 
+     */
     public Motocykel getMotocykel() {
         return motocykel;
     }
@@ -264,6 +275,10 @@ public class NovyMotocykelDialog extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Validácia formuláru pre úpravu motocykla.
+     * @return 
+     */
     public boolean validaciaFormularu(){
         if(jTextFieldCena.getText().isEmpty()){
             JOptionPane.showMessageDialog(null, "Nezadaná cena motocyklu");
@@ -296,6 +311,9 @@ public class NovyMotocykelDialog extends javax.swing.JDialog {
         return true;
     }
     
+    /**
+     * Inicializácia dát do formulárov, v prípade že sa jedná o úpravu.
+     */
     public void NaplnFormular(){
         jTextFieldCena.setText(motocykel.getCena()+"");
         jTextFieldZnacka.setText(motocykel.getZnacka());
@@ -311,6 +329,10 @@ public class NovyMotocykelDialog extends javax.swing.JDialog {
         jComboBoxDruh.setSelectedItem(motocykel.getDruh());
     }
     
+    /**
+     * Uloženie kategorie vozidla pre inzerát.
+     * @param evt 
+     */
     private void jButtonUlozitInzeratActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonUlozitInzeratActionPerformed
         // TODO add your handling code here:      
         if(validaciaFormularu()){

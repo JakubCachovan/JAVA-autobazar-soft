@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package sql;
 
 import java.sql.Connection;
@@ -11,11 +6,13 @@ import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
 /**
- *
- * @author Acer
+ * Konektor do databázy.
+ * @author Jakub Cachovan
  */
 public class ConnectToDB {
+    
     /**
+     * Statická metóda pre pripojenie do databázy.
      * @param dbPath
      * @return
      */

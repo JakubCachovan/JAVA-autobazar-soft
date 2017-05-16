@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package sql;
 
 import autobazar.*;
@@ -10,12 +5,19 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
+
 /**
- *
- * @author Acer
+ * Trieda pre úpravu Autobazaru v databáze.
+ * @author Jakub Cachovan
  */
-public class Update {
+public class UpdateDB {
             
+    /**
+     * Upravenie stavu inzerátu na "Predane"  podla id inzerátu.
+     * @param idInzeratu - id inzeratu
+     * @param dbPath - cesta k DB
+     * @return true/false
+     */
     public static boolean upravitStavInzeratu(String idInzeratu, String dbPath){      
         try (Connection con = ConnectToDB.ConnectDB(dbPath);){               
             PreparedStatement state = con.prepareStatement("UPDATE Inzerat SET stav='Predane' WHERE id_inzeratu=?;");
@@ -29,6 +31,12 @@ public class Update {
         return false;
     }
     
+    /**
+     * Upravenie predajcu v DB.
+     * @param predajca - objekt typu Predajca
+     * @param dbPath - cesta k DB
+     * @return true/false
+     */
     public static boolean upravitPredajcu(Predajca predajca, String dbPath){
         try (Connection con = ConnectToDB.ConnectDB(dbPath);){
             PreparedStatement state = con.prepareStatement("UPDATE Predajca SET email=?,meno=?,priezvisko=?,telefon=?,lokalita=? WHERE email=?;");
@@ -47,6 +55,12 @@ public class Update {
         return false;
     }
     
+    /**
+     * Upravenie inzeratu v DB.
+     * @param inzerat - inzerat
+     * @param dbPath - cesta k DB
+     * @return true/false
+     */
     public static boolean upravitInzerat(Inzerat inzerat, String dbPath){
         int idVozidla = -1;
         idVozidla = LoaderDB.zistiIdVozidla(inzerat.getID(), dbPath);
@@ -97,6 +111,13 @@ public class Update {
         return false;
     }  
     
+    /**
+     * Upravenie automobilu v DB.
+     * @param idVozidla - id vozidla
+     * @param auto - objekt typu Automobil
+     * @param dbPath - cesta k DB
+     * @return  true/false
+     */
     public static boolean upravitAutomobil(int idVozidla, Automobil auto, String dbPath){
         try (Connection con = ConnectToDB.ConnectDB(dbPath);){                               
             PreparedStatement state = con.prepareStatement(
@@ -123,6 +144,13 @@ public class Update {
         return false;
     }
     
+    /**
+     * Upravenie motocyklu v DB.
+     * @param idVozidla - id vozidla
+     * @param moto - objekt typu Motocykel
+     * @param dbPath - cesta k DB
+     * @return true/false
+     */
     public static boolean upravitMotocykel(int idVozidla, Motocykel moto, String dbPath){
         try (Connection con = ConnectToDB.ConnectDB(dbPath);){                               
             PreparedStatement state = con.prepareStatement(
@@ -148,6 +176,13 @@ public class Update {
         return false;
     }
     
+    /**
+     * Upravenie autobusu v DB.
+     * @param idVozidla - id vozidla
+     * @param autobus - objekt typu Autobus
+     * @param dbPath - cesta k DB
+     * @return true/false
+     */
     public static boolean upravitAutobus(int idVozidla, Autobus autobus, String dbPath){
         try (Connection con = ConnectToDB.ConnectDB(dbPath);){                               
             PreparedStatement state = con.prepareStatement(
@@ -177,6 +212,13 @@ public class Update {
         return false;
     }
     
+    /**
+     * Upravenie nakladneho auta v DB.
+     * @param idVozidla - id vozidla
+     * @param nakladne - objekt typu NakladneAuto
+     * @param dbPath - cesta k Db
+     * @return true/false
+     */
     public static boolean upravitNakladne(int idVozidla, NakladneAuto nakladne, String dbPath){
         try (Connection con = ConnectToDB.ConnectDB(dbPath);){                               
             PreparedStatement state = con.prepareStatement(

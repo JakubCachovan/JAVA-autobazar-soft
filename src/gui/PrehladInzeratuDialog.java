@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package gui;
 
 import autobazar.*;
@@ -11,8 +6,8 @@ import javax.swing.JCheckBox;
 import javax.swing.table.DefaultTableModel;
 
 /**
- *
- * @author Acer
+ * Dialogove okno pre prehlad inzeratu.
+ * @author Jakub Cachovan
  */
 public class PrehladInzeratuDialog extends javax.swing.JDialog {
 
@@ -28,6 +23,9 @@ public class PrehladInzeratuDialog extends javax.swing.JDialog {
         jLabel24.setIcon(new ImageIcon("./icons/sports-car.png"));
     }
     
+    /**
+     * Metóda pre inicializáciu tabuliek pre prehlad inzeratu.
+     */
     public void zobrazPrehlad(){
         Kategoria k = inzerat.getKategoria();
         Predajca p = inzerat.getPredajca();
@@ -143,6 +141,10 @@ public class PrehladInzeratuDialog extends javax.swing.JDialog {
         }        
     }
 
+    /**
+     * Setter pre inzerat.
+     * @param inzerat 
+     */
     public void setInzerat(Inzerat inzerat) {
         this.inzerat = inzerat;
     }  
@@ -160,7 +162,7 @@ public class PrehladInzeratuDialog extends javax.swing.JDialog {
         jSeparator2 = new javax.swing.JSeparator();
         jLabel24 = new javax.swing.JLabel();
         jSeparator3 = new javax.swing.JSeparator();
-        jButton1 = new javax.swing.JButton();
+        jButtonZavriet = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTablePredavajuci = new javax.swing.JTable();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -192,11 +194,11 @@ public class PrehladInzeratuDialog extends javax.swing.JDialog {
         jLabel24.setIcon(new javax.swing.ImageIcon("C:\\Users\\Acer\\Documents\\NetBeansProjects\\Autobazar\\icons\\sports-car.png")); // NOI18N
         jLabel24.setText("Informácie o vozidle:");
 
-        jButton1.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
-        jButton1.setText("Zavrieť");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jButtonZavriet.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        jButtonZavriet.setText("Zavrieť");
+        jButtonZavriet.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jButtonZavrietActionPerformed(evt);
             }
         });
 
@@ -336,7 +338,7 @@ public class PrehladInzeratuDialog extends javax.swing.JDialog {
                             .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jButtonZavriet, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel17, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel14, javax.swing.GroupLayout.Alignment.LEADING)
@@ -393,20 +395,24 @@ public class PrehladInzeratuDialog extends javax.swing.JDialog {
                     .addComponent(jLabel10)
                     .addComponent(jLabel12))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jButtonZavriet, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    /**
+     * Zavretie okna.
+     * @param evt 
+     */
+    private void jButtonZavrietActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonZavrietActionPerformed
         dispose();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_jButtonZavrietActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButtonZavriet;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel12;

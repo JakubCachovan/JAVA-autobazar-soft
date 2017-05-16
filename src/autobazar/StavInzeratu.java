@@ -1,20 +1,19 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package autobazar;
 
 import java.io.Serializable;
 
 /**
- *
- * @author Acer
+ * Enum pre stav inzerátu
+ * @author Jakub Cachovan
  */
 public enum StavInzeratu implements Serializable{
     Aktivne,
     Predane;
 
+    /**
+     * Znaková reprezentácia objektu.
+     * @return 
+     */
     @Override
     public String toString() {
         return "StavInzeratu{"+ this.name() + '}';

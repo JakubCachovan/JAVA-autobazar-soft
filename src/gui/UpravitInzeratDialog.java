@@ -1,16 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package gui;
 
 import autobazar.*;
 import javax.swing.ImageIcon;
 
 /**
- *
- * @author Acer
+ * Dialogove okno pre upravenie inzeratu.
+ * @author Jakub Cachovan
  */
 public class UpravitInzeratDialog extends javax.swing.JDialog {
     private Inzerat inzerat;
@@ -26,18 +21,34 @@ public class UpravitInzeratDialog extends javax.swing.JDialog {
         jButtonUpravitVozidlo.setIcon(new ImageIcon("./icons/car.png"));
     }
 
+    /**
+     * Getter pre objekt typu Inzerat.
+     * @return 
+     */
     public Inzerat getInzerat() {
         return inzerat;
     }
 
+    /**
+     * Setter pre objekt typu Inzerat.
+     * @param inzerat 
+     */
     public void setInzerat(Inzerat inzerat) {
         this.inzerat = inzerat;
     }
 
+    /**
+     * Indikátor úpravy predajcu.
+     * @return 
+     */
     public boolean isUpravaPredajcu() {
         return upravaPredajcu;
     }
 
+    /**
+     * Indikátor úpravy vozidla.
+     * @return 
+     */
     public boolean isUpravaVozidla() {
         return upravaVozidla;
     }
@@ -99,6 +110,10 @@ public class UpravitInzeratDialog extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Aktivuje úpravu predajcu.
+     * @param evt 
+     */
     private void jButtonUpravitPredajcuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonUpravitPredajcuActionPerformed
         upravaPredajcu = true;
         NovyPredajcaDialog predajcaDialog = new NovyPredajcaDialog(null, true);
@@ -113,6 +128,10 @@ public class UpravitInzeratDialog extends javax.swing.JDialog {
         dispose();
     }//GEN-LAST:event_jButtonUpravitPredajcuActionPerformed
 
+    /**
+     * Aktivuje úpravu vozidla.
+     * @param evt 
+     */
     private void jButtonUpravitVozidloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonUpravitVozidloActionPerformed
         upravaVozidla = true;
         switch(inzerat.getInstanceKategoria()){
