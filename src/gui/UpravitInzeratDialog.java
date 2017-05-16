@@ -13,6 +13,8 @@ public class UpravitInzeratDialog extends javax.swing.JDialog {
     private boolean upravaVozidla = false;
     /**
      * Creates new form UpravitInzeratDialog2
+     * @param parent parent
+     * @param modal modal
      */
     public UpravitInzeratDialog(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
@@ -23,7 +25,7 @@ public class UpravitInzeratDialog extends javax.swing.JDialog {
 
     /**
      * Getter pre objekt typu Inzerat.
-     * @return 
+     * @return objekt typu Inzerat
      */
     public Inzerat getInzerat() {
         return inzerat;
@@ -31,7 +33,7 @@ public class UpravitInzeratDialog extends javax.swing.JDialog {
 
     /**
      * Setter pre objekt typu Inzerat.
-     * @param inzerat 
+     * @param inzerat objekt typu Inzerat
      */
     public void setInzerat(Inzerat inzerat) {
         this.inzerat = inzerat;
@@ -39,7 +41,7 @@ public class UpravitInzeratDialog extends javax.swing.JDialog {
 
     /**
      * Indikátor úpravy predajcu.
-     * @return 
+     * @return true/false
      */
     public boolean isUpravaPredajcu() {
         return upravaPredajcu;
@@ -47,7 +49,7 @@ public class UpravitInzeratDialog extends javax.swing.JDialog {
 
     /**
      * Indikátor úpravy vozidla.
-     * @return 
+     * @return true/false
      */
     public boolean isUpravaVozidla() {
         return upravaVozidla;

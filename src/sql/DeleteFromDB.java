@@ -13,8 +13,8 @@ public class DeleteFromDB {
     
     /**
      * Statická metóda pre vymazanie predajcu na základe emailu.
-     * @param email
-     * @param dbPath 
+     * @param email - email predajcu
+     * @param dbPath  - cesta do DB
      */
     public static void vymazPredajcu(String email, String dbPath){
         try (Connection con = ConnectToDB.ConnectDB(dbPath);){                       
@@ -30,8 +30,8 @@ public class DeleteFromDB {
     
     /**
      * Statická metóda pre vymazanie inzerátov predajcu na základe emailu.
-     * @param email
-     * @param dbPath 
+     * @param email - email predajcu
+     * @param dbPath  - cesta do DB
      */
     public static void vymazatInzeratyPredajcu(String email, String dbPath){
         try (Connection con = ConnectToDB.ConnectDB(dbPath);){                               
@@ -47,7 +47,7 @@ public class DeleteFromDB {
     
     /**
      * Statická metóda pre vymazanie vozidiel ktoré nie su priradené inzerátu.
-     * @param dbPath 
+     * @param dbPath  - cesta do DB
      */
     public static void vymazatVozidlaVymazanychInzeratov(String dbPath){
         try (Connection con = ConnectToDB.ConnectDB(dbPath);){                               
@@ -63,8 +63,8 @@ public class DeleteFromDB {
     
     /**
      * Vymazanie inzerátu z databázy.
-     * @param idInzeratu
-     * @param dbPath 
+     * @param idInzeratu - id inzeratu
+     * @param dbPath  - cesta do DB
      */
     public static void vymazatInzerat(int idInzeratu, String dbPath) {
         int idVozidla = LoaderDB.zistiIdVozidla(idInzeratu, dbPath);
@@ -81,8 +81,8 @@ public class DeleteFromDB {
     
     /**
      * Vymazanie vozidla podla ID z databazy.
-     * @param idVozidla
-     * @param dbPath 
+     * @param idVozidla - id vozidla
+     * @param dbPath - cesta do DB
      */
     public static void deleteVozidlo(int idVozidla, String dbPath){
         try (Connection con = ConnectToDB.ConnectDB(dbPath);){           

@@ -13,6 +13,8 @@ public class FilterDialog extends javax.swing.JDialog {
     private ArrayList<Inzerat> inzeraty;
     /**
      * Creates new form FilterDialog
+     * @param parent - parent
+     * @param modal - modal
      */
     public FilterDialog(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
@@ -22,7 +24,7 @@ public class FilterDialog extends javax.swing.JDialog {
 
     /**
      * Getter pre zoznam inzerátov.
-     * @return 
+     * @return zoznam inzerátov
      */
     public ArrayList<Inzerat> getInzeraty() {
         return inzeraty;
@@ -30,7 +32,7 @@ public class FilterDialog extends javax.swing.JDialog {
 
     /**
      * Setter pre zoznam inzerátov.
-     * @param inzeraty 
+     * @param inzeraty zoznam inzerátov
      */
     public void setInzeraty(ArrayList<Inzerat> inzeraty) {
         this.inzeraty = inzeraty;
@@ -212,7 +214,7 @@ public class FilterDialog extends javax.swing.JDialog {
 
     /**
      * Vykoná filtrovanie zoznamu inzerátov na základe zhody podla kritérií.
-     * @param evt 
+     * @param evt - event
      */
     private void jButtonFiltrujActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonFiltrujActionPerformed
         if(jComboBoxZnacka.getSelectedIndex() != 0){

@@ -13,8 +13,8 @@ public class ConnectToDB {
     
     /**
      * Statická metóda pre pripojenie do databázy.
-     * @param dbPath
-     * @return
+     * @param dbPath - cesta do DB
+     * @return Connection do DB
      */
     public static Connection ConnectDB(String dbPath) {
         try {

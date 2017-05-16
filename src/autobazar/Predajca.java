@@ -6,9 +6,9 @@ import java.util.regex.Pattern;
 
 
 /**
+ * Trieda reprezentujúca Predajcu vozidla.
  * @author Cachovan Jakub
  * @version 1.0
- * @created 31-3-2017 13:05:52
  */
 public class Predajca implements Serializable{
 
@@ -20,11 +20,11 @@ public class Predajca implements Serializable{
 
     /**
      * Konštruktor pre vytvorenie objektu typu Predajca.
-     * @param Email
-     * @param Lokalita
-     * @param Meno
-     * @param Priezvisko
-     * @param Telefon 
+     * @param Email - emailová adresa predajcu
+     * @param Lokalita - lokalita v ktorej býva predajca
+     * @param Meno - meno predajcu 
+     * @param Priezvisko - priezvisko predajcu
+     * @param Telefon - telefon predajcu
      */
     public Predajca(String Email, String Lokalita, String Meno, String Priezvisko, String Telefon) {
         this.Email = Email;
@@ -36,7 +36,7 @@ public class Predajca implements Serializable{
     
     /**
      * Getter pre email predajcu.
-     * @return 
+     * @return email predajcu.
      */
     public String getEmail() {
         return Email;
@@ -44,7 +44,7 @@ public class Predajca implements Serializable{
 
     /**
      * Setter pre email predajcu.
-     * @param Email 
+     * @param Email email predajcu.
      */
     public void setEmail(String Email) {
         this.Email = Email;
@@ -52,7 +52,7 @@ public class Predajca implements Serializable{
 
     /**
      * Getter pre lokalitu predajcu.
-     * @return 
+     * @return lokalita predajcu
      */
     public String getLokalita() {
         return Lokalita;
@@ -60,7 +60,7 @@ public class Predajca implements Serializable{
 
     /**
      * Setter pre lokalitu predajcu.
-     * @param Lokalita 
+     * @param Lokalita lokalita predajcu
      */
     public void setLokalita(String Lokalita) {
         this.Lokalita = Lokalita;
@@ -68,7 +68,7 @@ public class Predajca implements Serializable{
 
     /**
      * Getter pre meno predajcu.
-     * @return 
+     * @return meno predajcu.
      */
     public String getMeno() {
         return Meno;
@@ -76,7 +76,7 @@ public class Predajca implements Serializable{
 
     /**
      * Setter pre meno predajcu.
-     * @param Meno 
+     * @param Meno meno predajcu.
      */
     public void setMeno(String Meno) {
         this.Meno = Meno;
@@ -84,7 +84,7 @@ public class Predajca implements Serializable{
 
     /**
      * Getter pre priezvisko predajcu.
-     * @return 
+     * @return priezvisko predajcu.
      */
     public String getPriezvisko() {
         return Priezvisko;
@@ -92,7 +92,7 @@ public class Predajca implements Serializable{
 
     /**
      * Setter pre priezvisko predajcu.
-     * @param Priezvisko 
+     * @param Priezvisko priezvisko predajcu.
      */
     public void setPriezvisko(String Priezvisko) {
         this.Priezvisko = Priezvisko;
@@ -100,7 +100,7 @@ public class Predajca implements Serializable{
 
     /**
      * Getter pre telefon predajcu.
-     * @return 
+     * @return telefon predajcu.
      */
     public String getTelefon() {
         return Telefon;
@@ -108,7 +108,7 @@ public class Predajca implements Serializable{
 
     /**
      * Setter pre telegon predajcu.
-     * @param Telefon 
+     * @param Telefon telefon predajcu.
      */
     public void setTelefon(String Telefon) {
         this.Telefon = Telefon;
@@ -127,7 +127,7 @@ public class Predajca implements Serializable{
 
     /**
      * Znaková reprezentácia objektu typu Motocykel.
-     * @return 
+     * @return String
      */
     @Override
     public String toString() {

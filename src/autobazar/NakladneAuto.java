@@ -6,9 +6,9 @@ import java.util.regex.Pattern;
 
 
 /**
+ * Trieda repzrezentujúca nákladné auto v autobazáre.
  * @author Cachovan Jakub
  * @version 1.0
- * @created 31-3-2017 13:05:52
  */
 public class NakladneAuto extends Vozidlo implements Kategoria, Serializable{
         private String druh;
@@ -17,20 +17,20 @@ public class NakladneAuto extends Vozidlo implements Kategoria, Serializable{
 	private int nosnost;
 
     /**
-     * 
-     * @param druh
-     * @param hmotnostVozidla
-     * @param normaEmisii
-     * @param nosnost
-     * @param cena
-     * @param model
-     * @param najazdeneKM
-     * @param palivo
-     * @param rokVyroby
-     * @param stav
-     * @param vykon
-     * @param znacka
-     * @param popis 
+     * Konštruktor pre vytvorenie objektu typu NakladneAuto
+     * @param druh - druh
+     * @param hmotnostVozidla - hmotnost vozidla
+     * @param normaEmisii - normaEmisii
+     * @param nosnost  - nosnost
+     * @param cena - cena
+     * @param model - model
+     * @param najazdeneKM - najazdene KM
+     * @param palivo -  palivo
+     * @param rokVyroby - rok vyroby
+     * @param stav - stav
+     * @param vykon  - vykon
+     * @param znacka - znacka
+     * @param popis - popis
      */
     public NakladneAuto(String druh, int hmotnostVozidla, String normaEmisii, int nosnost, int cena, String model, int najazdeneKM, String palivo, int rokVyroby, StavVozidla stav, int vykon, String znacka, String popis) {
         super(cena, model, najazdeneKM, palivo, rokVyroby, stav, vykon, znacka, popis);
@@ -42,7 +42,7 @@ public class NakladneAuto extends Vozidlo implements Kategoria, Serializable{
     
     /**
      * Getter pre druh nákladného auta.
-     * @return 
+     * @return druh nákladného auta.
      */
     public String getDruh() {
         return druh;
@@ -50,7 +50,7 @@ public class NakladneAuto extends Vozidlo implements Kategoria, Serializable{
 
     /**
      * Setter pre druh nákladného auta.
-     * @param druh 
+     * @param druh druh nákladného auta.
      */
     public void setDruh(String druh) {
         this.druh = druh;
@@ -58,7 +58,7 @@ public class NakladneAuto extends Vozidlo implements Kategoria, Serializable{
         
     /**
      * Getter pre hmotnost nákladného auta.
-     * @return 
+     * @return hmotnost nákladného auta.
      */
     public int getHmotnostVozidla() {
         return hmotnostVozidla;
@@ -66,7 +66,7 @@ public class NakladneAuto extends Vozidlo implements Kategoria, Serializable{
 
     /**
      * Setter pre hmotnost nákladného auta.
-     * @param hmotnostVozidla 
+     * @param hmotnostVozidla hmotnost nákladného auta.
      */
     public void setHmotnostVozidla(int hmotnostVozidla) {
         this.hmotnostVozidla = hmotnostVozidla;
@@ -74,7 +74,7 @@ public class NakladneAuto extends Vozidlo implements Kategoria, Serializable{
 
     /**
      * Getter pre normu emisii nákladného auta.
-     * @return 
+     * @return norma emisii nákladného auta
      */
     public String getNormaEmisii() {
         return normaEmisii;
@@ -82,7 +82,7 @@ public class NakladneAuto extends Vozidlo implements Kategoria, Serializable{
 
     /**
      * Setter pre druh nákladného auta.
-     * @param normaEmisii 
+     * @param normaEmisii norma emisii nákladného auta
      */
     public void setNormaEmisii(String normaEmisii) {
         this.normaEmisii = normaEmisii;
@@ -90,7 +90,7 @@ public class NakladneAuto extends Vozidlo implements Kategoria, Serializable{
 
     /**
      * Getter pre nosnosť nákladného auta.
-     * @return 
+     * @return nosnosť nákladného auta
      */
     public int getNosnost() {
         return nosnost;
@@ -98,7 +98,7 @@ public class NakladneAuto extends Vozidlo implements Kategoria, Serializable{
 
     /**
      * Setter pre nosnost nákladného auta.
-     * @param nosnost 
+     * @param nosnost nosnosť nákladného auta
      */
     public void setNosnost(int nosnost) {
         this.nosnost = nosnost;
@@ -106,7 +106,7 @@ public class NakladneAuto extends Vozidlo implements Kategoria, Serializable{
 
     /**
      * Setter pre značku nákladného auta.
-     * @param znacka 
+     * @param znacka značka nákladného auta
      */
     @Override
     public void setZnacka(String znacka) {
@@ -115,7 +115,7 @@ public class NakladneAuto extends Vozidlo implements Kategoria, Serializable{
 
     /**
      * Getter pre značku nákladného auta.
-     * @return 
+     * @return značka nákladného auta
      */
     @Override
     public String getZnacka() {
@@ -124,7 +124,7 @@ public class NakladneAuto extends Vozidlo implements Kategoria, Serializable{
 
     /**
      * Setter pre výkon nákladného auta.
-     * @param vykon 
+     * @param vykon výkon nákladného auta
      */
     @Override
     public void setVykon(int vykon) {
@@ -133,7 +133,7 @@ public class NakladneAuto extends Vozidlo implements Kategoria, Serializable{
 
     /**
      * Getter pre výkon nákladného auta.
-     * @return 
+     * @return výkon nákladného auta
      */
     @Override
     public int getVykon() {
@@ -142,7 +142,7 @@ public class NakladneAuto extends Vozidlo implements Kategoria, Serializable{
     
     /**
      * Setter pre popis nákladného auta.
-     * @param popis 
+     * @param popis popis nákladného auta
      */
     @Override
     public void setPopis(String popis) {
@@ -151,7 +151,7 @@ public class NakladneAuto extends Vozidlo implements Kategoria, Serializable{
 
     /**
      * Getter pre popis nákladného auta.
-     * @return 
+     * @return popis nákladného auta
      */
     @Override
     public String getPopis() {
@@ -160,7 +160,7 @@ public class NakladneAuto extends Vozidlo implements Kategoria, Serializable{
 
     /**
      * Setter pre stav nákladného auta.
-     * @param stav 
+     * @param stav stav nákladného auta
      */
     @Override
     public void setStav(StavVozidla stav) {
@@ -169,7 +169,7 @@ public class NakladneAuto extends Vozidlo implements Kategoria, Serializable{
 
     /**
      * Getter pre stav nákladného auta.
-     * @return 
+     * @return stav nákladného auta
      */
     @Override
     public StavVozidla getStav() {
@@ -178,7 +178,7 @@ public class NakladneAuto extends Vozidlo implements Kategoria, Serializable{
 
     /**
      * Setter pre rok výroby nákladného auta.
-     * @param rokVyroby 
+     * @param rokVyroby rok výroby nákladného auta
      */
     @Override
     public void setRokVyroby(int rokVyroby) {
@@ -187,7 +187,7 @@ public class NakladneAuto extends Vozidlo implements Kategoria, Serializable{
 
     /**
      * Getter pre rok výroby nákladného auta.
-     * @return 
+     * @return rok výroby nákladného auta
      */
     @Override
     public int getRokVyroby() {
@@ -196,7 +196,7 @@ public class NakladneAuto extends Vozidlo implements Kategoria, Serializable{
 
     /**
      * Setter pre palivo nákladného auta.
-     * @param palivo 
+     * @param palivo palivo nákladného auta
      */
     @Override
     public void setPalivo(String palivo) {
@@ -205,7 +205,7 @@ public class NakladneAuto extends Vozidlo implements Kategoria, Serializable{
 
     /**
      * Getter pre palivo nákladného auta.
-     * @return 
+     * @return palivo nákladného auta
      */
     @Override
     public String getPalivo() {
@@ -214,7 +214,7 @@ public class NakladneAuto extends Vozidlo implements Kategoria, Serializable{
 
     /**
      * Setter pre najazdené kilometre nákladného auta.
-     * @param najazdeneKM 
+     * @param najazdeneKM najazdené kilometre nákladného auta
      */
     @Override
     public void setNajazdeneKM(int najazdeneKM) {
@@ -223,7 +223,7 @@ public class NakladneAuto extends Vozidlo implements Kategoria, Serializable{
 
     /**
      * Getter pre najazdené kilometre nákladného auta.
-     * @return 
+     * @return najazdené kilometre nákladného auta
      */
     @Override
     public int getNajazdeneKM() {
@@ -232,7 +232,7 @@ public class NakladneAuto extends Vozidlo implements Kategoria, Serializable{
 
     /**
      * Setter pre model nákladného auta.
-     * @param model 
+     * @param model model nákladného auta
      */
     @Override
     public void setModel(String model) {
@@ -241,7 +241,7 @@ public class NakladneAuto extends Vozidlo implements Kategoria, Serializable{
 
     /**
      * Getter pre model nákladného auta.
-     * @return 
+     * @return model nákladného auta
      */
     @Override
     public String getModel() {
@@ -250,7 +250,7 @@ public class NakladneAuto extends Vozidlo implements Kategoria, Serializable{
 
     /**
      * Setter pre cenu nákladného auta.
-     * @param cena 
+     * @param cena cena nákladného auta
      */
     @Override
     public void setCena(int cena) {
@@ -259,7 +259,7 @@ public class NakladneAuto extends Vozidlo implements Kategoria, Serializable{
     
     /**
      * Getter pre cenu nákladného auta.
-     * @return 
+     * @return cena nákladného auta
      */
     @Override
     public int getCena() {
@@ -268,8 +268,8 @@ public class NakladneAuto extends Vozidlo implements Kategoria, Serializable{
 
     /**
      * Getter pre kategoriu nakladneho vozidla.
-     * 3-> reprezentuje nákladné auto
-     * @return 
+     * 3-reprezentuje nákladné auto
+     * @return kategoria nakladneho vozidla
      */
     @Override
     public int getKategoriaInt() {
@@ -290,7 +290,7 @@ public class NakladneAuto extends Vozidlo implements Kategoria, Serializable{
     
     /**
      * Metóda potrebná pre zistenie ceny vozidla.
-     * @return 
+     * @return cena vozidla
      */
     @Override
     public int celkovaHodnotaVozidiel() {
@@ -299,7 +299,7 @@ public class NakladneAuto extends Vozidlo implements Kategoria, Serializable{
 
     /**
      * Znaková reprezentácia objektu typu NakladneAuto.
-     * @return 
+     * @return String
      */
     @Override
     public String toString() {

@@ -47,10 +47,10 @@ public class LoaderDB {
     /**
      * Zistenie kategorie vozidla podla id inzeratu.
      * Metóda indentifikuje kategóriu a vrátí vráti indentifikátor kategorie.
-     * 1-> Automobil, 2-> Motocykel, 3-> Nakladne, 4-> Autobus
+     * 1- Automobil, 2- Motocykel, 3- Nakladne, 4- Autobus
      * 
      * @param idInzeratu - id inzeratu
-     * @param dbPath
+     * @param dbPath  - cesta do DB
      * @return integer
      */
     public static int getKategoriaInstance(int idInzeratu, String dbPath){

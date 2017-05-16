@@ -14,9 +14,9 @@ import javax.swing.JOptionPane;
 public class InsertIntoDB {
     /**
      * Statická metóda pre zistenie id vozidla pre potreby vkladania inzerátu.
-     * @param idInzeratu
-     * @param dbPath
-     * @return 
+     * @param idInzeratu - id inzeratu
+     * @param dbPath - cesta k DB
+     * @return integer - id vozidla
      */
     public static int zistiIdVozidla(int idInzeratu, String dbPath){
         int lastIdVozidla = -1;
@@ -37,9 +37,9 @@ public class InsertIntoDB {
     
     /**
      * Statická metóda pre vloženie inzerátu do databázy.
-     * @param inzerat
-     * @param dbPath
-     * @return 
+     * @param inzerat - objekt typu Inzerat
+     * @param dbPath - cesta k DB
+     * @return true/false
      */
     public static boolean insertInzerat(Inzerat inzerat, String dbPath){      
         if(isNovyPredajca(inzerat.getPredajca().getEmail(), dbPath)){
@@ -101,9 +101,9 @@ public class InsertIntoDB {
     
     /**
      * Statická metóda pre vloženie automobilu do databázy.
-     * @param auto
-     * @param dbPath
-     * @return 
+     * @param auto - objekt typu Automobil
+     * @param dbPath - cesta k DB
+     * @return true/false
      */
     public static boolean insertAutomobil(Automobil auto, String dbPath){
         try (Connection con = ConnectToDB.ConnectDB(dbPath);){                               
@@ -134,9 +134,9 @@ public class InsertIntoDB {
     
     /**
      * Statická metóda pre vloženie motocyklu do databázy.
-     * @param moto
-     * @param dbPath
-     * @return 
+     * @param moto - objekt typu Motocykel
+     * @param dbPath - cesta k DB
+     * @return true/false
      */
     public static boolean insertMotocykel(Motocykel moto, String dbPath){
         try (Connection con = ConnectToDB.ConnectDB(dbPath);){                               
@@ -166,9 +166,9 @@ public class InsertIntoDB {
     
     /**
      * Statická metóda pre vloženie autobusu do databázy.
-     * @param autobus
-     * @param dbPath
-     * @return 
+     * @param autobus - objekt typu Autobus
+     * @param dbPath - cesta k DB
+     * @return true/false
      */
     public static boolean insertAutobus(Autobus autobus, String dbPath){
         try (Connection con = ConnectToDB.ConnectDB(dbPath);){                               
@@ -202,9 +202,9 @@ public class InsertIntoDB {
     
     /**
      * Statická metóda pre vloženie nakladneho auta do databázy.
-     * @param nakladne
-     * @param dbPath
-     * @return 
+     * @param nakladne - objekt typu NakladneAuto
+     * @param dbPath - cesta k DB
+     * @return  true/false
      */
     public static boolean insertNakladne(NakladneAuto nakladne, String dbPath){
         try (Connection con = ConnectToDB.ConnectDB(dbPath);){                               
@@ -260,9 +260,9 @@ public class InsertIntoDB {
     
     /**
      * Statická metóda pre vloženie predajcu do databázy.
-     * @param predajca
-     * @param dbPath
-     * @return 
+     * @param predajca - objekt typu Predajca
+     * @param dbPath  - cesta k databáze
+     * @return true/false
      */
     public static boolean insertPredajca(Predajca predajca, String dbPath){
         try (Connection con = ConnectToDB.ConnectDB(dbPath);){                               

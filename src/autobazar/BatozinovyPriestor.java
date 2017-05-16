@@ -24,7 +24,7 @@ public class BatozinovyPriestor implements Serializable{
     }
 
     /**
-     * Zistí, či je vo vybave nosič lyží -> true, inak false.
+     * Zistí, či je vo vybave nosič lyží - true, inak false.
      * @return true/false
      */
     public boolean isNosicLyzi() {
@@ -32,15 +32,16 @@ public class BatozinovyPriestor implements Serializable{
     }
 
     /**
-     * 
-     * @param nosicLyzi 
+     * Setter pre nosič lyží.
+     * Ak existuje nosič lyzí true inak false
+     * @param nosicLyzi - nosič lyží
      */
     public void setNosicLyzi(boolean nosicLyzi) {
         this.nosicLyzi = nosicLyzi;
     }
 
     /**
-     * Ak neexistuje bytožinový priestor -> true, inak false.
+     * Ak neexistuje bytožinový priestor - true, inak false.
      * @return true/false
      */
     public boolean isZiadny() {
@@ -49,14 +50,14 @@ public class BatozinovyPriestor implements Serializable{
 
     /**
      * Nastaví atribut pre žiadny batožinový priestor.
-     * @param ziadny 
+     * @param ziadny - ziadny batozinovy priestor
      */
     public void setZiadny(boolean ziadny) {
         this.ziadny = ziadny;
     }
 
     /**
-     * Klasický batožinový priestor -> true, inak false.
+     * Klasický batožinový priestor - true, inak false.
      * @return true/false
      */
     public boolean isKlasicky() {
@@ -72,7 +73,7 @@ public class BatozinovyPriestor implements Serializable{
     }
 
     /**
-     * Vysoký batožinový priestor -> true, inak false.
+     * Vysoký batožinový priestor - true, inak false.
      * @return true/false
      */
     public boolean isVysoky() {
@@ -81,7 +82,7 @@ public class BatozinovyPriestor implements Serializable{
 
     /**
      * Nastaví hodnotu atributu vysoky.
-     * @param vysoky 
+     * @param vysoky - vysoky batozinovy priestor
      */
     public void setVysoky(boolean vysoky) {
         this.vysoky = vysoky;
@@ -103,7 +104,7 @@ public class BatozinovyPriestor implements Serializable{
     
     /**
      * Znaková reprezentácia objektu.
-     * @return 
+     * @return String
      */
     @Override
     public String toString() {

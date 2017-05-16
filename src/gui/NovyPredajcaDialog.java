@@ -17,6 +17,8 @@ public class NovyPredajcaDialog extends javax.swing.JDialog {
     private boolean upravaPredajcu = false;
     /**
      * Creates new form NovyPredajcaDialog
+     * @param parent parent
+     * @param modal modal
      */
     public NovyPredajcaDialog(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
@@ -27,7 +29,7 @@ public class NovyPredajcaDialog extends javax.swing.JDialog {
 
     /**
      * Getter pre objekt typu Predajca.
-     * @return 
+     * @return objekt typu Predajca
      */
     public Predajca getPredajca() {
         return predajca;
@@ -35,7 +37,7 @@ public class NovyPredajcaDialog extends javax.swing.JDialog {
 
     /**
      * Setter pre atribút typu Predajca.
-     * @param predajca 
+     * @param predajca objekt typu Predajca
      */
     public void setPredajca(Predajca predajca) {
         this.predajca = predajca;
@@ -43,7 +45,7 @@ public class NovyPredajcaDialog extends javax.swing.JDialog {
   
     /**
      * Getter pre zoznam existujucich predajcov v autobazare.
-     * @return 
+     * @return zoznam existujucich predajcov
      */
     public ArrayList<Predajca> getExistujuciPredajcovia() {
         return existujuciPredajcovia;
@@ -51,7 +53,7 @@ public class NovyPredajcaDialog extends javax.swing.JDialog {
     
     /**
      * Setter pre zoznam existujucich predajcov.
-     * @param existujuciPredajcovia
+     * @param existujuciPredajcovia zoznam existujucich predajcov
      */
     public void setExistujuciPredajcovia(ArrayList<Predajca> existujuciPredajcovia) {
         this.existujuciPredajcovia = existujuciPredajcovia;
@@ -59,7 +61,7 @@ public class NovyPredajcaDialog extends javax.swing.JDialog {
     
     /**
      * Setter pre indikator upravy predajcu.
-     * @param upravaPredajcu 
+     * @param upravaPredajcu indikator upravy predajcu
      */
     public void setUpravaPredajcu(boolean upravaPredajcu) {
         this.upravaPredajcu = upravaPredajcu;
@@ -67,7 +69,7 @@ public class NovyPredajcaDialog extends javax.swing.JDialog {
     
     /**
      * Validácia formuláru pre predajcu.
-     * @return 
+     * @return true/false
      */
     public boolean validaciaFormularu(){
         Pattern p = Pattern.compile("(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|\"(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21\\x23-\\x5b\\x5d-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])*\")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21-\\x5a\\x53-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])+)\\])");
@@ -90,7 +92,7 @@ public class NovyPredajcaDialog extends javax.swing.JDialog {
     
     /**
      * Overenie existencie predajcu v autobazare.
-     * @return 
+     * @return true/false
      */
     private boolean existujuciPredajca(){
         String email = jTextFieldEmail.getText();
@@ -244,7 +246,7 @@ public class NovyPredajcaDialog extends javax.swing.JDialog {
 
     /**
      * Priradenie predajcu k inzerátu.
-     * @param evt 
+     * @param evt - event
      */
     private void jButtonUlozitPredajcuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonUlozitPredajcuActionPerformed
         if(validaciaFormularu()){

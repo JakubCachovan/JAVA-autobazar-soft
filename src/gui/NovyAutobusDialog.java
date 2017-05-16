@@ -14,8 +14,11 @@ import javax.swing.JOptionPane;
 public class NovyAutobusDialog extends javax.swing.JDialog {
     private Autobus autobus;
     private boolean upravaVozidla = false;
+    
     /**
      * Creates new form NovyAutobus
+     * @param parent - parent
+     * @param modal - modal
      */
     public NovyAutobusDialog(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
@@ -28,7 +31,7 @@ public class NovyAutobusDialog extends javax.swing.JDialog {
 
     /**
      * Indikator upravy vozidla.
-     * @return 
+     * @return indikator upravy vozidla
      */
     public boolean isUpravaVozidla() {
         return upravaVozidla;
@@ -36,7 +39,7 @@ public class NovyAutobusDialog extends javax.swing.JDialog {
 
     /**
      * Setter pre indikator upravy.
-     * @param upravaVozidla 
+     * @param upravaVozidla indikator upravy vozidla
      */
     public void setUpravaVozidla(boolean upravaVozidla) {
         this.upravaVozidla = upravaVozidla;
@@ -44,7 +47,7 @@ public class NovyAutobusDialog extends javax.swing.JDialog {
 
     /**
      * Getter pre atribus autobus.
-     * @return 
+     * @return objekt typu Autobus
      */
     public Autobus getAutobus() {
         return autobus;
@@ -52,7 +55,7 @@ public class NovyAutobusDialog extends javax.swing.JDialog {
 
     /**
      * Setter pre atribut autobus.
-     * @param autobus 
+     * @param autobus objekt typu Autobus
      */
     public void setAutobus(Autobus autobus) {
         this.autobus = autobus;
@@ -422,7 +425,7 @@ public class NovyAutobusDialog extends javax.swing.JDialog {
 
     /**
      * Validácia formulárov pre autobus.
-     * @return 
+     * @return true/false
      */
     public boolean validaciaFormularu(){
         if(jTextFieldCena.getText().isEmpty()){
@@ -467,7 +470,7 @@ public class NovyAutobusDialog extends javax.swing.JDialog {
     
     /**
      * Priradenie autobusu pre inzerát.
-     * @param evt 
+     * @param evt - event
      */
     private void jButtonUlozitInzeratActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonUlozitInzeratActionPerformed
         // TODO add your handling code here:         

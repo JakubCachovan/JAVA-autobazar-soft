@@ -12,8 +12,11 @@ import javax.swing.table.DefaultTableModel;
 public class PrehladInzeratuDialog extends javax.swing.JDialog {
 
     private Inzerat inzerat;
+    
     /**
      * Creates new form PrehladInzeratuDialog
+     * @param parent parent
+     * @param modal modal
      */
     public PrehladInzeratuDialog(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
@@ -143,7 +146,7 @@ public class PrehladInzeratuDialog extends javax.swing.JDialog {
 
     /**
      * Setter pre inzerat.
-     * @param inzerat 
+     * @param inzerat - objekt typu Inzerat
      */
     public void setInzerat(Inzerat inzerat) {
         this.inzerat = inzerat;
@@ -404,7 +407,7 @@ public class PrehladInzeratuDialog extends javax.swing.JDialog {
 
     /**
      * Zavretie okna.
-     * @param evt 
+     * @param evt - event
      */
     private void jButtonZavrietActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonZavrietActionPerformed
         dispose();

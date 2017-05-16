@@ -15,6 +15,8 @@ public class NovyMotocykelDialog extends javax.swing.JDialog {
     private boolean upravaVozidla = false;
     /**
      * Creates new form NovyMotocykelDialog
+     * @param parent parent
+     * @param modal modal
      */
     public NovyMotocykelDialog(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
@@ -27,7 +29,7 @@ public class NovyMotocykelDialog extends javax.swing.JDialog {
 
     /**
      * Indikátor úpravy motocykla.
-     * @return 
+     * @return true/false
      */
     public boolean isUpravaVozidla() {
         return upravaVozidla;
@@ -35,7 +37,7 @@ public class NovyMotocykelDialog extends javax.swing.JDialog {
 
     /**
      * Setter pre indikátor úpravy motocykla.
-     * @param upravaVozidla 
+     * @param upravaVozidla true/false
      */
     public void setUpravaVozidla(boolean upravaVozidla) {
         this.upravaVozidla = upravaVozidla;
@@ -44,7 +46,7 @@ public class NovyMotocykelDialog extends javax.swing.JDialog {
 
     /**
      * Setter pre atribut motocykel.
-     * @param motocykel 
+     * @param motocykel - objekt typu Motocykel
      */    
     public void setMotocykel(Motocykel motocykel) {
         this.motocykel = motocykel;
@@ -52,7 +54,7 @@ public class NovyMotocykelDialog extends javax.swing.JDialog {
 
     /**
      * Getter pre atribut motocykel
-     * @return 
+     * @return - objekt typu Motocykel
      */
     public Motocykel getMotocykel() {
         return motocykel;
@@ -277,7 +279,7 @@ public class NovyMotocykelDialog extends javax.swing.JDialog {
 
     /**
      * Validácia formuláru pre úpravu motocykla.
-     * @return 
+     * @return true/false
      */
     public boolean validaciaFormularu(){
         if(jTextFieldCena.getText().isEmpty()){

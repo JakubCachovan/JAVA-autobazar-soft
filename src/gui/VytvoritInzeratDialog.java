@@ -18,8 +18,8 @@ public final class VytvoritInzeratDialog extends javax.swing.JDialog {
     private Kategoria kategoria;           
     /**
      * Creates new form VytvoritInzeratDialog
-     * @param parent
-     * @param modal
+     * @param parent - parent
+     * @param modal - modal
      */
     public VytvoritInzeratDialog(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
@@ -65,7 +65,7 @@ public final class VytvoritInzeratDialog extends javax.swing.JDialog {
 
     /**
      * Setter pre nastavenie existujuceho zoznamu predajcov.
-     * @param existujuciPredajcovia 
+     * @param existujuciPredajcovia - zoznam existujucich predajcov
      */
     public void setExistujuciPredajcovia(ArrayList<Predajca> existujuciPredajcovia) {
         this.existujuciPredajcovia = existujuciPredajcovia;
@@ -73,7 +73,7 @@ public final class VytvoritInzeratDialog extends javax.swing.JDialog {
    
     /**
      * Gettter pre objekt typu Predajca.
-     * @return 
+     * @return objekt typu Predajca
      */
     public Predajca getPredajca() {
         return predajca;
@@ -81,7 +81,7 @@ public final class VytvoritInzeratDialog extends javax.swing.JDialog {
 
     /**
      * Getter pre objekt typu Kategoria.
-     * @return 
+     * @return objekt typu Kategoria
      */
     public Kategoria getKategoria() {
         return kategoria;
@@ -365,7 +365,7 @@ public final class VytvoritInzeratDialog extends javax.swing.JDialog {
 
     /**
      * Uloženie inzerátu.
-     * @param evt 
+     * @param evt - event
      */
     private void jButtonUlozitInzeratActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonUlozitInzeratActionPerformed
         
@@ -378,7 +378,7 @@ public final class VytvoritInzeratDialog extends javax.swing.JDialog {
 
     /**
      * Vytvorenie nového predajcu pre inzerát.
-     * @param evt 
+     * @param evt - event
      */
     private void jButtonNovyPredajcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNovyPredajcaActionPerformed
         // TODO add your handling code here:
@@ -405,7 +405,7 @@ public final class VytvoritInzeratDialog extends javax.swing.JDialog {
 
     /**
      * Aktivovanie funkcionalít po kliknutí na inzerát v tabulke.
-     * @param evt 
+     * @param evt - event
      */
     private void jTableExistujuciPredajcoviaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableExistujuciPredajcoviaMouseClicked
         // TODO add your handling code here:

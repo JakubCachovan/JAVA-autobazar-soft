@@ -26,6 +26,8 @@ public class SynchronizeDbJDialog extends javax.swing.JDialog {
     private double progress;
     /**
      * Creates new form SynchronizeDbJDialog
+     * @param parent parent
+     * @param modal modal
      */
     public SynchronizeDbJDialog(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
@@ -40,7 +42,7 @@ public class SynchronizeDbJDialog extends javax.swing.JDialog {
 
     /**
      * Getter pre objekt typu Autobazar.
-     * @return 
+     * @return objekt typu Autobazar
      */
     public Autobazar getAutobazar() {
         return autobazar;
@@ -48,7 +50,7 @@ public class SynchronizeDbJDialog extends javax.swing.JDialog {
 
     /**
      * Setter pre objekt typu Autobazar.
-     * @param autobazar 
+     * @param autobazar objekt typu Autobazar
      */
     public void setAutobazar(Autobazar autobazar) {
         this.autobazar = autobazar;
@@ -56,7 +58,7 @@ public class SynchronizeDbJDialog extends javax.swing.JDialog {
 
     /**
      * Getter pre cestu k databáze.
-     * @return 
+     * @return cestu k DB
      */
     public String getDbPath() {
         return dbPath;
@@ -64,23 +66,23 @@ public class SynchronizeDbJDialog extends javax.swing.JDialog {
 
     /**
      * Setter pre cestu k databáze.
-     * @param dbPath 
+     * @param dbPath - cesta k DB
      */
     public void setDbPath(String dbPath) {
         this.dbPath = dbPath;
     }
 
     /**
-     * Getter pre 
-     * @return 
+     * Getter pre atribut progress
+     * @return hodnotu double
      */
     public double getProgress() {
         return progress;
     }
 
     /**
-     * 
-     * @param progress 
+     * Setter pre atribut progress
+     * @param progress  - číselne určuje progres pri vykonavani procesu 
      */
     public void setProgress(double progress) {
         this.progress = progress;
@@ -201,7 +203,7 @@ public class SynchronizeDbJDialog extends javax.swing.JDialog {
 
     /**
      * Vybranie databázy na synchronizáciu.
-     * @param evt 
+     * @param evt - event
      */
     private void jButtonVybratActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVybratActionPerformed
         try {
@@ -224,7 +226,7 @@ public class SynchronizeDbJDialog extends javax.swing.JDialog {
 
     /**
      * Vykonanie synchronizácie s načítanou databázou.
-     * @param evt 
+     * @param evt - event
      */
     private void jButtonSpustiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSpustiActionPerformed
         worker = new SwingWorker<Void, String>() {
@@ -295,12 +297,16 @@ public class SynchronizeDbJDialog extends javax.swing.JDialog {
 
     /**
      * Zrušenie vykonávania synchronizácie.
-     * @param evt 
+     * @param evt - event
      */
     private void jButtonZrusitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonZrusitActionPerformed
         worker.cancel(true);
     }//GEN-LAST:event_jButtonZrusitActionPerformed
 
+    /**
+     * Zrušenie dialogoveho okna.
+     * @param evt - event
+     */
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         dispose();
     }//GEN-LAST:event_jButton1ActionPerformed

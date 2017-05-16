@@ -6,9 +6,9 @@ import java.time.Instant;
 import javax.swing.JOptionPane;
 
 /**
+ * Trieda reprezentujúca inzerát pre autobazar.
  * @author Cachovan Jakub
  * @version 1.0
- * @created 31-3-2017 13:05:52
  */
 public class Inzerat implements Serializable{
         private Kategoria kategoria;
@@ -21,8 +21,8 @@ public class Inzerat implements Serializable{
     
     /**
      * Konštruktor pre vytvorenie objektu typu Inzerat
-     * @param paKategoria
-     * @param paPredajca 
+     * @param paKategoria - objekt typu Kategoria
+     * @param paPredajca - objekt typu Predajca
      */
     public Inzerat(Kategoria paKategoria, Predajca paPredajca){
         DatumVytvorenia = new Date(java.util.Date.from(Instant.now()).getTime());
@@ -33,11 +33,11 @@ public class Inzerat implements Serializable{
     
     /**
      * Metóda pre priradenie predajcu pre inzerát.
-     * @param Email
-     * @param Lokalita
-     * @param Meno
-     * @param Priezvisko
-     * @param Telefon
+     * @param Email - emailová adresa predajcu
+     * @param Lokalita - lokalita v ktorej býva predajca
+     * @param Meno - meno predajcu 
+     * @param Priezvisko - priezvisko predajcu
+     * @param Telefon - telefon predajcu
      * @return true/false
      */
     public boolean priraditPredajcu(String Email, String Lokalita, String Meno, String Priezvisko, String Telefon){
@@ -51,8 +51,8 @@ public class Inzerat implements Serializable{
     }
     /**
      * Vrátenie hodnoty ktorá reprezentuje typ objektu.
-     * 1-> Automobil, 2->Autobus, 3->Motocykel, 4->Nakladne auto
-     * @return 
+     * 1-Automobil, 2-Autobus, 3-Motocykel, 4-Nakladne auto
+     * @return identifikátor kategorie
      */
     public int getInstanceKategoria(){
         if(kategoria instanceof Automobil){
@@ -70,7 +70,6 @@ public class Inzerat implements Serializable{
     
     /**
      * Vrátenie názvu kategórie podľa toho, ktorá inštancia ju reprezentuje.
-     * 
      * @return String
      */
     public String getKategoriaInstanceName(){
@@ -96,7 +95,7 @@ public class Inzerat implements Serializable{
 
     /**
      * Setter pre atribút stav.
-     * @param stav 
+     * @param stav - stav inzeratu, objekt typu StavInzeratu
      */
     public void setStav(StavInzeratu stav) {
         this.stav = stav;
@@ -104,7 +103,7 @@ public class Inzerat implements Serializable{
 
     /**
      * Getter pre atribút stav inzeratu.
-     * @return 
+     * @return objekt typu StavInzeratu
      */
     public StavInzeratu getStav() {
         return stav;
@@ -112,7 +111,7 @@ public class Inzerat implements Serializable{
        
     /**
      * Getter pre atribút kategória.
-     * @return 
+     * @return objekt typu Kategoria
      */
     public Kategoria getKategoria() {    
         return kategoria;
@@ -128,7 +127,7 @@ public class Inzerat implements Serializable{
 
     /**
      * Getter pre atribút id inzeratu.
-     * @return 
+     * @return id inzeratu
      */
     public int getID() {
         return ID;
@@ -144,7 +143,7 @@ public class Inzerat implements Serializable{
 
     /**
      * Setter pre kategóriu vozidla.
-     * @param kategoria 
+     * @param kategoria objekt typu Kategoria
      */
     public void setKategoria(Kategoria kategoria) {
         this.kategoria = kategoria;
@@ -152,7 +151,7 @@ public class Inzerat implements Serializable{
 
     /**
      * Setter pre dátum vytvorenia inzerátu.
-     * @param DatumVytvorenia 
+     * @param DatumVytvorenia - datum vytvorenia inzeratu
      */
     public void setDatumVytvorenia(Date DatumVytvorenia) {
         this.DatumVytvorenia = DatumVytvorenia;
@@ -160,7 +159,7 @@ public class Inzerat implements Serializable{
 
     /**
      * Setter pre id inzerátu.
-     * @param ID 
+     * @param ID - id inzeratu
      */
     public void setID(int ID) {
         this.ID = ID;
@@ -168,7 +167,7 @@ public class Inzerat implements Serializable{
 
     /**
      * Znaková reprezentácia objektu typu Inzerat.
-     * @return 
+     * @return String
      */
     @Override
     public String toString() {

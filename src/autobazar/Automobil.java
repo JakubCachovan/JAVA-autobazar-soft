@@ -5,9 +5,9 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
+ * Trieda reprezentujúca Automobil.
  * @author Cachovan Jakub
  * @version 1.0
- * @created 31-3-2017 13:05:52
  */
 public class Automobil extends Vozidlo implements Kategoria, Serializable{
 
@@ -17,18 +17,18 @@ public class Automobil extends Vozidlo implements Kategoria, Serializable{
 
     /**
      * Konštruktor pre vytvorenie objektu typu Automobil
-     * @param karoseria
-     * @param pocetDveri
-     * @param pocetSedadiel
-     * @param cena
-     * @param model
-     * @param najazdeneKM
-     * @param palivo
-     * @param rokVyroby
-     * @param stav
-     * @param vykon
-     * @param znacka
-     * @param popis 
+     * @param karoseria karoséria vozidla
+     * @param pocetDveri pocet dveri 
+     * @param pocetSedadiel pocet sedadiel
+     * @param cena cena
+     * @param model model
+     * @param najazdeneKM najazdene KM
+     * @param palivo palivo
+     * @param rokVyroby rok vyroby
+     * @param stav stav
+     * @param vykon vykon
+     * @param znacka znacka
+     * @param popis popis
      */
     public Automobil(String karoseria, int pocetDveri, int pocetSedadiel, int cena, String model, int najazdeneKM, String palivo, int rokVyroby, StavVozidla stav, int vykon, String znacka, String popis) {
         super(cena, model, najazdeneKM, palivo, rokVyroby, stav, vykon, znacka, popis);
@@ -39,14 +39,14 @@ public class Automobil extends Vozidlo implements Kategoria, Serializable{
 
     /**
      * Getter pre karoseriu automobilu.
-     * @return 
+     * @return karoseria automobilu.
      */
     public String getKaroseria() {
         return karoseria;
     }
     /**
      * Setter pre karosériu automobilu.
-     * @param karoseria 
+     * @param karoseria karoseria automobilu.
      */
     public void setKaroseria(String karoseria) {
         this.karoseria = karoseria;
@@ -54,7 +54,7 @@ public class Automobil extends Vozidlo implements Kategoria, Serializable{
 
     /**
      * Getter pre počet dverí.
-     * @return 
+     * @return počet dverí.
      */
     public int getPocetDveri() {
         return pocetDveri;
@@ -62,7 +62,7 @@ public class Automobil extends Vozidlo implements Kategoria, Serializable{
 
     /**
      * Setter pre počet dverí automobilu.
-     * @param pocetDveri 
+     * @param pocetDveri počet dverí.
      */
     public void setPocetDveri(int pocetDveri) {
         this.pocetDveri = pocetDveri;
@@ -70,7 +70,7 @@ public class Automobil extends Vozidlo implements Kategoria, Serializable{
 
     /**
      * Getter pre počet sedadiel automobilu.
-     * @return 
+     * @return počet sedadiel automobilu.
      */
     public int getPocetSedadiel() {
         return pocetSedadiel;
@@ -78,7 +78,7 @@ public class Automobil extends Vozidlo implements Kategoria, Serializable{
 
     /**
      * Setter pre počet sedadiel.
-     * @param pocetSedadiel 
+     * @param pocetSedadiel počet sedadiel automobilu.
      */
     public void setPocetSedadiel(int pocetSedadiel) {
         this.pocetSedadiel = pocetSedadiel;
@@ -86,7 +86,7 @@ public class Automobil extends Vozidlo implements Kategoria, Serializable{
 
     /**
      * Setter pre značku automobilu.
-     * @param znacka 
+     * @param znacka značka automobilu.
      */
     @Override
     public void setZnacka(String znacka) {
@@ -95,7 +95,7 @@ public class Automobil extends Vozidlo implements Kategoria, Serializable{
 
     /**
      * Getter pre značku automobilu.
-     * @return 
+     * @return značka automobilu.
      */
     @Override
     public String getZnacka() {
@@ -104,7 +104,7 @@ public class Automobil extends Vozidlo implements Kategoria, Serializable{
 
     /**
      * Getter pre výkon automobilu.
-     * @param vykon 
+     * @param vykon výkon automobilu.
      */
     @Override
     public void setVykon(int vykon) {
@@ -113,7 +113,7 @@ public class Automobil extends Vozidlo implements Kategoria, Serializable{
 
     /**
      * Setter pre výkon automobilu.
-     * @return 
+     * @return výkon automobilu.
      */
     @Override
     public int getVykon() {
@@ -122,7 +122,7 @@ public class Automobil extends Vozidlo implements Kategoria, Serializable{
     
     /**
      * Setter pre stav automobilu.
-     * @param stav 
+     * @param stav stav automobilu.
      */
     @Override
     public void setStav(StavVozidla stav) {
@@ -131,7 +131,7 @@ public class Automobil extends Vozidlo implements Kategoria, Serializable{
 
     /**
      * Getter pre stav automobilu.
-     * @return 
+     * @return stav automobilu.
      */
     @Override
     public StavVozidla getStav() {
@@ -140,7 +140,7 @@ public class Automobil extends Vozidlo implements Kategoria, Serializable{
     
     /**
      * Setter pre popis automobilu. 
-     * @param popis 
+     * @param popis popis automobilu. 
      */
     @Override
     public void setPopis(String popis) {
@@ -149,7 +149,7 @@ public class Automobil extends Vozidlo implements Kategoria, Serializable{
 
     /**
      * Getter pre popis automobilu.
-     * @return 
+     * @return popis automobilu. 
      */
     @Override
     public String getPopis() {
@@ -158,7 +158,7 @@ public class Automobil extends Vozidlo implements Kategoria, Serializable{
 
     /**
      * Setter pre rok výroby automobilu.
-     * @param rokVyroby 
+     * @param rokVyroby rok výroby automobilu.
      */
     @Override
     public void setRokVyroby(int rokVyroby) {
@@ -167,7 +167,7 @@ public class Automobil extends Vozidlo implements Kategoria, Serializable{
 
     /**
      * Getter pre rok výroby automobilu.
-     * @return 
+     * @return rok výroby automobilu.
      */
     @Override
     public int getRokVyroby() {
@@ -176,7 +176,7 @@ public class Automobil extends Vozidlo implements Kategoria, Serializable{
 
     /**
      * Setter pre palivo automobilu.
-     * @param palivo 
+     * @param palivo palivo automobilu. 
      */
     @Override
     public void setPalivo(String palivo) {
@@ -185,7 +185,7 @@ public class Automobil extends Vozidlo implements Kategoria, Serializable{
 
     /**
      * Getter pre palivo automobilu.
-     * @return 
+     * @return palivo automobilu.
      */
     @Override
     public String getPalivo() {
@@ -194,7 +194,7 @@ public class Automobil extends Vozidlo implements Kategoria, Serializable{
     
     /**
      * Setter pre najazdené kilometre automobilu.
-     * @param najazdeneKM 
+     * @param najazdeneKM najazdené kilometre automobilu.
      */
     @Override
     public void setNajazdeneKM(int najazdeneKM) {
@@ -203,7 +203,7 @@ public class Automobil extends Vozidlo implements Kategoria, Serializable{
 
     /**
      * Getter pre najazdené kilometre automobilu.
-     * @return 
+     * @return najazdené kilometre automobilu.
      */
     @Override
     public int getNajazdeneKM() {
@@ -212,48 +212,49 @@ public class Automobil extends Vozidlo implements Kategoria, Serializable{
 
     /**
      * Setter pre model automobilu.
-     * @param model 
+     * @param model model automobilu.
      */
     @Override
     public void setModel(String model) {
-        super.setModel(model); //To change body of generated methods, choose Tools | Templates.
+        super.setModel(model); 
     }
 
     /**
      * Getter pre model automobilu.
-     * @return 
+     * @return model automobilu.
      */
     @Override
     public String getModel() {
-        return super.getModel(); //To change body of generated methods, choose Tools | Templates.
+        return super.getModel(); 
     }
 
     /**
      * Setter pre cenu automobilu.
-     * @param cena 
+     * @param cena cena automobilu
      */
     @Override
     public void setCena(int cena) {
-        super.setCena(cena); //To change body of generated methods, choose Tools | Templates.
+        super.setCena(cena); 
+    }
+    
+    /**
+     * Getter pre cenu automobilu.
+     * @return cenu automobilu
+     */
+    @Override
+    public int getCena() {
+        return super.getCena();
     }
 
     /**
      * Getter pre kategoriu automobilu.
-     * @return 
+     * @return kategoria automobilu.
      */
     @Override
     public int getKategoriaInt() {
         return 1;
     }
     
-    /**
-     * Getter pre cenu automobilu.
-     * @return 
-     */
-    @Override
-    public int getCena() {
-        return super.getCena(); //To change body of generated methods, choose Tools | Templates.
-    }
     
     /**
      * Metóda pre zistenie zhody kľúčového slova v znakovej reprezentácií objektu (toString).
@@ -269,7 +270,7 @@ public class Automobil extends Vozidlo implements Kategoria, Serializable{
 
     /**
      * Metóda potrebná pre zistenie ceny vozidla.
-     * @return 
+     * @return cena vozidla
      */
     @Override
     public int celkovaHodnotaVozidiel() {
@@ -278,7 +279,7 @@ public class Automobil extends Vozidlo implements Kategoria, Serializable{
 
     /**
      * Znaková reprezentácia objektu typu Automobil.
-     * @return 
+     * @return String
      */
     @Override
     public String toString() {

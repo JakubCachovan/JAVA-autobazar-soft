@@ -25,9 +25,9 @@ public class VlastnostiSedadiel implements Serializable{
     }
 
     /**
-     * true -> ak je su sedadla štandartne
+     * true - ak je su sedadla štandartne
      * inak false
-     * @return 
+     * @return true/false
      */
     public boolean isStandart() {
         return standart;
@@ -35,17 +35,16 @@ public class VlastnostiSedadiel implements Serializable{
 
     /**
      * Setter pre nastavenie atributu standart.
-     * Standartne sedadla -> true inak false
-     * @param standart 
+     * @param standart Standartne sedadla - true inak false
      */
     public void setStandart(boolean standart) {
         this.standart = standart;
     }
 
     /**
-     * true -> ak su sedadla polohovatelne
+     * Indikátor polohovatelnosti sedadiel.
+     * @return true - ak su sedadla polohovatelne
      * inak false
-     * @return 
      */
     public boolean isPolohovatelne() {
         return polohovatelne;
@@ -53,7 +52,7 @@ public class VlastnostiSedadiel implements Serializable{
 
     /**
      * Setter pre polohovatelne sedadla v autobuse.
-     * @param polohovatelne 
+     * @param polohovatelne Indikátor polohovatelnosti sedadiel.
      */
     public void setPolohovatelne(boolean polohovatelne) {
         this.polohovatelne = polohovatelne;
@@ -61,7 +60,7 @@ public class VlastnostiSedadiel implements Serializable{
 
     /**
      * Indikator či su sedadla posuvne.
-     * @return 
+     * @return true / false
      */
     public boolean isPosuvne() {
         return posuvne;
@@ -69,7 +68,7 @@ public class VlastnostiSedadiel implements Serializable{
 
     /**
      * Setter pre indikator posuvne.
-     * @param posuvne 
+     * @param posuvne sedadla posuvne.
      */
     public void setPosuvne(boolean posuvne) {
         this.posuvne = posuvne;
@@ -77,7 +76,7 @@ public class VlastnostiSedadiel implements Serializable{
 
     /**
      * Indikator či su sedadla nastavitelne.
-     * @return 
+     * @return true / false
      */
     public boolean isNastavitelne() {
         return nastavitelne;
@@ -85,7 +84,7 @@ public class VlastnostiSedadiel implements Serializable{
 
     /**
      * Setter pre indikator nastavitelne.
-     * @param nastavitelne 
+     * @param nastavitelne sedadla nastavitelne.
      */
     public void setNastavitelne(boolean nastavitelne) {
         this.nastavitelne = nastavitelne;
@@ -93,7 +92,7 @@ public class VlastnostiSedadiel implements Serializable{
 
     /**
      * Znaková reprezentácia atribútov z hodnotou true.
-     * @return 
+     * @return String
      */
     public String vratRetazec(){
         String ret = "";
@@ -107,7 +106,7 @@ public class VlastnostiSedadiel implements Serializable{
     
     /**
      * Znaková reprezentácia objektu typu vlasnosti sedadiel.
-     * @return 
+     * @return String
      */
     @Override
     public String toString() {

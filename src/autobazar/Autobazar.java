@@ -13,9 +13,10 @@ import javax.swing.JOptionPane;
 
 
 /**
+ * Trieda reprezentujúca Autobazar.
+ * Obsahuje zoznam inzeratov, predajcov a vozidiel.
  * @author Cachovan Jakub
  * @version 1.0
- * @created 31-3-2017 13:05:51
  */
 public class Autobazar implements Serializable{
 
@@ -318,7 +319,7 @@ public class Autobazar implements Serializable{
     
     /**
      * Getter pre zoznam autobusov
-     * @return 
+     * @return zoznam autobusov alebo null
      */
     public ArrayList<Autobus> getZoznamAutobusov(){
         try {
@@ -337,7 +338,7 @@ public class Autobazar implements Serializable{
 
     /**
      * Getter pre zoznam vozidiel
-     * @return 
+     * @return zoznam vozidiel alebo null
      */
     public ArrayList<Kategoria> getZoznamVozidiel() {
         return zoznamVozidiel;
@@ -345,7 +346,7 @@ public class Autobazar implements Serializable{
 
     /**
      * Setter pre zoznam vozidiel
-     * @param zoznamVozidiel 
+     * @param zoznamVozidiel - zoznam vozidiel
      */
     public void setZoznamVozidiel(ArrayList<Kategoria> zoznamVozidiel) {
         this.zoznamVozidiel = zoznamVozidiel;
@@ -390,7 +391,7 @@ public class Autobazar implements Serializable{
 
     /**
      * Znaková reprezentácia objektu.
-     * @return 
+     * @return String
      */
     @Override
     public String toString() {

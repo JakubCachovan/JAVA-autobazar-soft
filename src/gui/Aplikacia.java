@@ -16,6 +16,7 @@ import java.io.File;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 import javax.swing.table.DefaultTableModel;
@@ -102,7 +103,7 @@ public final class Aplikacia extends javax.swing.JFrame {
                 public void actionPerformed(ActionEvent e) {
                     Runtime.getRuntime().exit(0);
                 }
-            };
+            };         
             // create a popup menu
             PopupMenu popup = new PopupMenu();
             // create menu item for the default action
@@ -119,17 +120,23 @@ public final class Aplikacia extends javax.swing.JFrame {
             // set the TrayIcon properties
             trayIcon.addActionListener(listenerForNew);
             trayIcon.addActionListener(listenerForUkoncit);
+            trayIcon.addMouseListener(new java.awt.event.MouseAdapter() {
+                @Override
+                public void mouseClicked(java.awt.event.MouseEvent evt) {
+                    if (SwingUtilities.isLeftMouseButton(evt)) {
+                        setVisible(true);
+                        setExtendedState(JFrame.NORMAL);
+                    }
+                }
+            });
             // ...
             // add the tray image
             try {
                 tray.add(trayIcon);
             } catch (AWTException e) {
-                System.err.println(e);
+                JOptionPane.showMessageDialog(null, e);
             }
             // ...
-        } else {
-            // disable tray option in your application or
-            // perform other actions
         }
     }
     

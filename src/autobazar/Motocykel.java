@@ -5,9 +5,9 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
+ * Trieda reprezentujúca Motocykel.
  * @author Cachovan Jakub
  * @version 1.0
- * @created 31-3-2017 13:05:52
  */
 public class Motocykel extends Vozidlo implements Kategoria, Serializable{
 	private String druh;
@@ -15,17 +15,17 @@ public class Motocykel extends Vozidlo implements Kategoria, Serializable{
 
     /**
      * Konštruktor pre tvorbu objektu typu Motocykel.
-     * @param druh
-     * @param objemValcov
-     * @param cena
-     * @param model
-     * @param najazdeneKM
-     * @param palivo
-     * @param rokVyroby
-     * @param stav
-     * @param vykon
-     * @param znacka
-     * @param popis 
+     * @param druh - druh motocyklu
+     * @param objemValcov - objem válcov motocyklu
+     * @param cena - cena motocyklu
+     * @param model - model motocyklu
+     * @param najazdeneKM - najazdene kilometre motocyklu
+     * @param palivo - palivom motocyklu
+     * @param rokVyroby - rokVyroby motocyklu
+     * @param stav - stav motocyklu
+     * @param vykon - vykon motocyklu
+     * @param znacka - znacka motocyklu
+     * @param popis - popis motocyklu
      */
     public Motocykel(String druh, int objemValcov, int cena, String model, int najazdeneKM, String palivo, int rokVyroby, StavVozidla stav, int vykon, String znacka, String popis) {
         super(cena, model, najazdeneKM, palivo, rokVyroby, stav, vykon, znacka, popis);
@@ -35,7 +35,7 @@ public class Motocykel extends Vozidlo implements Kategoria, Serializable{
     
     /**
      * Getter pre druh motocykla.
-     * @return 
+     * @return druh motocykla.
      */
     public String getDruh() {
         return druh;
@@ -43,7 +43,7 @@ public class Motocykel extends Vozidlo implements Kategoria, Serializable{
 
     /**
      * Setter pre druh motocykla motocykla.
-     * @param druh 
+     * @param druh druh motocykla.
      */
     public void setDruh(String druh) {
         this.druh = druh;
@@ -51,7 +51,7 @@ public class Motocykel extends Vozidlo implements Kategoria, Serializable{
 
     /**
      * Getter pre objem valcov motocykla.
-     * @return 
+     * @return objem valcov motocykla.
      */
     public int getObjemValcov() {
         return objemValcov;
@@ -59,7 +59,7 @@ public class Motocykel extends Vozidlo implements Kategoria, Serializable{
 
     /**
      * Setter pre objem valcov motocykla.
-     * @param objemValcov 
+     * @param objemValcov objem valcov motocykla.
      */
     public void setObjemValcov(int objemValcov) {
         this.objemValcov = objemValcov;
@@ -67,7 +67,7 @@ public class Motocykel extends Vozidlo implements Kategoria, Serializable{
 
     /**
      * Setter pre znacku motocykla.
-     * @param znacka 
+     * @param znacka znacku motocykla.
      */
     @Override
     public void setZnacka(String znacka) {
@@ -76,7 +76,7 @@ public class Motocykel extends Vozidlo implements Kategoria, Serializable{
 
     /**
      * Getter pre znacku motocykla.
-     * @return 
+     * @return znacku motocykla.
      */
     @Override
     public String getZnacka() {
@@ -85,7 +85,7 @@ public class Motocykel extends Vozidlo implements Kategoria, Serializable{
 
     /**
      * Setter pre vykon motocykla.
-     * @param vykon 
+     * @param vykon vykon motocykla.
      */
     @Override
     public void setVykon(int vykon) {
@@ -94,7 +94,7 @@ public class Motocykel extends Vozidlo implements Kategoria, Serializable{
 
     /**
      * Getter pre vykon motocykla.
-     * @return 
+     * @return vykon motocykla.
      */
     @Override
     public int getVykon() {
@@ -103,7 +103,7 @@ public class Motocykel extends Vozidlo implements Kategoria, Serializable{
     
     /**
      * Setter pre popis motocykla.
-     * @param popis 
+     * @param popis  popis motocykla.
      */
     @Override
     public void setPopis(String popis) {
@@ -112,7 +112,7 @@ public class Motocykel extends Vozidlo implements Kategoria, Serializable{
 
     /**
      * Getter pre popis motocykla.
-     * @return 
+     * @return  popis motocykla.
      */
     @Override
     public String getPopis() {
@@ -121,7 +121,7 @@ public class Motocykel extends Vozidlo implements Kategoria, Serializable{
 
     /**
      * Setter pre stav motocykla.
-     * @param stav 
+     * @param stav stav motocykla.
      */
     @Override
     public void setStav(StavVozidla stav) {
@@ -130,7 +130,7 @@ public class Motocykel extends Vozidlo implements Kategoria, Serializable{
 
     /**
      * Getter pre stav vozidla motocykla.
-     * @return 
+     * @return stav motocykla.
      */
     @Override
     public StavVozidla getStav() {
@@ -139,7 +139,7 @@ public class Motocykel extends Vozidlo implements Kategoria, Serializable{
 
     /**
      * Setter pre rok výroby motocykla.
-     * @param rokVyroby 
+     * @param rokVyroby rok výroby motocykla.
      */
     @Override
     public void setRokVyroby(int rokVyroby) {
@@ -148,7 +148,7 @@ public class Motocykel extends Vozidlo implements Kategoria, Serializable{
 
     /**
      * Getter pre rok výroby motocykla.
-     * @return 
+     * @return rok výroby motocykla.
      */
     @Override
     public int getRokVyroby() {
@@ -157,7 +157,7 @@ public class Motocykel extends Vozidlo implements Kategoria, Serializable{
 
     /**
      * Setter pre palivo motocykla.
-     * @param palivo 
+     * @param palivo palivo motocykla.
      */
     @Override
     public void setPalivo(String palivo) {
@@ -166,7 +166,7 @@ public class Motocykel extends Vozidlo implements Kategoria, Serializable{
 
     /**
      * Getter pre palivo motocykla.
-     * @return 
+     * @return palivo motocykla.
      */
     @Override
     public String getPalivo() {
@@ -175,7 +175,7 @@ public class Motocykel extends Vozidlo implements Kategoria, Serializable{
 
     /**
      * Setter pre najazdene kilometre motocykla.
-     * @param najazdeneKM 
+     * @param najazdeneKM najazdene kilometre motocykla.
      */
     @Override
     public void setNajazdeneKM(int najazdeneKM) {
@@ -184,7 +184,7 @@ public class Motocykel extends Vozidlo implements Kategoria, Serializable{
 
     /**
      * Getter pre najazdene kilometre motocykla.
-     * @return 
+     * @return najazdene kilometre motocykla.
      */
     @Override
     public int getNajazdeneKM() {
@@ -193,7 +193,7 @@ public class Motocykel extends Vozidlo implements Kategoria, Serializable{
 
     /**
      * Setter pre model motocykla.
-     * @param model 
+     * @param model model motocykla.
      */
     @Override
     public void setModel(String model) {
@@ -202,7 +202,7 @@ public class Motocykel extends Vozidlo implements Kategoria, Serializable{
 
     /**
      * Getter pre model motocykla.
-     * @return 
+     * @return model motocykla.
      */
     @Override
     public String getModel() {
@@ -211,7 +211,7 @@ public class Motocykel extends Vozidlo implements Kategoria, Serializable{
 
     /**
      * Setter pre cenu motocykla.
-     * @param cena 
+     * @param cena cena motocykla.
      */
     @Override
     public void setCena(int cena) {
@@ -220,7 +220,7 @@ public class Motocykel extends Vozidlo implements Kategoria, Serializable{
 
     /**
      * Getter pre cenu motocykla.
-     * @return 
+     * @return cena motocykla.
      */
     @Override
     public int getCena() {
@@ -229,7 +229,7 @@ public class Motocykel extends Vozidlo implements Kategoria, Serializable{
 
     /**
      * Getter pre kategoriu motocykla.
-     * @return 
+     * @return kategoria motocykla.
      */
     @Override
     public int getKategoriaInt() {
@@ -250,7 +250,7 @@ public class Motocykel extends Vozidlo implements Kategoria, Serializable{
     
     /**
      * Metóda potrebná pre zistenie ceny vozidla.
-     * @return 
+     * @return cena vozidla.
      */
     @Override
     public int celkovaHodnotaVozidiel() {
@@ -259,7 +259,7 @@ public class Motocykel extends Vozidlo implements Kategoria, Serializable{
     
     /**
      * Znaková reprezentácia objektu typu Motocykel.
-     * @return 
+     * @return String
      */
     @Override
     public String toString() {

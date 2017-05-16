@@ -7,7 +7,6 @@ import java.io.Serializable;
  * Predstavuje predka všetkých kategórií vozidiel.
  * @author Cachovan Jakub
  * @version 1.0
- * @created 31-3-2017 13:05:52
  */
 public abstract class Vozidlo implements Serializable{
 
@@ -23,16 +22,16 @@ public abstract class Vozidlo implements Serializable{
 
     /**
      * Konštruktor pre vytvorenie objektu typu Vozidlo.
-     * @param cena
-     * @param model
-     * @param najazdeneKM
-     * @param palivo
-     * @param rokVyroby
-     * @param stav
-     * @param vykon
-     * @param znacka
-     * @param popis 
-     */
+     * @param cena - cena vozidla
+     * @param model - model vozidla
+     * @param najazdeneKM  - najazdene KM vozidla
+     * @param palivo - palivo vozidla
+     * @param rokVyroby - rok vyroby vozidla
+     * @param stav - stav vozidla
+     * @param vykon - vykon vozidla
+     * @param znacka - znacka vozidla
+     * @param popis - popis vozidla
+     */ 
     public Vozidlo(int cena, String model, int najazdeneKM, String palivo, int rokVyroby, StavVozidla stav, int vykon, String znacka, String popis) {
         this.cena = cena;
         this.model = model;
@@ -47,7 +46,7 @@ public abstract class Vozidlo implements Serializable{
    
     /**
      * Getter pre popis vozidla.
-     * @return
+     * @return popis vozidla.
      */
     public String getPopis() {
         return popis;
@@ -55,7 +54,7 @@ public abstract class Vozidlo implements Serializable{
 
     /**
      * Setter pre popis vozidla.
-     * @param popis 
+     * @param popis popis vozidla.
      */
     public void setPopis(String popis) {
         this.popis = popis;
@@ -63,7 +62,7 @@ public abstract class Vozidlo implements Serializable{
 
     /**
      * Getter pre cenu vozidla.
-     * @return 
+     * @return cena vozidla.
      */
     public int getCena() {
         return cena;
@@ -71,7 +70,7 @@ public abstract class Vozidlo implements Serializable{
 
     /**
      * Setter pre cenu vozidla.
-     * @param cena 
+     * @param cena cena vozidla.
      */
     public void setCena(int cena) {
         this.cena = cena;
@@ -79,7 +78,7 @@ public abstract class Vozidlo implements Serializable{
     
     /**
      * Getter pre model vozidla.
-     * @return 
+     * @return model vozidla.
      */
     public String getModel() {
         return model;
@@ -87,7 +86,7 @@ public abstract class Vozidlo implements Serializable{
 
     /**
      * Setter pre model vozidla.
-     * @param model 
+     * @param model model vozidla.
      */
     public void setModel(String model) {
         this.model = model;
@@ -95,7 +94,7 @@ public abstract class Vozidlo implements Serializable{
 
     /**
      * Getter pre najazdene km vozidla.
-     * @return 
+     * @return najazdene km vozidla.
      */
     public int getNajazdeneKM() {
         return najazdeneKM;
@@ -103,7 +102,7 @@ public abstract class Vozidlo implements Serializable{
 
     /**
      * Setter pre najazdene km vozidla.
-     * @param najazdeneKM 
+     * @param najazdeneKM najazdene km vozidla.
      */
     public void setNajazdeneKM(int najazdeneKM) {
         this.najazdeneKM = najazdeneKM;
@@ -111,7 +110,7 @@ public abstract class Vozidlo implements Serializable{
 
     /**
      * Getter pre palivo vozidla.
-     * @return 
+     * @return palivo vozidla.
      */
     public String getPalivo() {
         return palivo;
@@ -119,7 +118,7 @@ public abstract class Vozidlo implements Serializable{
 
     /**
      * Setter pre palivo vozidla.
-     * @param palivo 
+     * @param palivo palivo vozidla.
      */
     public void setPalivo(String palivo) {
         this.palivo = palivo;
@@ -127,7 +126,7 @@ public abstract class Vozidlo implements Serializable{
 
     /**
      * Getter pre rok vyroby vozidla.
-     * @return 
+     * @return rok vyroby vozidla.
      */
     public int getRokVyroby() {
         return rokVyroby;
@@ -135,7 +134,7 @@ public abstract class Vozidlo implements Serializable{
 
     /**
      * Setter pre rok vyroby vozidla.
-     * @param rokVyroby 
+     * @param rokVyroby rok vyroby vozidla.
      */
     public void setRokVyroby(int rokVyroby) {
         this.rokVyroby = rokVyroby;
@@ -143,15 +142,15 @@ public abstract class Vozidlo implements Serializable{
 
     /**
      * Getter pre objekt typu StavVozidla.
-     * @return
+     * @return objekt typu StavVozidla.
      */
     public StavVozidla getStav() {
         return stav;
     }
 
     /**
-     * Setter pre popis vozidla.
-     * @param stav 
+     * Setter pre stav vozidla.
+     * @param stav objekt typu StavVozidla.
      */
     public void setStav(StavVozidla stav) {
         this.stav = stav;
@@ -159,7 +158,7 @@ public abstract class Vozidlo implements Serializable{
 
     /**
      * Getter pre vykon vozidla.
-     * @return 
+     * @return vykon vozidla.
      */
     public int getVykon() {
         return vykon;
@@ -167,7 +166,7 @@ public abstract class Vozidlo implements Serializable{
 
     /**
      * Setter pre vykon vozidla.
-     * @param vykon 
+     * @param vykon vykon vozidla.
      */
     public void setVykon(int vykon) {
         this.vykon = vykon;
@@ -175,7 +174,7 @@ public abstract class Vozidlo implements Serializable{
 
     /**
      * Getter pre značku vozidla.
-     * @return 
+     * @return značku vozidla.
      */
     public String getZnacka() {
         return znacka;
@@ -183,7 +182,7 @@ public abstract class Vozidlo implements Serializable{
 
     /**
      * Setter pre značku vozidla.
-     * @param znacka 
+     * @param znacka značku vozidla.
      */
     public void setZnacka(String znacka) {
         this.znacka = znacka;
@@ -191,7 +190,7 @@ public abstract class Vozidlo implements Serializable{
 
     /**
      * Znaková reprezentácia objektu typu Vozidlo.
-     * @return 
+     * @return String
      */
     @Override
     public String toString() {

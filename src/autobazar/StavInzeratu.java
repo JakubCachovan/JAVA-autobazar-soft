@@ -12,7 +12,7 @@ public enum StavInzeratu implements Serializable{
 
     /**
      * Znaková reprezentácia objektu.
-     * @return 
+     * @return String
      */
     @Override
     public String toString() {

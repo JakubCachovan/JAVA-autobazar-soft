@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package gui;
 
 import autobazar.Automobil;
@@ -11,14 +6,16 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
- *
- * @author Acer
+ * Dialogove okno pre vytvorenie automobilu.
+ * @author Jakub Cachovan
  */
 public class NovyAutomobilDialog extends javax.swing.JDialog {
     private Automobil automobil;
     private boolean upravaVozidla = false;
     /**
      * Creates new form NovyAutomobilDialog
+     * @param parent - parent
+     * @param modal - modal
      */
     public NovyAutomobilDialog(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
@@ -44,9 +41,7 @@ public class NovyAutomobilDialog extends javax.swing.JDialog {
     public void setUpravaVozidla(boolean upravaVozidla) {
         this.upravaVozidla = upravaVozidla;
     }
-    
-    
-    
+       
     public void NaplnFormular(){
         jTextFieldCena.setText(automobil.getCena()+"");
         jTextFieldZnacka.setText(automobil.getZnacka());

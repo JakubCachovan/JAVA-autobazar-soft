@@ -14,6 +14,8 @@ public class NovyNakladakDialog extends javax.swing.JDialog {
     private boolean upravaVozidla = false;
     /**
      * Creates new form NovyNakladakDialog
+     * @param parent parent
+     * @param modal modal
      */
     public NovyNakladakDialog(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
@@ -34,7 +36,7 @@ public class NovyNakladakDialog extends javax.swing.JDialog {
 
     /**
      * Setter pre objekt typu NakladneAuto.
-     * @param nakladne 
+     * @param nakladne objekt typu NakladneAuto
      */
     public void setNakladne(NakladneAuto nakladne) {
         this.nakladne = nakladne;
@@ -42,7 +44,7 @@ public class NovyNakladakDialog extends javax.swing.JDialog {
     
     /**
      * Indikátor úpravy nákaladného auta.
-     * @return 
+     * @return true/false
      */
     public boolean isUpravaVozidla() {
         return upravaVozidla;
@@ -50,7 +52,7 @@ public class NovyNakladakDialog extends javax.swing.JDialog {
 
     /**
      * Setter pre indikátor úpravy nákladného auta.
-     * @param upravaVozidla 
+     * @param upravaVozidla indikátor úpravy nákladného auta
      */
     public void setUpravaVozidla(boolean upravaVozidla) {
         this.upravaVozidla = upravaVozidla;
@@ -324,7 +326,7 @@ public class NovyNakladakDialog extends javax.swing.JDialog {
 
     /**
      * Validácia formuláru pre úpravu nákladného auta.
-     * @return 
+     * @return true/false
      */
     public boolean validaciaFormularu(){
         if(jTextFieldCena.getText().isEmpty()){
@@ -357,7 +359,7 @@ public class NovyNakladakDialog extends javax.swing.JDialog {
     
     /**
      * Uloženie kategorie vozidla pre inzerát.
-     * @param evt 
+     * @param evt - event
      */
     private void jButtonUlozitInzeratActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonUlozitInzeratActionPerformed
         if(validaciaFormularu()){

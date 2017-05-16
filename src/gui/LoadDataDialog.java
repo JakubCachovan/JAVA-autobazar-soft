@@ -20,6 +20,8 @@ public class LoadDataDialog extends javax.swing.JDialog {
     static boolean isFromFile = false;
     /**
      * Creates new form LoadDataDialog
+     * @param parent - parent
+     * @param modal - modal
      */
     public LoadDataDialog(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
@@ -39,7 +41,7 @@ public class LoadDataDialog extends javax.swing.JDialog {
     
     /**
      * Getter pre cestu k zdrojovému súboru.
-     * @return 
+     * @return cesta k zdrojovému súboru
      */
     public String getPath() {
         return path;
@@ -47,7 +49,7 @@ public class LoadDataDialog extends javax.swing.JDialog {
 
     /**
      * Getter pre zdrojový súbor.
-     * @return 
+     * @return cesta k zdrojovému súboru
      */
     public File getFile() {
         return file;
@@ -153,7 +155,7 @@ public class LoadDataDialog extends javax.swing.JDialog {
 
     /**
      * Vyvolanie okna pre výber zdrojového súboru.
-     * @param evt 
+     * @param evt - event
      */
     private void jButtonVyberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVyberActionPerformed
         try {
@@ -171,7 +173,7 @@ public class LoadDataDialog extends javax.swing.JDialog {
     /**
      * Načítanie dát zo zdrojového súboru.
      * Overuje príponu súboru. Povolene su len TXT subory alebo SQLITE databázy
-     * @param evt 
+     * @param evt - event
      */
     private void jButtonNacitajActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNacitajActionPerformed
         Pattern p = Pattern.compile("(.sqlite)");
@@ -193,7 +195,7 @@ public class LoadDataDialog extends javax.swing.JDialog {
 
     /**
      * Rýchle načítanie zo súboru.
-     * @param evt 
+     * @param evt - event
      */
     private void jButtonFromFileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonFromFileActionPerformed
         path = "./autobazar.txt";
