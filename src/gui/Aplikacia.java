@@ -1386,10 +1386,10 @@ public final class Aplikacia extends javax.swing.JFrame {
         Predajca predajca = null;
         Kategoria kategoria = null;
         if (vid.getPredajca() != null)
-        predajca = vid.getPredajca();
+            predajca = vid.getPredajca();
         else return;
         if(vid.getKategoria() != null)
-        kategoria = vid.getKategoria();
+            kategoria = vid.getKategoria();
         else return;
         Inzerat novyInzerat = _autobazar.VytvoritInzerat(kategoria, predajca);
         if(DbPath != null) {
